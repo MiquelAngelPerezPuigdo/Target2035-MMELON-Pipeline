@@ -17,6 +17,7 @@ CACHE Challenge/
 ├── scoring.py                     # Custom scoring engine mapping 3 conditions to 0-1
 ├── preprocess_del.py              # Polars deduplication & PyTorch Dataset class
 ├── run_pipeline.py                # Command-Line executable pipeline entrypoint
+├── run_validation.py              # Unified executable validation & submission entrypoint
 ├── pgk2_sequence.fasta            # Human PGK2 FASTA protein sequence (P07205)
 ├── test_pipeline.py               # Automated local validation test suite
 └── Target2035_Aircheck_Utils/     # Official challenge utility repo (fingerprints/evaluation)
@@ -112,7 +113,35 @@ python test_pipeline.py
 
 ---
 
-## 💡 How to Feed the Preprocessed Data into MAMMAL Training
+## � Step 4: Run Inference & Prepare Submission
+
+Once your model has been fine-tuned, you can use the unified validation script `run_validation.py` to run feedforward inference on CACHE validation or test split CSV/Parquets. It automatically ranks candidates, tags the top 50, and generates the exact required challenge submission outputs inside a `/submissions/` directory:
+
+1. **Validation Split submission (`Team_MAMMAL_submission_validation.txt`)**: A list of exactly 50 CatalogIDs (one per line).
+2. **Test Split submission (`Team_MAMMAL_submission_test.csv`)**: A formatted 3-column CSV (`CatalogID`, `Sel_50`, `Score`).
+
+### Running validation & inference:
+```bash
+python run_validation.py \
+  --model-dir /path/to/fine-tuned-checkpoint/ \
+  --validation-file PGK2_CACHE_Val_Test_Set.csv \
+  --fasta-file pgk2_sequence.fasta \
+  --output-dir submissions
+```
+
+### Running validation with automated local evaluation (if local labels are available):
+If you have a local gold standard CSV containing `RandomID`, `Label`, and `Cluster`, you can supply it using `--gold-file` to automatically calculate `ROC-AUC`, `PR-AUC`, `Hit count @50`, `Unique clusters hit`, and statistical `Poisson-Binomial p-value`:
+```bash
+python run_validation.py \
+  --model-dir /path/to/fine-tuned-checkpoint/ \
+  --validation-file PGK2_CACHE_Val_Test_Set.csv \
+  --gold-file PGK2_Gold_Standard.csv \
+  --output-dir submissions
+```
+
+---
+
+## �💡 How to Feed the Preprocessed Data into MAMMAL Training
 
 Once `run_pipeline.py` has run and generated the preprocessed parquets, your collaborator can load the PyTorch Dataset directly in their training script:
 

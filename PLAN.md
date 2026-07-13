@@ -4,12 +4,26 @@ This document outlines our strategy for handling the massive amount of DEL data 
 
 ---
 
+## 🤯 Why This Looks Impossible (But Isn't)
+
+The library has **~898 million enumerated compounds**. Fine-tuning a 458M-parameter transformer on a billion molecules seems computationally insane — *if* each molecule were an independent data point.
+
+It is **not**. A DEL is built combinatorially from a tiny shared set of building blocks:
+
+$$N_{\text{compounds}} = |BB_1| \times |BB_2| \times |BB_3| \approx 10^9, \qquad\text{but}\qquad \text{information} \sim |BB_1| + |BB_2| + |BB_3| \approx \text{a few thousand.}$$
+
+The apparent billion-scale problem is really only a **few-thousand-fragment** problem in disguise. By explicitly encoding the building blocks, MAMMAL learns the *combinatorial grammar* of binding rather than memorizing 898M strings.
+
+**Consequence:** we do **not** need to discard data to make training feasible. Every compound reinforces signal about the fragments it shares with others, so the design goal of this repo is to **embrace all the data as important**. Downsampling (Phase 5) is a purely optional speed/convenience knob — set `sample_size` to `0`/`None` to train on the full deduplicated library.
+
+---
+
 ## 🎯 The Core Idea & OOD Generalization
 Traditional machine learning models (e.g. LightGBM, FNNs trained on Morgan Fingerprints) are highly prone to overfitting on the chemical space of the training libraries. They perform poorly when evaluating unseen scaffolds (OOD), which is the exact scenario in this challenge (testing on the 400K ASMS library).
 
 To solve this, we will train **MAMMAL** using a multi-modal combinatorial formulation:
 1. **Protein Target Context**: Feed the target protein sequence (PGK2) to MAMMAL's encoder.
-2. **Combinatorial Building Blocks (BBs)**: Instead of just the final compound, we feed the SMILES of the individual building blocks ($BB_1$, $BB_2$, $BB_3$) that make up the molecule. This allows the model to learn localized combinatorial binding patterns.
+2. **Combinatorial Building Blocks (BBs)**: Instead of just the final compound, we feed the SMILES of the individual building blocks ($BB_1$, $BB_2$, $BB_3$) that make up the molecule. This allows the model to learn localized combinatorial binding patterns — the key to why a "billion-molecule" fine-tune is actually tractable.
 3. **Whole Molecule SMILES**: Feed the final deprotected enumerated SMILES string.
 4. **MAMMAL Multi-Modal Tokenizer**: Merge all of these in a single sequence-to-sequence prompt!
 
@@ -63,5 +77,6 @@ The prompt will utilize MAMMAL's multi-modal capabilities:
 The model's target for fine-tuning will predict the binary classification `<1>` or `<0>` token, or regress on the continuous score.
 
 ### Phase 5: High-Performance Training Pipeline
-- **Imbalance Mitigation**: DEL data is extremely sparse (mostly inactives). We will build a balanced training dataset by keeping all active hits (e.g., $100\text{k} - 500\text{k}$) and downsampling the negatives/unobserved compounds.
-- **Streaming Data Loader**: We'll implement a chunked data loader to feed the PyTorch / Lightning pipeline efficiently.
+- **Embrace all data (default philosophy)**: Thanks to the combinatorial encoding, the full deduplicated library is tractable — every compound reinforces shared building-block signal. Set `sample_size=0`/`None` to train on everything.
+- **Imbalance Mitigation (optional knob)**: DEL data is extremely sparse (mostly inactives). For faster iteration you *may* keep all active hits and downsample negatives/unobserved compounds via `sample_size`, but this is a convenience, **not** a requirement of the method.
+- **Streaming Data Loader**: We'll implement a chunked data loader to feed the PyTorch / Lightning pipeline efficiently, so even the full library never has to sit in memory at once.

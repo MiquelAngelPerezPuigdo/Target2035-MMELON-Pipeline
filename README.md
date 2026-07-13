@@ -8,6 +8,28 @@ This repository is designed for **collaborative development**:
 
 ---
 
+## 🤯 The Big (Seemingly Crazy) Idea
+
+At first glance, this project looks **impossible**. The BCM OpenDEL library contains **~898 million enumerated compounds**. Fine-tuning a 458M-parameter transformer like MAMMAL on nearly a billion molecules sounds absurd — the raw compute, memory, and I/O would be prohibitive if every molecule were a truly independent data point.
+
+**But it isn't absurd — because of the combinatorial nature of a DNA-Encoded Library.**
+
+A DEL is not 898M independent molecules. It is a small set of physical **building blocks (BBs)** combined in 2–3 reaction cycles:
+
+$$N_{\text{compounds}} = |BB_1| \times |BB_2| \times |BB_3| \quad\text{(e.g. } 1000 \times 1000 \times 1000 = 10^9\text{)}$$
+
+The *true* information content of the library scales with the **sum** of the building blocks ($|BB_1| + |BB_2| + |BB_3| \approx$ a few thousand), **not** their product (a billion). Every one of the 898M "molecules" is just a re-combination of a tiny shared vocabulary of fragments.
+
+### Why this changes everything
+- **Feed the model what actually varies.** By explicitly tokenizing the individual building blocks ($BB_1, BB_2, BB_3$) alongside the assembled compound and the PGK2 target sequence, MAMMAL learns the *combinatorial grammar* of binding — how fragments contribute to activity — rather than memorizing a billion unique strings.
+- **The effective learning problem is small.** The model only needs to internalize how a few thousand fragments interact, so the giant dataset collapses into a tractable fine-tuning task. The scale is an illusion created by combinatorics.
+- **This makes it realistic to embrace *all* the data as important.** Because every compound reinforces signal about its shared building blocks, we don't *have* to throw data away. Downsampling (see below) is offered as a convenience/speed knob — **not a requirement**. The philosophy of this repo is that all 898M enumerated compounds carry usable enrichment signal, and the combinatorial encoding lets the model absorb it efficiently.
+- **It naturally targets out-of-distribution (OOD) performance.** A model that understands fragment-level combinatorial rules generalizes to *unseen* recombinations and scaffolds — precisely what the challenge's OOD ASMS test set demands, and precisely where fingerprint baselines fail.
+
+> **In one sentence:** it looks impossible because of the ~898M compound count, but the library's combinatorial structure means the real problem is only a few thousand building blocks wide — so we can (and do) treat the entire dataset as valuable rather than discarding it.
+
+---
+
 ## 📁 Repository Map
 
 ```

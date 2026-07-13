@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data and large files
+*.parquet
+*.zip
+*.tar.gz
+processed_data/
+mock_data/
+
+# IDE settings
+.vscode/
+.idea/
+.DS_Store

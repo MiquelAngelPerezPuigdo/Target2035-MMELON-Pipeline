@@ -25,6 +25,8 @@ The *true* information content of the library scales with the **sum** of the bui
 - **The effective learning problem is small.** The model only needs to internalize how a few thousand fragments interact, so the giant dataset collapses into a tractable fine-tuning task. The scale is an illusion created by combinatorics.
 - **This makes it realistic to embrace *all* the data as important.** Because every compound reinforces signal about its shared building blocks, we don't *have* to throw data away. Downsampling (see below) is offered as a convenience/speed knob — **not a requirement**. The philosophy of this repo is that all 898M enumerated compounds carry usable enrichment signal, and the combinatorial encoding lets the model absorb it efficiently.
 - **It naturally targets out-of-distribution (OOD) performance.** A model that understands fragment-level combinatorial rules generalizes to *unseen* recombinations and scaffolds — precisely what the challenge's OOD ASMS test set demands, and precisely where fingerprint baselines fail.
+- **Compact Combinatorial Mode (`--compact`):** Forces the model to learn combinatorial grammar natively while avoiding input sequence and token bloat. Instead of heavy, redundant full SMILES strings, we feed the protein sequence and BB SMILES once, followed by the BB codes/identifiers.
+- **Validation Reverse-Engineering:** Since validation molecules are given as full SMILES strings, our pipeline reverse-engineers them using RDKit substructure filters and asymmetric **Tversky Similarity matching** ($\alpha=0.0$, $\beta=1.0$) back to the closest matching physical library building blocks. This translates validation compounds back into the combinatorial language of the fine-tuned MAMMAL model.
 
 > **In one sentence:** it looks impossible because of the ~898M compound count, but the library's combinatorial structure means the real problem is only a few thousand building blocks wide — so we can (and do) treat the entire dataset as valuable rather than discarding it.
 
@@ -103,12 +105,13 @@ python run_pipeline.py \
 #### 2. Train under Tier 2 (Continuous Soft Sigmoid Specificity Targets) — *Recommended*
 Computes pocket-specificity scores:
 $$S = Z_{\text{PGK2}} - \max(Z_{\text{NTC}}, Z_{\text{inhibitor}})$$
-and squashes them to a $[0, 1]$ target range using a sigmoid with adjustable temperature ($\tau$) and bias ($\beta$):
+and squashes them to a $[0, 1]$ target range using a sigmoid with adjustable temperature ($\tau$) and bias ($\beta$). You can optionally add `--compact` to utilize the compact combinatorial prompt format:
 ```bash
 python run_pipeline.py \
   --selection-file PGK2_selection.parquet \
   --scoring-scheme tier2 \
   --sample-size 300000 \
+  --compact \
   --output-dir processed_data
 ```
 
@@ -143,11 +146,14 @@ Once your model has been fine-tuned, you can use the unified validation script `
 2. **Test Split submission (`Team_MAMMAL_submission_test.csv`)**: A formatted 3-column CSV (`CatalogID`, `Sel_50`, `Score`).
 
 ### Running validation & inference:
+If you fine-tuned your model in `--compact` mode, you should also pass `--compact` during validation so the full smiles are reverse-engineered into the correct building-block representation on-the-fly:
 ```bash
 python run_validation.py \
   --model-dir /path/to/fine-tuned-checkpoint/ \
   --validation-file PGK2_CACHE_Val_Test_Set.csv \
   --fasta-file pgk2_sequence.fasta \
+  --compact \
+  --bb-glob "OpenDEL-libraries/building_blocks/*.parquet" \
   --output-dir submissions
 ```
 

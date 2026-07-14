@@ -80,3 +80,9 @@ The model's target for fine-tuning will predict the binary classification `<1>` 
 - **Embrace all data (default philosophy)**: Thanks to the combinatorial encoding, the full deduplicated library is tractable — every compound reinforces shared building-block signal. Set `sample_size=0`/`None` to train on everything.
 - **Imbalance Mitigation (optional knob)**: DEL data is extremely sparse (mostly inactives). For faster iteration you *may* keep all active hits and downsample negatives/unobserved compounds via `sample_size`, but this is a convenience, **not** a requirement of the method.
 - **Streaming Data Loader**: We'll implement a chunked data loader to feed the PyTorch / Lightning pipeline efficiently, so even the full library never has to sit in memory at once.
+
+### Phase 6: Compact Combinatorial & Validation Reverse-Engineering
+To optimize data density and peak model performance, we utilize the **Compact Combinatorial Mode**:
+1. **Redundancy Reduction**: We only feed the protein sequence and the building block SMILES ($BB_1, BB_2, BB_3$) once. Instead of the massive, redundant full compound SMILES string, we feed the short, unique combinatorial building block identifier codes (e.g. `0012-0045-0210`).
+2. **Reverse Engineering Validation Compounds**: Because validation compounds are only supplied as full synthesized SMILES strings, we run an on-the-fly chemical reverse-engineering module at inference time. Using **RDKit**, we check for exact substructure overlap with our library's building blocks, then apply a custom asymmetric **Tversky similarity** ($\alpha=0.0$, $\beta=1.0$) comparison on Morgan fingerprints to resolve each validation SMILES back to the closest Cycle 1, Cycle 2, and Cycle 3 building block IDs and structures. This reconstructs the combinatorial prompt perfectly so MAMMAL evaluates them using its specialized combinatorial rules.
+

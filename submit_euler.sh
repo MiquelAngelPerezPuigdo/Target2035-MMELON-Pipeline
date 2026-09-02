@@ -29,6 +29,8 @@ if [ ! -d "venv_euler" ]; then
   source venv_euler/bin/activate
   pip install --upgrade pip
   pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
+  # Install the pre-trained MMELON multi-view framework directly from GitHub
+  pip install git+https://github.com/jmorrone/biomed-multi-view.git
 else
   source venv_euler/bin/activate
 fi

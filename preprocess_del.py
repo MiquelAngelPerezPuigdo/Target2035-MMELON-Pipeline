@@ -189,7 +189,7 @@ class BuildingBlockMapper:
     def __init__(self, bb_files_glob: str) -> None:
         """
         Initialize mapper by loading building block composition files.
-        e.g., 'OpeDELLibrary/BBids_SMILES/*.csv'
+        Supports both Parquet files (official/mock) and unzipped CSV tables.
         """
         self.bb_map = {}
         self.bb_cycle_maps = {1: {}, 2: {}, 3: {}}
@@ -201,33 +201,55 @@ class BuildingBlockMapper:
         print(f"Loading {len(bb_files)} building block lookup tables...")
         for file in bb_files:
             try:
-                # Load unzipped CSV files from OpeDELLibrary
-                # Expected format columns: BB1_SMILES, BB1_ID, BB2_SMILES, BB2_ID, BB3_SMILES, BB3_ID
-                bb_df = pl.read_csv(file)
-                
-                # We extract all BB1, BB2, BB3 mappings from these columns
-                for row in bb_df.iter_rows(named=True):
-                    # BB1
-                    if "BB1_ID" in row and "BB1_SMILES" in row:
-                        bb_id1 = str(row["BB1_ID"]).split(".")[0] # clean float casting (e.g., "43.0" -> "43")
-                        smiles1 = str(row["BB1_SMILES"])
-                        if smiles1 and bb_id1:
-                            self.bb_map[bb_id1] = smiles1
-                            self.bb_cycle_maps[1][bb_id1] = smiles1
-                    # BB2
-                    if "BB2_ID" in row and "BB2_SMILES" in row:
-                        bb_id2 = str(row["BB2_ID"]).split(".")[0]
-                        smiles2 = str(row["BB2_SMILES"])
-                        if smiles2 and bb_id2:
-                            self.bb_map[bb_id2] = smiles2
-                            self.bb_cycle_maps[2][bb_id2] = smiles2
-                    # BB3
-                    if "BB3_ID" in row and "BB3_SMILES" in row:
-                        bb_id3 = str(row["BB3_ID"]).split(".")[0]
-                        smiles3 = str(row["BB3_SMILES"])
-                        if smiles3 and bb_id3:
-                            self.bb_map[bb_id3] = smiles3
-                            self.bb_cycle_maps[3][bb_id3] = smiles3
+                ext = os.path.splitext(file)[1].lower()
+                if ext == ".parquet":
+                    # Load Parquet format
+                    bb_df = pl.read_parquet(file)
+                    id_col = [c for c in bb_df.columns if c.lower() in ("id", "bb_id", "bb_name")][0]
+                    smiles_col = [c for c in bb_df.columns if c.lower() in ("smiles", "structure")][0]
+                    
+                    filename = os.path.basename(file).lower()
+                    cycle = None
+                    if "bb1" in filename or "cycle1" in filename:
+                        cycle = 1
+                    elif "bb2" in filename or "cycle2" in filename:
+                        cycle = 2
+                    elif "bb3" in filename or "cycle3" in filename:
+                        cycle = 3
+                        
+                    for row in bb_df.select([id_col, smiles_col]).iter_rows():
+                        bb_id_str = str(row[0])
+                        smiles_str = str(row[1])
+                        self.bb_map[bb_id_str] = smiles_str
+                        if cycle is not None:
+                            self.bb_cycle_maps[cycle][bb_id_str] = smiles_str
+                else:
+                    # Load unzipped CSV files from OpeDELLibrary
+                    # Expected format columns: BB1_SMILES, BB1_ID, BB2_SMILES, BB2_ID, BB3_SMILES, BB3_ID
+                    bb_df = pl.read_csv(file)
+                    
+                    for row in bb_df.iter_rows(named=True):
+                        # BB1
+                        if "BB1_ID" in row and "BB1_SMILES" in row:
+                            bb_id1 = str(row["BB1_ID"]).split(".")[0] # clean float casting (e.g., "43.0" -> "43")
+                            smiles1 = str(row["BB1_SMILES"])
+                            if smiles1 and bb_id1:
+                                self.bb_map[bb_id1] = smiles1
+                                self.bb_cycle_maps[1][bb_id1] = smiles1
+                        # BB2
+                        if "BB2_ID" in row and "BB2_SMILES" in row:
+                            bb_id2 = str(row["BB2_ID"]).split(".")[0]
+                            smiles2 = str(row["BB2_SMILES"])
+                            if smiles2 and bb_id2:
+                                self.bb_map[bb_id2] = smiles2
+                                self.bb_cycle_maps[2][bb_id2] = smiles2
+                        # BB3
+                        if "BB3_ID" in row and "BB3_SMILES" in row:
+                            bb_id3 = str(row["BB3_ID"]).split(".")[0]
+                            smiles3 = str(row["BB3_SMILES"])
+                            if smiles3 and bb_id3:
+                                self.bb_map[bb_id3] = smiles3
+                                self.bb_cycle_maps[3][bb_id3] = smiles3
             except Exception as e:
                 print(f"Error loading {file}: {e}")
                 
@@ -625,20 +647,22 @@ class CombinatorialMMELONDataset(Dataset):
                 inactives_sampled = inactives.sample(n=n_inactives_to_sample, random_state=random_seed)
                 df = pd.concat([actives, inactives_sampled]).sample(frac=1.0, random_state=random_seed).reset_index(drop=True)
                 
-        self.data = df
+        # For O(1) instantaneous access (avoiding slow pandas .iloc lookup inside dataloading loop)
+        self.compounds = df["compound"].astype(str).tolist() if "compound" in df.columns else [""] * len(df)
+        self.labels = df["label"].astype(np.float32).to_numpy()
+        self.target_scores = df["target_score"].astype(np.float32).to_numpy()
         
         # Determine embedding dimension
         self.emb_dim = next(iter(self.bb_embeddings.values())).shape[0]
-        print(f"Dataset initialized: {len(self.data):,} items ({len(df[df['label'] == 1]):,} actives). Embedding Dim: {self.emb_dim}")
+        print(f"Dataset initialized: {len(df):,} items ({len(df[df['label'] == 1]):,} actives). Embedding Dim: {self.emb_dim}")
 
     def __len__(self) -> int:
-        return len(self.data)
+        return len(self.compounds)
 
     def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor, float]:
-        row = self.data.iloc[idx]
-        compound_id = str(row.get("compound", ""))
-        label = int(row.get("label", 0))
-        target_score = float(row.get("target_score", 0.0))
+        compound_id = self.compounds[idx]
+        label = self.labels[idx]
+        target_score = self.target_scores[idx]
         
         # Combinatorial building-block lookup
         parts = compound_id.split("-")

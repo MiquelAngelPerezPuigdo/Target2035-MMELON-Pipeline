@@ -34,14 +34,14 @@ else
 fi
 
 # Step 1: Execute the unified pipeline training
-# Starting with bcm_binary (strictly filtered high-confidence actives, much smaller dataset)
-# Set --sample-size to 50000 for a very fast test run.
+# Running with bcm_binary (strictly filtered high-confidence actives)
+# Set --sample-size to 0 to train over the FULL deduplicated DEL dataset (no downsampling!).
 python3 run_pipeline.py \
   --selection-file PGK2_selection.parquet \
   --bb-glob "OpeDELLibrary/BBids_SMILES/*.csv" \
   --scoring-scheme bcm_binary \
   --score-threshold 0.5 \
-  --sample-size 50000 \
+  --sample-size 0 \
   --output-dir processed_data
 
 # Step 2: Run inference & validation to prepare the final challenge submission files

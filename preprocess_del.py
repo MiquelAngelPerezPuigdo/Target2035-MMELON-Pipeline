@@ -82,9 +82,9 @@ def deduplicate_selection_parquet(
     for col in df.columns:
         if col == dedup_col:
             continue
-        if col.endswith("_count"):
+        if col.endswith("_count") or col.startswith("count_") or "count" in col.lower():
             agg_scheme[col] = "sum"
-        elif col.endswith("_zscore") or col.endswith("_score"):
+        elif col.endswith("_zscore") or col.endswith("_score") or col.startswith("zscore_") or col.startswith("score_") or "zscore" in col.lower() or "score" in col.lower():
             agg_scheme[col] = "stouffer"
         elif col == "historic_hits":
             agg_scheme[col] = "max"
@@ -189,7 +189,7 @@ class BuildingBlockMapper:
     def __init__(self, bb_files_glob: str) -> None:
         """
         Initialize mapper by loading building block composition files.
-        e.g., 'OpenDEL-libraries/building_blocks/*.parquet'
+        e.g., 'OpeDELLibrary/BBids_SMILES/*.csv'
         """
         self.bb_map = {}
         self.bb_cycle_maps = {1: {}, 2: {}, 3: {}}
@@ -201,27 +201,33 @@ class BuildingBlockMapper:
         print(f"Loading {len(bb_files)} building block lookup tables...")
         for file in bb_files:
             try:
-                # Expect columns: 'ID' (or 'bb_id') and 'SMILES' (or 'smiles')
-                bb_df = pl.read_parquet(file)
-                id_col = [c for c in bb_df.columns if c.lower() in ("id", "bb_id", "bb_name")][0]
-                smiles_col = [c for c in bb_df.columns if c.lower() in ("smiles", "structure")][0]
+                # Load unzipped CSV files from OpeDELLibrary
+                # Expected format columns: BB1_SMILES, BB1_ID, BB2_SMILES, BB2_ID, BB3_SMILES, BB3_ID
+                bb_df = pl.read_csv(file)
                 
-                # Determine cycle from filename/path
-                filename = os.path.basename(file).lower()
-                cycle = None
-                if "bb1" in filename or "cycle1" in filename:
-                    cycle = 1
-                elif "bb2" in filename or "cycle2" in filename:
-                    cycle = 2
-                elif "bb3" in filename or "cycle3" in filename:
-                    cycle = 3
-                
-                for row in bb_df.select([id_col, smiles_col]).iter_rows():
-                    bb_id_str = str(row[0])
-                    smiles_str = str(row[1])
-                    self.bb_map[bb_id_str] = smiles_str
-                    if cycle is not None:
-                        self.bb_cycle_maps[cycle][bb_id_str] = smiles_str
+                # We extract all BB1, BB2, BB3 mappings from these columns
+                for row in bb_df.iter_rows(named=True):
+                    # BB1
+                    if "BB1_ID" in row and "BB1_SMILES" in row:
+                        bb_id1 = str(row["BB1_ID"]).split(".")[0] # clean float casting (e.g., "43.0" -> "43")
+                        smiles1 = str(row["BB1_SMILES"])
+                        if smiles1 and bb_id1:
+                            self.bb_map[bb_id1] = smiles1
+                            self.bb_cycle_maps[1][bb_id1] = smiles1
+                    # BB2
+                    if "BB2_ID" in row and "BB2_SMILES" in row:
+                        bb_id2 = str(row["BB2_ID"]).split(".")[0]
+                        smiles2 = str(row["BB2_SMILES"])
+                        if smiles2 and bb_id2:
+                            self.bb_map[bb_id2] = smiles2
+                            self.bb_cycle_maps[2][bb_id2] = smiles2
+                    # BB3
+                    if "BB3_ID" in row and "BB3_SMILES" in row:
+                        bb_id3 = str(row["BB3_ID"]).split(".")[0]
+                        smiles3 = str(row["BB3_SMILES"])
+                        if smiles3 and bb_id3:
+                            self.bb_map[bb_id3] = smiles3
+                            self.bb_cycle_maps[3][bb_id3] = smiles3
             except Exception as e:
                 print(f"Error loading {file}: {e}")
                 

@@ -160,7 +160,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--bb-glob",
         type=str,
-        default="OpenDEL-libraries/building_blocks/*.parquet",
+        default="OpeDELLibrary/BBids_SMILES/*.csv",
         help="Glob pattern pointing to physical library building block files."
     )
     

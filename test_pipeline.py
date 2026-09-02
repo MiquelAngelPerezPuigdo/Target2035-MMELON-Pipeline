@@ -193,6 +193,28 @@ def test_pipeline() -> None:
         print(f"  - Target Score value:       {target_score:.4f}")
         print(f"  - Label value:              {label}")
         
+        print("\nTesting CombinatorialMMELONDataset under BCM Binary...")
+        dataset_bcm = CombinatorialMMELONDataset(
+            selection_parquet_path=dedup_path,
+            bb_embeddings_path=bb_embeddings_path,
+            scoring_scheme="bcm_binary",
+            score_threshold_labeling=0.5,
+        )
+        print(f"✔ Dataset loaded under BCM Binary with {len(dataset_bcm)} compounds.")
+        _, label_bcm, score_bcm = dataset_bcm[0]
+        print(f"  - First item: Score={score_bcm:.4f}, Label={label_bcm}")
+
+        print("\nTesting CombinatorialMMELONDataset under BCM Hybrid...")
+        dataset_hybrid = CombinatorialMMELONDataset(
+            selection_parquet_path=dedup_path,
+            bb_embeddings_path=bb_embeddings_path,
+            scoring_scheme="bcm_hybrid",
+            score_threshold_labeling=0.5,
+        )
+        print(f"✔ Dataset loaded under BCM Hybrid with {len(dataset_hybrid)} compounds.")
+        _, label_hybrid, score_hybrid = dataset_hybrid[0]
+        print(f"  - First item: Score={score_hybrid:.4f}, Label={label_hybrid}")
+        
         # 6. Test MLP head setup and mock train step
         print("\nTesting MLP prediction head feedforward & training loop...")
         loader = DataLoader(dataset, batch_size=4, shuffle=True)

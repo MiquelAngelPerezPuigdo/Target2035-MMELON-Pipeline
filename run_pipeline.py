@@ -73,8 +73,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--bb-glob",
         type=str,
-        default="OpenDEL-libraries/building_blocks/*.parquet",
-        help="Glob pattern pointing to the building block parquet files."
+        default="OpeDELLibrary/BBids_SMILES/*.csv",
+        help="Glob pattern pointing to the building block CSV files."
     )
     parser.add_argument(
         "--output-dir",
@@ -87,9 +87,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--scoring-scheme",
         type=str,
-        choices=["tier2"],
+        choices=["tier2", "bcm_binary", "bcm_hybrid"],
         default="tier2",
-        help="The scoring scheme to map 3 experimental conditions into a 0-1 target score."
+        help="The scoring scheme to map experimental conditions into a target score. Supported: 'tier2', 'bcm_binary', 'bcm_hybrid'."
     )
     parser.add_argument(
         "--sample-size",

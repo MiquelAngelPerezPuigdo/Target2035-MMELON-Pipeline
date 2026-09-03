@@ -29,6 +29,8 @@ if [ ! -d "venv_euler" ]; then
   source venv_euler/bin/activate
   pip install --upgrade pip
   pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
+  # Install torch_scatter compatible with PyTorch 2.1.0 on Euler's CPU architecture
+  pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
   # Install the pre-trained MMELON multi-view framework directly from GitHub
   pip install git+https://github.com/jmorrone/biomed-multi-view.git
 else

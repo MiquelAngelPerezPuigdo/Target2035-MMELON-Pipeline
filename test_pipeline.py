@@ -171,7 +171,8 @@ def test_pipeline() -> None:
             bb_mapper=bb_mapper,
             base_model_path="ibm-research/biomed.sm.mv-te-84m",
             output_path=bb_embeddings_path,
-            device="cpu"
+            device="cpu",
+            allow_mock=True
         )
         assert os.path.exists(bb_embeddings_path), "Embedding cache was not created!"
         print("✔ Embedding cache successfully written.")

@@ -22,20 +22,18 @@ module load stack/2024-06 python/3.11.6
 module load eth_proxy
 
 # Activate virtual environment or create it on Euler if it doesn't exist.
-# (Venv cannot be copied directly from Mac to Linux because of binary incompatibility and hardcoded paths).
 if [ ! -d "venv_euler" ]; then
   echo "Creating fresh Python virtual environment on Euler..."
   python3 -m venv venv_euler
-  source venv_euler/bin/activate
-  pip install --upgrade pip
-  pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
-  # Install torch_scatter compatible with PyTorch 2.1.0 on Euler's CPU architecture
-  pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
-  # Install the pre-trained MMELON multi-view framework directly from GitHub
-  pip install git+https://github.com/jmorrone/biomed-multi-view.git
-else
-  source venv_euler/bin/activate
 fi
+
+source venv_euler/bin/activate
+
+echo "Ensuring all required Python packages and pre-trained MMELON frameworks are installed..."
+pip install --upgrade pip
+pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
+pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+pip install git+https://github.com/jmorrone/biomed-multi-view.git
 
 # Step 1: Execute the unified pipeline training
 # Running with bcm_hybrid (Strictly-filtered high-confidence actives + Soft-Sigmoid continuous relative affinity)

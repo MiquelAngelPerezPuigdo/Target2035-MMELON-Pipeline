@@ -115,6 +115,60 @@ class InferenceDataset(Dataset):
         return compound_id, compound_smiles, torch.tensor(emb, dtype=torch.float32)
 
 
+def select_diverse_top50(df: pd.DataFrame, top_pool_size: int = 500, max_selected: int = 50) -> list[int]:
+    """Select up to 50 top-scoring candidates while enforcing chemical scaffold diversity via Morgan Fingerprints."""
+    try:
+        from rdkit import Chem
+        from rdkit.Chem import AllChem, DataStructs
+    except ImportError:
+        print("⚠️ RDKit not found. Falling back to top 50 by raw score.")
+        return df.index[:max_selected].tolist()
+
+    print(f"Applying MaxMin Tanimoto Diversity Selection over top {top_pool_size} candidate molecules...")
+    top_pool = df.head(top_pool_size).copy()
+    fps = []
+    valid_indices = []
+    
+    for idx, row in top_pool.iterrows():
+        smiles = str(row.get("SMILES", ""))
+        mol = Chem.MolFromSmiles(smiles) if smiles else None
+        if mol is not None:
+            fp = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=2048)
+            fps.append(fp)
+            valid_indices.append(idx)
+            
+    if not fps:
+        return df.index[:max_selected].tolist()
+        
+    selected_indices = [valid_indices[0]]
+    selected_fps = [fps[0]]
+    
+    for i in range(1, len(valid_indices)):
+        if len(selected_indices) >= max_selected:
+            break
+        cand_idx = valid_indices[i]
+        cand_fp = fps[i]
+        
+        # Max Tanimoto similarity to any already selected candidate
+        max_sim = max(DataStructs.TverskySimilarity(cand_fp, s_fp, 1.0, 1.0) for s_fp in selected_fps)
+        
+        # Require Tanimoto similarity < 0.65 (distinct scaffold)
+        if max_sim < 0.65:
+            selected_indices.append(cand_idx)
+            selected_fps.append(cand_fp)
+            
+    # If fewer than 50 met the strict similarity threshold, backfill from remaining top ranks
+    if len(selected_indices) < max_selected:
+        for idx in valid_indices:
+            if idx not in selected_indices:
+                selected_indices.append(idx)
+                if len(selected_indices) >= max_selected:
+                    break
+                    
+    print(f"✔ Selected {len(selected_indices)} chemically diverse top candidates.")
+    return selected_indices
+
+
 # ---------------------------------------------------------------------------
 # 2. Main CLI Controller
 # ---------------------------------------------------------------------------
@@ -280,9 +334,10 @@ def main() -> None:
     print("\nFormatting submission files...")
     ranked_df = pred_df.sort_values(by="Score", ascending=False).reset_index(drop=True)
     
-    # Identify top 50 candidate binders (flag Sel_50 as 1, others as 0)
+    # Identify top 50 candidate binders using MaxMin Tanimoto diversity selection
+    diverse_indices = select_diverse_top50(ranked_df, top_pool_size=500, max_selected=50)
     ranked_df["Sel_50"] = 0
-    ranked_df.loc[:49, "Sel_50"] = 1
+    ranked_df.loc[diverse_indices, "Sel_50"] = 1
     
     # Output file paths
     val_txt_path = os.path.join(args.output_dir, "Team_MMELON_submission_validation.txt")

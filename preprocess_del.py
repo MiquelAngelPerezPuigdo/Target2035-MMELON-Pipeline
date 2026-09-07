@@ -405,6 +405,7 @@ def cache_bb_embeddings(
     base_model_path: str = "ibm-research/biomed.sm.mv-te-84m",
     output_path: str = "processed_data/mmelon_bb_embeddings.npz",
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
+    allow_mock: bool = False,
 ) -> dict[str, np.ndarray]:
     """
     Load all physical building blocks, compute their multi-view embeddings 
@@ -420,116 +421,129 @@ def cache_bb_embeddings(
         
     print(f"Caching MMELON embeddings for {len(unique_bbs):,} unique building blocks...")
     
-    # Try loading MMELON core packages
+    embed_dict = {}
+    success = False
+    last_err = None
+    
     try:
         from bmfm_sm.core.data_modules.namespace import LateFusionStrategy, TaskType
         from bmfm_sm.predictive.modules.finetune_lightning_module import FineTuneLightningModule
         from bmfm_sm.predictive.data_modules.multimodal_finetune_dataset import MultiModalFinetuneDataPipeline
         from bmfm_sm.api.smmv_api import SmallMoleculeMultiViewModel
         
-        # Prepare temporary CSV for MMELON data module
         temp_dir = tempfile.mkdtemp()
         temp_df = pd.DataFrame({
             "smiles": [item[1] for item in unique_bbs],
-            "label": [0] * len(unique_bbs) # Dummy label required by MMELON pipeline
+            "label": [0] * len(unique_bbs)
         })
         temp_df.to_csv(os.path.join(temp_dir, "data_train.csv"), index=False)
         
-        # Instantiate MMELON pipeline
-        dataset_args = {
-            'task_type': TaskType.CLASSIFICATION,
-            'num_tasks': 1,
-            'modalities': ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
-            'smiles_col': 'smiles',
-            'label_cols': ['label'],
-            'split_col': None
-        }
+        # Modality fallback order: Full Multi-View -> Image+Graph -> Graph 2D
+        modality_options = [
+            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
+            ['IMAGE_MODEL', 'GRAPH_2D_MODEL'],
+            ['GRAPH_2D_MODEL']
+        ]
         
-        pipeline = MultiModalFinetuneDataPipeline(
-            data_dir=temp_dir,
-            dataset_args=dataset_args,
-            stage='train'
-        )
-        
-        loader = DataLoader(
-            pipeline,
-            batch_size=32,
-            shuffle=False,
-            collate_fn=pipeline.collate_fn,
-            num_workers=0
-        )
-        
-        # Load Pretrained MMELON model weights
-        print(f"Loading pretrained MMELON model '{base_model_path}'...")
-        FUSION_STRATEGY = LateFusionStrategy.ATTENTIONAL
-        
-        model_params = {
-            'agg_arch': FUSION_STRATEGY.value[0],
-            'agg_gate_input': FUSION_STRATEGY.value[1],
-            'agg_weight_freeze': FUSION_STRATEGY.value[2],
-            'inference_mode': False
-        }
-        finetuning_args = {
-            'weight_freeze': 'unfrozen',
-            'initialization': 'default',
-            'head_arch': 'mlp',
-            'use_norm': True,
-            'head_dropout': 0.2
-        }
-        
-        lightning_module = FineTuneLightningModule(
-            base_model_class='bmfm_sm.predictive.modules.smmv_model.SmallMoleculeMultiView',
-            model_params=model_params,
-            task_type='classification',
-            num_tasks=1,
-            checkpoint_path=None,
-            lr=2e-5,
-            weight_decay=0.01,
-            finetuning_args=finetuning_args
-        )
-        
-        pretrained_model = SmallMoleculeMultiViewModel.from_pretrained(
-            FUSION_STRATEGY,
-            model_path=base_model_path,
-            huggingface=True
-        )
-        lightning_module.model.load_state_dict(pretrained_model.state_dict(), strict=False)
-        lightning_module.to(device)
-        lightning_module.eval()
-        
-        # Extract embeddings
-        embeddings_list = []
-        with torch.no_grad():
-            for batch in tqdm(loader, desc="MMELON Encoding"):
-                for key in batch:
-                    if isinstance(batch[key], torch.Tensor):
-                        batch[key] = batch[key].to(device)
+        for modalities in modality_options:
+            try:
+                print(f"Attempting MMELON embedding extraction with modalities: {modalities}")
+                dataset_args = {
+                    'task_type': TaskType.CLASSIFICATION,
+                    'num_tasks': 1,
+                    'modalities': modalities,
+                    'smiles_col': 'smiles',
+                    'label_cols': ['label'],
+                    'split_col': None
+                }
                 
-                embs = lightning_module.model.forward0(batch)
-                if isinstance(embs, tuple):
-                    embs = embs[0]
-                embeddings_list.append(embs.cpu().numpy())
+                pipeline = MultiModalFinetuneDataPipeline(
+                    data_dir=temp_dir,
+                    dataset_args=dataset_args,
+                    stage='train'
+                )
                 
-        all_embeddings = np.concatenate(embeddings_list, axis=0)
-        
-        # Map back to dict
-        embed_dict = {}
-        for i, (bb_id, _) in enumerate(unique_bbs):
-            embed_dict[bb_id] = all_embeddings[i]
-            
-        # Clean up temporary directory
-        import shutil
-        shutil.rmtree(temp_dir)
-        
+                loader = DataLoader(
+                    pipeline,
+                    batch_size=32,
+                    shuffle=False,
+                    collate_fn=pipeline.collate_fn,
+                    num_workers=0
+                )
+                
+                FUSION_STRATEGY = LateFusionStrategy.ATTENTIONAL
+                model_params = {
+                    'agg_arch': FUSION_STRATEGY.value[0],
+                    'agg_gate_input': FUSION_STRATEGY.value[1],
+                    'agg_weight_freeze': FUSION_STRATEGY.value[2],
+                    'inference_mode': False
+                }
+                finetuning_args = {
+                    'weight_freeze': 'unfrozen',
+                    'initialization': 'default',
+                    'head_arch': 'mlp',
+                    'use_norm': True,
+                    'head_dropout': 0.2
+                }
+                
+                lightning_module = FineTuneLightningModule(
+                    base_model_class='bmfm_sm.predictive.modules.smmv_model.SmallMoleculeMultiView',
+                    model_params=model_params,
+                    task_type='classification',
+                    num_tasks=1,
+                    checkpoint_path=None,
+                    lr=2e-5,
+                    weight_decay=0.01,
+                    finetuning_args=finetuning_args
+                )
+                
+                pretrained_model = SmallMoleculeMultiViewModel.from_pretrained(
+                    FUSION_STRATEGY,
+                    model_path=base_model_path,
+                    huggingface=True
+                )
+                lightning_module.model.load_state_dict(pretrained_model.state_dict(), strict=False)
+                lightning_module.to(device)
+                lightning_module.eval()
+                
+                embeddings_list = []
+                with torch.no_grad():
+                    for batch in tqdm(loader, desc="MMELON Encoding"):
+                        for key in batch:
+                            if isinstance(batch[key], torch.Tensor):
+                                batch[key] = batch[key].to(device)
+                        embs = lightning_module.model.forward0(batch)
+                        if isinstance(embs, tuple):
+                            embs = embs[0]
+                        embeddings_list.append(embs.cpu().numpy())
+                        
+                all_embeddings = np.concatenate(embeddings_list, axis=0)
+                for i, (bb_id, _) in enumerate(unique_bbs):
+                    embed_dict[bb_id] = all_embeddings[i]
+                    
+                import shutil
+                shutil.rmtree(temp_dir)
+                success = True
+                print(f"✔ Successfully extracted pre-trained MMELON embeddings using modalities: {modalities}")
+                break
+            except Exception as mod_err:
+                print(f"⚠️ Modality configuration {modalities} failed: {mod_err}")
+                last_err = mod_err
+
     except Exception as e:
-        # Graceful fallback: produce random/mock embeddings for testing/portability if package is missing
-        print(f"⚠️ Warning during MMELON extraction: {e}")
-        print("Falling back to simulated/mock embeddings for structural resolution...")
-        embed_dict = {}
-        np.random.seed(42)
-        mock_dim = 768
-        for bb_id, _ in unique_bbs:
-            embed_dict[bb_id] = np.random.randn(mock_dim).astype(np.float32)
+        last_err = e
+
+    if not success:
+        if allow_mock:
+            print(f"⚠️ Warning during MMELON extraction: {last_err}")
+            print("Falling back to simulated/mock embeddings for testing...")
+            embed_dict = {}
+            np.random.seed(42)
+            mock_dim = 768
+            for bb_id, _ in unique_bbs:
+                embed_dict[bb_id] = np.random.randn(mock_dim).astype(np.float32)
+        else:
+            raise RuntimeError(f"Failed to extract real MMELON embeddings: {last_err}")
             
     # Save embeddings to disk
     np.savez_compressed(output_path, **embed_dict)
@@ -540,8 +554,13 @@ def extract_smiles_embedding(
     smiles_list: list[str],
     base_model_path: str = "ibm-research/biomed.sm.mv-te-84m",
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
+    allow_mock: bool = False,
 ) -> np.ndarray:
     """Run direct MMELON multi-view embedding extraction for an arbitrary list of full SMILES."""
+    success = False
+    last_err = None
+    all_embeddings = None
+    
     try:
         from bmfm_sm.core.data_modules.namespace import LateFusionStrategy, TaskType
         from bmfm_sm.predictive.modules.finetune_lightning_module import FineTuneLightningModule
@@ -555,55 +574,78 @@ def extract_smiles_embedding(
         })
         temp_df.to_csv(os.path.join(temp_dir, "data_train.csv"), index=False)
         
-        dataset_args = {
-            'task_type': TaskType.CLASSIFICATION,
-            'num_tasks': 1,
-            'modalities': ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
-            'smiles_col': 'smiles',
-            'label_cols': ['label'],
-            'split_col': None
-        }
+        modality_options = [
+            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
+            ['IMAGE_MODEL', 'GRAPH_2D_MODEL'],
+            ['GRAPH_2D_MODEL']
+        ]
         
-        pipeline = MultiModalFinetuneDataPipeline(
-            data_dir=temp_dir,
-            dataset_args=dataset_args,
-            stage='train'
-        )
-        
-        loader = DataLoader(pipeline, batch_size=32, shuffle=False, collate_fn=pipeline.collate_fn)
-        
-        FUSION_STRATEGY = LateFusionStrategy.ATTENTIONAL
-        lightning_module = FineTuneLightningModule(
-            base_model_class='bmfm_sm.predictive.modules.smmv_model.SmallMoleculeMultiView',
-            model_params={'agg_arch': FUSION_STRATEGY.value[0], 'agg_gate_input': FUSION_STRATEGY.value[1], 'agg_weight_freeze': FUSION_STRATEGY.value[2], 'inference_mode': False},
-            task_type='classification', num_tasks=1, checkpoint_path=None, lr=2e-5, weight_decay=0.01, finetuning_args={'weight_freeze': 'unfrozen', 'initialization': 'default', 'head_arch': 'mlp', 'use_norm': True, 'head_dropout': 0.2}
-        )
-        
-        pretrained_model = SmallMoleculeMultiViewModel.from_pretrained(FUSION_STRATEGY, model_path=base_model_path, huggingface=True)
-        lightning_module.model.load_state_dict(pretrained_model.state_dict(), strict=False)
-        lightning_module.to(device)
-        lightning_module.eval()
-        
-        embeddings_list = []
-        with torch.no_grad():
-            for batch in loader:
-                for key in batch:
-                    if isinstance(batch[key], torch.Tensor):
-                        batch[key] = batch[key].to(device)
-                embs = lightning_module.model.forward0(batch)
-                if isinstance(embs, tuple):
-                    embs = embs[0]
-                embeddings_list.append(embs.cpu().numpy())
+        for modalities in modality_options:
+            try:
+                print(f"Attempting full SMILES MMELON extraction with modalities: {modalities}")
+                dataset_args = {
+                    'task_type': TaskType.CLASSIFICATION,
+                    'num_tasks': 1,
+                    'modalities': modalities,
+                    'smiles_col': 'smiles',
+                    'label_cols': ['label'],
+                    'split_col': None
+                }
                 
-        import shutil
-        shutil.rmtree(temp_dir)
-        return np.concatenate(embeddings_list, axis=0)
-        
+                pipeline = MultiModalFinetuneDataPipeline(
+                    data_dir=temp_dir,
+                    dataset_args=dataset_args,
+                    stage='train'
+                )
+                
+                loader = DataLoader(pipeline, batch_size=32, shuffle=False, collate_fn=pipeline.collate_fn)
+                
+                FUSION_STRATEGY = LateFusionStrategy.ATTENTIONAL
+                lightning_module = FineTuneLightningModule(
+                    base_model_class='bmfm_sm.predictive.modules.smmv_model.SmallMoleculeMultiView',
+                    model_params={'agg_arch': FUSION_STRATEGY.value[0], 'agg_gate_input': FUSION_STRATEGY.value[1], 'agg_weight_freeze': FUSION_STRATEGY.value[2], 'inference_mode': False},
+                    task_type='classification', num_tasks=1, checkpoint_path=None, lr=2e-5, weight_decay=0.01, finetuning_args={'weight_freeze': 'unfrozen', 'initialization': 'default', 'head_arch': 'mlp', 'use_norm': True, 'head_dropout': 0.2}
+                )
+                
+                pretrained_model = SmallMoleculeMultiViewModel.from_pretrained(FUSION_STRATEGY, model_path=base_model_path, huggingface=True)
+                lightning_module.model.load_state_dict(pretrained_model.state_dict(), strict=False)
+                lightning_module.to(device)
+                lightning_module.eval()
+                
+                embeddings_list = []
+                with torch.no_grad():
+                    for batch in loader:
+                        for key in batch:
+                            if isinstance(batch[key], torch.Tensor):
+                                batch[key] = batch[key].to(device)
+                        embs = lightning_module.model.forward0(batch)
+                        if isinstance(embs, tuple):
+                            embs = embs[0]
+                        embeddings_list.append(embs.cpu().numpy())
+                        
+                all_embeddings = np.concatenate(embeddings_list, axis=0)
+                import shutil
+                shutil.rmtree(temp_dir)
+                success = True
+                print(f"✔ Successfully extracted pre-trained SMILES embeddings using modalities: {modalities}")
+                break
+            except Exception as mod_err:
+                print(f"⚠️ Modality configuration {modalities} failed: {mod_err}")
+                last_err = mod_err
+
     except Exception as e:
-        print(f"⚠️ Warning during full SMILES extraction: {e}")
-        # Return mock embeddings
-        np.random.seed(42)
-        return np.random.randn(len(smiles_list), 768).astype(np.float32)
+        last_err = e
+
+    if not success:
+        if allow_mock:
+            print(f"⚠️ Warning during full SMILES extraction: {last_err}")
+            print("Falling back to simulated/mock embeddings for testing...")
+            np.random.seed(42)
+            return np.random.randn(len(smiles_list), 768).astype(np.float32)
+        else:
+            raise RuntimeError(f"Failed to extract real SMILES embeddings: {last_err}")
+            
+    return all_embeddings
 
 # ---------------------------------------------------------------------------
 # 5. PyTorch Streaming Dataset for Scale

@@ -229,7 +229,8 @@ def main() -> None:
                 
                 total_loss += loss.item() * embs.size(0)
                 preds = (torch.sigmoid(logits) > 0.5).float()
-                correct += (preds == labels).sum().item()
+                binary_labels = (labels > 0.0).float()
+                correct += (preds == binary_labels).sum().item()
                 total += labels.size(0)
                 
             epoch_loss = total_loss / total

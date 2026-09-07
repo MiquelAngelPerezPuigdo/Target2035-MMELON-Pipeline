@@ -38,12 +38,12 @@ else
 fi
 
 # Step 1: Execute the unified pipeline training
-# Running with bcm_binary (strictly filtered high-confidence actives)
+# Running with bcm_hybrid (Strictly-filtered high-confidence actives + Soft-Sigmoid continuous relative affinity)
 # Set --sample-size to 0 to train over the FULL deduplicated DEL dataset (no downsampling!).
 python3 run_pipeline.py \
   --selection-file PGK2_selection.parquet \
   --bb-glob "OpeDELLibrary/BBids_SMILES/*.csv" \
-  --scoring-scheme bcm_binary \
+  --scoring-scheme bcm_hybrid \
   --score-threshold 0.5 \
   --sample-size 0 \
   --output-dir processed_data

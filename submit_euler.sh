@@ -21,19 +21,20 @@ module load stack/2024-06 python/3.11.6
 # We must load 'eth_proxy' to allow pip to download and install packages over the internet!
 module load eth_proxy
 
-# Activate virtual environment or create it on Euler if it doesn't exist.
-if [ ! -d "venv_euler" ]; then
+# Activate virtual environment or create it on Euler if it doesn't exist or is corrupted.
+if [ ! -d "venv_euler" ] || [ ! -f "venv_euler/bin/pip" ]; then
   echo "Creating fresh Python virtual environment on Euler..."
+  rm -rf venv_euler
   python3 -m venv venv_euler
+  source venv_euler/bin/activate
+  python3 -m ensurepip --upgrade || true
+  pip install --upgrade pip
+  pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
+  pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+  pip install git+https://github.com/jmorrone/biomed-multi-view.git
+else
+  source venv_euler/bin/activate
 fi
-
-source venv_euler/bin/activate
-
-echo "Ensuring all required Python packages and pre-trained MMELON frameworks are installed..."
-pip install --upgrade pip
-pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
-pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
-pip install git+https://github.com/jmorrone/biomed-multi-view.git
 
 # Step 1: Execute the unified pipeline training
 # Running with bcm_hybrid (Strictly-filtered high-confidence actives + Soft-Sigmoid continuous relative affinity)

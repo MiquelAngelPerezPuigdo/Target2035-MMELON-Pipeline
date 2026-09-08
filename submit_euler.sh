@@ -28,9 +28,10 @@ if [ ! -d "venv_euler" ] || [ ! -f "venv_euler/bin/pip" ]; then
   python3 -m venv venv_euler
   source venv_euler/bin/activate
   python3 -m ensurepip --upgrade || true
-  pip install --upgrade pip
+  pip install --upgrade pip wheel setuptools
   pip install numpy pandas polars torch rdkit pyarrow fastparquet tqdm scikit-learn
   pip install torch-scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+  pip install --no-build-isolation pytorch-fast-transformers==0.4.0
   pip install git+https://github.com/jmorrone/biomed-multi-view.git
 else
   source venv_euler/bin/activate

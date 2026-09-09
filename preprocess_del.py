@@ -473,8 +473,6 @@ def cache_bb_embeddings(
         # Primary modality is full Multi-View MMELON
         modality_options = [
             ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
-            ['IMAGE_MODEL', 'GRAPH_2D_MODEL'],
-            ['GRAPH_2D_MODEL'],
         ]
         
         for modalities in modality_options:

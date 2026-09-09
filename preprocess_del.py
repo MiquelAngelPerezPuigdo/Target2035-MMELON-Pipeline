@@ -400,27 +400,36 @@ class BuildingBlockMapper:
 # 4. MMELON Multi-View Embedding Cacher
 # ---------------------------------------------------------------------------
 
+def clean_smiles_string(smiles: str) -> str:
+    """Clean SMILES by stripping CXSMILES annotations and canonicalizing with RDKit."""
+    if not smiles:
+        return ""
+    sm = str(smiles).strip().split()[0]
+    try:
+        from rdkit import Chem
+        mol = Chem.MolFromSmiles(sm)
+        if mol is not None:
+            return Chem.MolToSmiles(mol)
+    except Exception:
+        pass
+    return sm
+
 def _ensure_fast_transformers_stub():
     """Bypass fast_transformers C++ ABI loading issues if fast_transformers fails to import."""
-    try:
-        import fast_transformers
-    except Exception as ft_err:
-        import sys
-        from unittest.mock import MagicMock
-        for mod in [
-            'fast_transformers',
-            'fast_transformers.attention',
-            'fast_transformers.builders',
-            'fast_transformers.builders.attention_builders',
-            'fast_transformers.builders.transformer_builders',
-            'fast_transformers.events',
-            'fast_transformers.feature_maps',
-            'fast_transformers.masking',
-            'fast_transformers.transformers',
-            'fast_transformers.causal_product',
-            'fast_transformers.causal_product.causal_product_cpu',
-        ]:
-            sys.modules[mod] = MagicMock()
+    import sys, importlib
+    from unittest.mock import MagicMock
+
+    class FastTransformersImportHook:
+        def find_spec(self, fullname, path, target=None):
+            if fullname.startswith("fast_transformers.") and ("_cpu" in fullname or "_cuda" in fullname):
+                return importlib.util.spec_from_loader(fullname, self)
+            return None
+        def create_module(self, spec):
+            return MagicMock()
+        def exec_module(self, module):
+            pass
+
+    sys.meta_path.insert(0, FastTransformersImportHook())
 
 def cache_bb_embeddings(
     bb_mapper: BuildingBlockMapper,
@@ -436,7 +445,7 @@ def cache_bb_embeddings(
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     # 1. Compile all unique building blocks
-    unique_bbs = [(bb_id, smiles) for bb_id, smiles in bb_mapper.bb_map.items() if smiles]
+    unique_bbs = [(bb_id, clean_smiles_string(smiles)) for bb_id, smiles in bb_mapper.bb_map.items() if smiles]
     if not unique_bbs:
         print("No valid building blocks found to embed.")
         return {}
@@ -461,11 +470,11 @@ def cache_bb_embeddings(
         })
         temp_df.to_csv(os.path.join(temp_dir, "data_train.csv"), index=False)
         
-        # Modality fallback order: Image+Graph -> Graph 2D -> Full Multi-View
+        # Primary modality is full Multi-View MMELON
         modality_options = [
+            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
             ['IMAGE_MODEL', 'GRAPH_2D_MODEL'],
             ['GRAPH_2D_MODEL'],
-            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
         ]
         
         for modalities in modality_options:
@@ -585,6 +594,8 @@ def extract_smiles_embedding(
     last_err = None
     all_embeddings = None
     
+    cleaned_smiles = [clean_smiles_string(s) for s in smiles_list]
+    
     try:
         from bmfm_sm.core.data_modules.namespace import LateFusionStrategy, TaskType
         from bmfm_sm.predictive.modules.finetune_lightning_module import FineTuneLightningModule
@@ -593,15 +604,15 @@ def extract_smiles_embedding(
         
         temp_dir = tempfile.mkdtemp()
         temp_df = pd.DataFrame({
-            "smiles": smiles_list,
-            "label": [0] * len(smiles_list)
+            "smiles": cleaned_smiles,
+            "label": [0] * len(cleaned_smiles)
         })
         temp_df.to_csv(os.path.join(temp_dir, "data_train.csv"), index=False)
         
         modality_options = [
+            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
             ['IMAGE_MODEL', 'GRAPH_2D_MODEL'],
             ['GRAPH_2D_MODEL'],
-            ['TEXT_MODEL', 'IMAGE_MODEL', 'GRAPH_2D_MODEL'],
         ]
         
         for modalities in modality_options:

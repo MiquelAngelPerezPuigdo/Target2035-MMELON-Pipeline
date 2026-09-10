@@ -11,6 +11,28 @@ This script provides robust utility functions and an end-to-end pipeline to:
 """
 
 from __future__ import annotations
+
+# ---- CRITICAL: Install fast_transformers C++ ABI stub BEFORE any bmfm_sm import ----
+# pytorch-fast-transformers 0.4.0 has C++ ABI incompatibilities with PyTorch 2.1+ on Linux.
+# We intercept only the broken C++ extension sub-modules (*_cpu, *_cuda) so that the pure-Python
+# parts of fast_transformers load normally and bmfm_sm can initialize the pre-trained MMELON model.
+import sys as _sys
+import importlib as _importlib
+from unittest.mock import MagicMock as _MagicMock
+
+class _FastTransformersCppStubHook:
+    def find_spec(self, fullname, path, target=None):
+        if fullname.startswith("fast_transformers.") and ("_cpu" in fullname or "_cuda" in fullname):
+            return _importlib.util.spec_from_loader(fullname, self)
+        return None
+    def create_module(self, spec):
+        return _MagicMock()
+    def exec_module(self, module):
+        pass
+
+_sys.meta_path.insert(0, _FastTransformersCppStubHook())
+# ---- END fast_transformers stub ----
+
 import os
 import glob
 import warnings
@@ -414,23 +436,6 @@ def clean_smiles_string(smiles: str) -> str:
         pass
     return sm
 
-def _ensure_fast_transformers_stub():
-    """Bypass fast_transformers C++ ABI loading issues if fast_transformers fails to import."""
-    import sys, importlib
-    from unittest.mock import MagicMock
-
-    class FastTransformersImportHook:
-        def find_spec(self, fullname, path, target=None):
-            if fullname.startswith("fast_transformers.") and ("_cpu" in fullname or "_cuda" in fullname):
-                return importlib.util.spec_from_loader(fullname, self)
-            return None
-        def create_module(self, spec):
-            return MagicMock()
-        def exec_module(self, module):
-            pass
-
-    sys.meta_path.insert(0, FastTransformersImportHook())
-
 def cache_bb_embeddings(
     bb_mapper: BuildingBlockMapper,
     base_model_path: str = "ibm-research/biomed.sm.mv-te-84m",
@@ -452,7 +457,6 @@ def cache_bb_embeddings(
         
     print(f"Caching MMELON embeddings for {len(unique_bbs):,} unique building blocks...")
     
-    _ensure_fast_transformers_stub()
     embed_dict = {}
     success = False
     last_err = None
@@ -587,7 +591,6 @@ def extract_smiles_embedding(
     allow_mock: bool = True,
 ) -> np.ndarray:
     """Run direct MMELON multi-view embedding extraction for an arbitrary list of full SMILES."""
-    _ensure_fast_transformers_stub()
     success = False
     last_err = None
     all_embeddings = None

@@ -1,0 +1,3 @@
+Round 12 — submit AH only to VALIDATION.
+
+AH contains 50 new scaffold-diverse pharmacophore matches allocated across seven evidence sources. Report hits, clusters and p-value. 15 validations remain before this submission; 14 afterward.

@@ -1,0 +1,9 @@
+{
+  "passed": [
+    "SMILES invariance, invalid-SMILES rejection and packed/native fingerprint Tanimoto parity",
+    "No shared scaffold across DEL holdout; no duplicate training parents; no negatives inferred from absent libraries",
+    "Four serialized trained models reproduce saved predictions on 100 randomly chosen candidates",
+    "Exactly three submission files; each contains 50 unique valid catalog IDs and 50 distinct parent structures; hashes verified"
+  ],
+  "official_challenge_feedback_received": false
+}

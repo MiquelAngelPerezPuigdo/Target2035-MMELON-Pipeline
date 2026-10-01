@@ -1,0 +1,4 @@
+Round 14 - submit AJ_AI_HIT_SPLIT1 only to VALIDATION.
+
+This is an adaptive split, so send back the result before submitting anything else.
+Thirteen validations remain before this submission; twelve afterward.

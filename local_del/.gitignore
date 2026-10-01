@@ -1,0 +1,19 @@
+# Generated scientific assets are preserved locally and indexed in docs/recovery.
+data/
+features/
+vendor/
+mmelon_env/
+*.npy
+*.npz
+*.log
+models/**
+!models/**/
+!models/**/*.json
+!models/**/*.py
+external/pgk2/*
+!external/pgk2/verified_ligands.json
+submissions/* copy/
+submissions/blind_test/Team_*.csv
+submissions/blind_test_revised/Team_*.csv
+# Small original validation archives are evidence and must survive a fresh clone.
+!submissions/*_validation_batch.zip

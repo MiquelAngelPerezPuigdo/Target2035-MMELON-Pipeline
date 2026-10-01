@@ -1,0 +1,6 @@
+REPLACEMENT FOR THE UNSUBMITTED T2
+Submit only Team_MMELON_T2_REVISED_COUNTS.csv to TEST.
+Do not submit the old T2_DIVERSE_TRANSFER.csv.
+One test submission remains before this file, zero afterward.
+All 184,632 original test IDs are retained; exactly 50 new candidates selected; no T1-selected molecule is selected again.
+This revision uses authorized T1 feedback. No Boltz credit was spent.

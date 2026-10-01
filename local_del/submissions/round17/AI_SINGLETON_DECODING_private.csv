@@ -1,0 +1,4 @@
+submission,candidate,anchor,SMILES
+AN_AI_SINGLETON_1,Z1514105447,G_25hits_3series,c1cncc(-c2nc(NC3C4CCOC4C34CCCC4)c3ccccc3n2)c1
+AO_AI_SINGLETON_2,Z1993862266,AD_2hits_2series,Cc1sc2ncnc(SCc3ncnn3CCF)c2c1C
+inferred_if_AN0_AO0,Z31254272,K_21hits_2series,CCCNc1nc(CN2CCCC2)nc2sc(C)c(C)c12

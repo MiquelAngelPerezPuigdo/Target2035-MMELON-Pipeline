@@ -1,0 +1,58 @@
+{
+  "round": 7,
+  "type": "diagnostic partition",
+  "known_fact": "M contains exactly 21 hits among 50 molecules and two organizer-defined hit clusters.",
+  "method": "Partition all M molecules exactly once while keeping Butina ECFP4 groups together; pad each file to 50 with candidates from zero-hit J.",
+  "filler_validity": "J returned zero hits, so fillers cannot change hit or hit-cluster counts if evaluation is consistent.",
+  "observable_cluster_cutoff": 0.5,
+  "observable_cluster_sizes": [
+    15,
+    7,
+    5,
+    4,
+    4,
+    3,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "individual_hit_labels_assumed": false,
+  "sets": {
+    "S_M_PART1": {
+      "file": "Team_MMELON_R07_S_M_PART1.txt",
+      "M_candidates": 17,
+      "proven_zero_fillers": 33,
+      "observable_groups": 3,
+      "sha256": "51a6b1371a33cf4d9d35dcf6ac700006c08aa56e87b8fad4da3d00cb31ac19c1"
+    },
+    "T_M_PART2": {
+      "file": "Team_MMELON_R07_T_M_PART2.txt",
+      "M_candidates": 17,
+      "proven_zero_fillers": 33,
+      "observable_groups": 6,
+      "sha256": "d7a4717e025a36aaf9f1caa3542e72f432a0d28c8ce5d33286cdb479f698c8d0"
+    },
+    "U_M_PART3": {
+      "file": "Team_MMELON_R07_U_M_PART3.txt",
+      "M_candidates": 16,
+      "proven_zero_fillers": 34,
+      "observable_groups": 7,
+      "sha256": "27b5b7090308eafd499d45e0244b5e83974851bf129cdbd3cade938db9445dd4"
+    }
+  },
+  "expected_consistency_check": "S + T + U hit counts must equal 21.",
+  "remaining_before": 30,
+  "remaining_after": 27,
+  "verification": [
+    "Every M candidate occurs in exactly one diagnostic set",
+    "Every filler comes from the independently evaluated zero-hit J set",
+    "Each serialized file contains exactly 50 unique valid CatalogIDs"
+  ]
+}

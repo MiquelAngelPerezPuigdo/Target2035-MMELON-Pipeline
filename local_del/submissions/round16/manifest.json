@@ -1,0 +1,28 @@
+{
+  "round": 16,
+  "submissions": [
+    "Team_MMELON_R16_AL_AI_CODE_BIT1",
+    "Team_MMELON_R16_AM_AI_CODE_BIT2"
+  ],
+  "purpose": "Two-bit group test reducing 12 candidates to 3",
+  "candidate_groups": {
+    "A": 3,
+    "B": 3,
+    "C": 3,
+    "D": 3
+  },
+  "diagnostic_candidates_per_file": 6,
+  "confirmed_negative_fillers_per_file": 44,
+  "decoding": {
+    "AL=1, AM=1": "group A",
+    "AL=1, AM=0": "group B",
+    "AL=0, AM=1": "group C",
+    "AL=0, AM=0": "group D"
+  },
+  "sha256": {
+    "Team_MMELON_R16_AL_AI_CODE_BIT1.txt": "08bb0f088e801aae94221ba067bb2f30543e96eb01c109ef4999f70b93618b9e",
+    "Team_MMELON_R16_AM_AI_CODE_BIT2.txt": "446bc772bb6508aad12c7598b3aae3550e16f688b18a09a0939f863d169e7857"
+  },
+  "remaining_before": 11,
+  "remaining_after": 9
+}

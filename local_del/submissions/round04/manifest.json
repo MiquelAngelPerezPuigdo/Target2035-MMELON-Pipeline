@@ -1,0 +1,53 @@
+{
+  "round": 4,
+  "purpose": "Transfer stress tests, not optimization for repeating the 25 validation hits.",
+  "previously_submitted_IDs_excluded": 335,
+  "hit_identities_known": false,
+  "test_activity_labels_accessed": false,
+  "test_submissions_made": 0,
+  "unlabelled_test_usage": "The structural distance audit motivated the <=0.36 anchor-similarity stress gate. No activity outcomes were used.",
+  "definitions": {
+    "J": "Fresh candidates ranked against crystal ligand 47 only, using frozen 65/20/15 ligand metrics and 5% DEL model contribution.",
+    "K": "Fresh candidates without a quinazoline core; 30% structural Tanimoto, 45% feature Tanimoto, 25% feature Tversky, across the two ligands; 5% DEL contribution.",
+    "L": "Frozen winning score on fresh candidates with maximum reference ECFP similarity <=0.36 and maximum ECFP similarity to any prior G candidate <=0.40."
+  },
+  "caveat": "These gates create harder validation experiments, but do not reproduce the organizers hidden test series or prove OOD generalization. Expected validation yield may be lower.",
+  "sets": {
+    "J_LIGAND47": {
+      "file": "Team_MMELON_R04_J_LIGAND47.txt",
+      "sha256": "df5617c0efb368f81a783f4d14e9ce394ecd07c41f23a8e9f5ca31920627232f",
+      "unique_Murcko_scaffolds": 44,
+      "quinazoline_core_count": 4,
+      "median_nearest_reference_ECFP": 0.2774431109428406,
+      "median_nearest_G_ECFP": 0.3952455520629883,
+      "previously_submitted_candidates": 0
+    },
+    "K_NEW_CORES": {
+      "file": "Team_MMELON_R04_K_NEW_CORES.txt",
+      "sha256": "0e810536b4e67efae75ed17367e8665378c9726cb8ac7bd4e120caf8b892dba3",
+      "unique_Murcko_scaffolds": 41,
+      "quinazoline_core_count": 0,
+      "median_nearest_reference_ECFP": 0.23702514171600342,
+      "median_nearest_G_ECFP": 0.38408851623535156,
+      "previously_submitted_candidates": 0
+    },
+    "L_DISTANT_TRANSFER": {
+      "file": "Team_MMELON_R04_L_DISTANT_TRANSFER.txt",
+      "sha256": "667dc433aba01b4aa1c90c8d1dc49e0c7cc34d5839cd91217233480ef12a6031",
+      "unique_Murcko_scaffolds": 44,
+      "quinazoline_core_count": 6,
+      "median_nearest_reference_ECFP": 0.2711637020111084,
+      "median_nearest_G_ECFP": 0.35211268067359924,
+      "previously_submitted_candidates": 0
+    }
+  },
+  "overlap": {
+    "J_LIGAND47__K_NEW_CORES": 11,
+    "J_LIGAND47__L_DISTANT_TRANSFER": 26,
+    "K_NEW_CORES__L_DISTANT_TRANSFER": 10
+  },
+  "remaining_before_submission": 39,
+  "remaining_after_three_submissions": 36,
+  "unique_new_candidates": 112,
+  "code_sha256": "d2a9a8597924bd855bcbce003ea36d78a985222abeeee27e0f6ecf9737464040"
+}

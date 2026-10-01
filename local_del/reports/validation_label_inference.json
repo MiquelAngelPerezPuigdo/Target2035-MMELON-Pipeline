@@ -1,0 +1,109 @@
+{
+  "bags": 48,
+  "unique_submitted": 1247,
+  "forced_positive": 8,
+  "forced_negative": 628,
+  "unresolved_submitted": 611,
+  "propagation": [
+    {
+      "bag": "A_ECFP",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "B_FCFP",
+      "label": 0,
+      "count": 47
+    },
+    {
+      "bag": "D_STRUCTURAL",
+      "label": 0,
+      "count": 44
+    },
+    {
+      "bag": "E_CHEMICAL_FEATURES",
+      "label": 0,
+      "count": 37
+    },
+    {
+      "bag": "F_CONTROL_CONTRAST",
+      "label": 0,
+      "count": 18
+    },
+    {
+      "bag": "H_SELECTIVE_DEL",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "J_LIGAND47",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "Z_X_ISOXAZOLE3",
+      "label": 0,
+      "count": 3
+    },
+    {
+      "bag": "AA_X_SINGLETONS3",
+      "label": 0,
+      "count": 3
+    },
+    {
+      "bag": "AB_Y_PAIR_SPLIT",
+      "label": 0,
+      "count": 2
+    },
+    {
+      "bag": "AF_K_GROUP7",
+      "label": 1,
+      "count": 7
+    },
+    {
+      "bag": "AN_AI_SINGLETON_1",
+      "label": 1,
+      "count": 1
+    },
+    {
+      "bag": "AO_AI_SINGLETON_2",
+      "label": 0,
+      "count": 1
+    },
+    {
+      "bag": "AP_EXACT_HIT_ANALOGS",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "AQ_EXACT_HIT_SCAFFOLD_HOPS",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "AR_LIGAND21_CRYSTAL_3D",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "AT_TESTSTYLE_CONSENSUS",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "AU_TESTSTYLE_SERIES_PORTFOLIO",
+      "label": 0,
+      "count": 50
+    },
+    {
+      "bag": "AV_AS_KLIKE_HALF",
+      "label": 0,
+      "count": 26
+    },
+    {
+      "bag": "AI_CHEMBERTA_OOD",
+      "label": 0,
+      "count": 47
+    }
+  ]
+}

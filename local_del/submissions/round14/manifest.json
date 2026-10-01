@@ -1,0 +1,14 @@
+{
+  "round": 14,
+  "submission": "AJ_AI_HIT_SPLIT1",
+  "purpose": "Adaptive binary split to locate the one round-13 hit",
+  "diagnostic_candidates": 25,
+  "confirmed_negative_fillers": 25,
+  "interpretation": {
+    "0 hits": "The active molecule is among the other 25 round-13 candidates",
+    "1 hit": "The active molecule is among these 25 diagnostic candidates"
+  },
+  "sha256": "deb28ad64bd45c5e9b1aed89fe105a4ddd255c795446f8cfd914b745cfbb390e",
+  "remaining_before": 13,
+  "remaining_after": 12
+}

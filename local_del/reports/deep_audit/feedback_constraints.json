@@ -1,0 +1,8 @@
+{
+  "zero_hit_set_count": 5,
+  "distinct_candidates_in_zero_hit_sets": 196,
+  "positive_bag_original_size": 50,
+  "possible_hit_candidates_after_zero_set_intersections": 22,
+  "possible_hit_scaffolds": 18,
+  "interpretation": "Assuming submitted files match the saved archives and evaluations are consistent, exactly one of these remaining candidates is a hit. No individual is labelled positive. Zero-set members are validation-assay non-hits; this is feedback-derived data and cannot be treated as independent evaluation."
+}

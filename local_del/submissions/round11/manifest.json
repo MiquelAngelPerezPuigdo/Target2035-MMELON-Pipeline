@@ -1,0 +1,33 @@
+{
+  "round": 11,
+  "known_fact": "K minus zero-hit J contains exactly 21 hits in two assay clusters among 39 molecules.",
+  "strategy": "Test its two largest fingerprint groups separately and place all remaining groups in a third set.",
+  "expected_check": "AE + AF + AG must total 21 hits; their assay-cluster union must explain K's two clusters.",
+  "sets": {
+    "AE_K_GROUP10": {
+      "file": "Team_MMELON_R11_AE_K_GROUP10.txt",
+      "K39_candidates": 10,
+      "zero_fillers": 40,
+      "sha256": "b89f903fcfc5235c78c444cf6359b26361fe9d78d64f816458c8f9204f58ba33"
+    },
+    "AF_K_GROUP7": {
+      "file": "Team_MMELON_R11_AF_K_GROUP7.txt",
+      "K39_candidates": 7,
+      "zero_fillers": 43,
+      "sha256": "c01bb641096b069ab0a08621d72a11dea3b30c54d28cad22ac2adea19d9b857d"
+    },
+    "AG_K_REST22": {
+      "file": "Team_MMELON_R11_AG_K_REST22.txt",
+      "K39_candidates": 22,
+      "zero_fillers": 28,
+      "sha256": "42231023808c542ba386ed44360beede8b3fb038651bff08813104fb71f7f2ac"
+    }
+  },
+  "remaining_before": 18,
+  "remaining_after": 15,
+  "verification": [
+    "The three sets exactly partition all 39 informative K molecules",
+    "Every filler is from independently zero-hit J",
+    "Each submission has 50 unique valid IDs"
+  ]
+}

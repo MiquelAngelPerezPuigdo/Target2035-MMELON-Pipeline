@@ -1,0 +1,8 @@
+{
+  "positive_references": 3000,
+  "negative_references": 24,
+  "positive_selection": "Strongest strict DEL positives, max 2 per non-chiral Murcko scaffold, exclude NTC supplement overlap.",
+  "negative_selection": "Sample of inhibitor/NTC-associated DEL compounds with control count >= target count and >= 3.",
+  "features": "Top-3 mean Tanimoto to positives and maximum Tanimoto to controls, ECFP4 and FCFP4.",
+  "holdout": "Separate reference set excluding every held-out scaffold."
+}

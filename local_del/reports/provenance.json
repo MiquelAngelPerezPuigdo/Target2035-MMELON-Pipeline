@@ -1,0 +1,121 @@
+{
+  "created": "2026-09-11",
+  "compute": "local Mac only",
+  "source_files_edited": false,
+  "files": [
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/PGK2_selection.parquet",
+      "bytes": 193260896,
+      "sha256": "1dab30c45a91e83e48886c4a0def0a873eefd8d3211d886e865e89369ad61a13"
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/PGK2_NTC_supplement.parquet",
+      "bytes": 10230899,
+      "sha256": "bb9868a174b69d4d9cabcad61e40a0585777c02a24c6dc767bfb222e40d2b4d0"
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/Val-Test-set/PGK2_Validation_split.csv",
+      "bytes": 13146478,
+      "sha256": "337040d538210a005075a431b4c42aa0ad96d3fa19c76e389ff521e17ff3cb72"
+    },
+    {
+      "path": "/Users/perezmi/.codex/.chatgpt-projects/g-p-6aa392213d008191a42dc240e16bc733/local_del/data/training_raw.parquet",
+      "bytes": 4106241,
+      "sha256": "53a8f54fe58ca16e5f8e35d8c1da9412b57161628bbf6911ebe8c28c1add3277"
+    },
+    {
+      "path": "/Users/perezmi/.codex/.chatgpt-projects/g-p-6aa392213d008191a42dc240e16bc733/local_del/data/selection_dedup.parquet",
+      "bytes": 186887529,
+      "sha256": "e7d330724f89484470fd3bcc05b468e85979e735cd85fde1737a24f749c2e97f"
+    }
+  ],
+  "code": {
+    "export_round.py": "288f27af9a32791e83f81832bac55669fe3b2f51ecba0dc09a8c1a972a335bb0",
+    "similarity.py": "eb69a6336519171b3c5c1cb9c5b5be7e277944b9b57c4340939b8209a1dbec38",
+    "features.py": "4a8103df6014aed008cb2db51ec04b5cb724029128feab79d69024886fedb096",
+    "train.py": "070e9490ea186e9f1f71c11eac9bab25808fd71e91e9d55238d56cce47789a5a",
+    "verify.py": "2fd215a559a728445bd49eccd4752f000169a7a6ea86f3986aa2938495838558",
+    "prepare.py": "b1be1cf693203d3c4aaf6d607640ae6b8211a8009116093e62c8808485b20dd6"
+  },
+  "packages": {
+    "rdkit": "2025.9.2",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "polars": "1.36.1",
+    "pyarrow": "21.0.0",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1"
+  },
+  "lightgbm": "4.6.0 (project-local vendor directory)",
+  "enumeration_inputs": [
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS11.enumeration.parquet",
+      "bytes": 482542068,
+      "mtime_ns": 1780928864000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS13.enumeration.parquet",
+      "bytes": 24782086,
+      "mtime_ns": 1780928864000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS14.enumeration.parquet",
+      "bytes": 168090549,
+      "mtime_ns": 1780928866000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS18_3.enumeration.parquet",
+      "bytes": 523563560,
+      "mtime_ns": 1780928874000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS19_1.enumeration.parquet",
+      "bytes": 179859879,
+      "mtime_ns": 1780928876000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS19_2.enumeration.parquet",
+      "bytes": 183958560,
+      "mtime_ns": 1780928877000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS23.enumeration.parquet",
+      "bytes": 480904819,
+      "mtime_ns": 1780928884000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS24.enumeration.parquet",
+      "bytes": 34924892,
+      "mtime_ns": 1780928885000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS30.enumeration.parquet",
+      "bytes": 284885981,
+      "mtime_ns": 1780928888000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS4.enumeration.parquet",
+      "bytes": 1544512526,
+      "mtime_ns": 1780928831000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS42_2.enumeration.parquet",
+      "bytes": 301528378,
+      "mtime_ns": 1780928891000000000
+    },
+    {
+      "path": "/Users/perezmi/Target2035-MMELON-Pipeline/OpeDELLibrary/qDOS9.enumeration.parquet",
+      "bytes": 1543586880,
+      "mtime_ns": 1780928856000000000
+    }
+  ],
+  "run_script_sha256": "2e391c56ed1ea0a145a5fbae5f3f2c77cf8e5b799a8394b3e26965b2776734f7",
+  "model_sha256": {
+    "ecfp_2036.txt": "336e2bd164e4dbb6248a8132cc8733cdd346e40eac76b3d2e0e5bb0a03f7cfcf",
+    "fcfp_holdout.txt": "11a619e95e2920626ebca7fbb0d11b66421c92164ff2424614ef85550bf7834e",
+    "ecfp_2035.txt": "5a53676d6cd39790475401d926180ad3275636394624e77914b1a64fad907b42",
+    "fcfp_2035.txt": "e0e4e54561a332312d5ea2a815919a0c37a44f5cf5df4478d027ab43081fdb48",
+    "fcfp_2036.txt": "6ddc4c88495d07cded008dc6625f95f942a6d21b2009fe369bc010736f799a52",
+    "ecfp_holdout.txt": "e456fb343b0805423c8ea69f916fe3a13f621b49337a458b9814400098a560ad"
+  }
+}

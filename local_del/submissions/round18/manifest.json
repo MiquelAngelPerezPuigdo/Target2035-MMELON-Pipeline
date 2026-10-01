@@ -1,0 +1,17 @@
+{
+  "round": 18,
+  "exact_active": "Z1514105447",
+  "submissions": [
+    "Team_MMELON_R18_AP_EXACT_HIT_ANALOGS",
+    "Team_MMELON_R18_AQ_EXACT_HIT_SCAFFOLD_HOPS"
+  ],
+  "AP_method": "Local analog exploitation using ECFP, ErG, ChemBERTa and descriptors",
+  "AQ_method": "Scaffold hopping using ChemBERTa, ErG and descriptors with ECFP-to-active below 0.38",
+  "overlap": 0,
+  "sha256": {
+    "Team_MMELON_R18_AP_EXACT_HIT_ANALOGS.txt": "51a1054dcdab90e1d547f7c4ca6669581f147a67830233e89b50f9b05c32b42f",
+    "Team_MMELON_R18_AQ_EXACT_HIT_SCAFFOLD_HOPS.txt": "2b6c774a61ec60f71eed9cf5821e7762769841f5afb334bec257ea4e7dd75c5d"
+  },
+  "remaining_before": 7,
+  "remaining_after": 5
+}

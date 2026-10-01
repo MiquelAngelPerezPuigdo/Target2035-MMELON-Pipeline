@@ -1,0 +1,16 @@
+{
+  "phase": "active_learning",
+  "as_of": "2026-10-01",
+  "timezone": "Europe/Zurich",
+  "preparation": "phase_one_recovered",
+  "released_labels_ingested": false,
+  "current_template_verified": false,
+  "eligible_selection_universe_verified": false,
+  "published_validation_allowance": 100,
+  "published_test_allowance": 2,
+  "account_balance_verified": false,
+  "validation_submissions_by_this_recovery": 0,
+  "test_submissions_by_this_recovery": 0,
+  "account_submission_history_reconciled": false,
+  "next_action": "Obtain official released labels and templates; audit evidence sources and eligible IDs before modeling."
+}

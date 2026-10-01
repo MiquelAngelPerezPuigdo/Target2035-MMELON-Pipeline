@@ -1,0 +1,16 @@
+{
+  "round": 13,
+  "submission": "AI_CHEMBERTA_OOD",
+  "method": "ChemBERTa committee over five validation evidence groups, negative-prototype penalty, ECFP diversity",
+  "quotas": {
+    "G_25hits_3series": 12,
+    "K_21hits_2series": 12,
+    "AF_7confirmed": 10,
+    "O_4hits_3series": 9,
+    "AD_2hits_2series": 7
+  },
+  "pairwise_ecfp_maximum": 0.58,
+  "sha256": "286b0441c2ba19af973a8d73dd32f08ce7987ce6358436ebc2919186e21901b9",
+  "remaining_before": 14,
+  "remaining_after": 13
+}

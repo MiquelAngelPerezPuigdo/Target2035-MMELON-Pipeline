@@ -1,0 +1,51 @@
+Split,Round,Set,Hits,ChemicalSeries,PValue,ROCAUC,PRAUC,SubmissionID,EvidenceSource
+validation,round01,A_ECFP,0,0,,,,,User: only Neighbors hit
+validation,round01,B_FCFP,0,0,,,,,User: only Neighbors hit
+validation,round01,C_NEIGHBORS,1,1,0.05201186181800377,,,,User supplied evaluation result
+validation,round02,D_STRUCTURAL,0,0,,,,,User: zero hits in all three
+validation,round02,E_CHEMICAL_FEATURES,0,0,,,,,User: zero hits in all three
+validation,round02,F_CONTROL_CONTRAST,0,0,,,,,User: zero hits in all three
+validation,round03,G_KNOWN_LIGANDS,25,3,2.0888282834863325e-05,,,,User reported round03 results
+validation,round03,H_SELECTIVE_DEL,0,0,,,,,User reported round03 results
+validation,round03,I_SIZE_AWARE_KERNEL,1,1,0.052011861818003435,,,,User reported round03 results
+validation,round04,J_LIGAND47,0,0,,,,,User reported round04 results
+validation,round04,K_NEW_CORES,21,2,0.001306315865095553,,,,User reported round04 results
+validation,round04,L_DISTANT_TRANSFER,1,1,0.052011861818003546,,,,User reported round04 results
+validation,round05,M_K_BAG,21,2,0.00130631586509522,,,,User reported round05 results in M/N/O order
+validation,round05,N_GROUP_A_B,8,2,0.0013063158650958862,,,,User reported round05 results in M/N/O order
+validation,round05,O_DIVERSE_BAG,4,3,2.0888282834752303e-05,,,,User reported round05 results in M/N/O order
+validation,round06,P_M_EXPANSION,2,1,0.05201186181800388,,,,User reported round06 results in P/Q/R order
+validation,round06,Q_K_M_CONSENSUS,3,2,0.001306315865095664,,,,User reported round06 results in P/Q/R order
+validation,round06,R_SERIES_SEARCH,1,1,0.05201186181800421,,,,User reported round06 results in P/Q/R order
+validation,round07,S_M_PART1,13,1,0.05201186181800377,,,,User reported round07 results in S/T/U order
+validation,round07,T_M_PART2,6,2,0.001306315865095664,,,,User reported round07 results in S/T/U order
+validation,round07,U_M_PART3,2,1,0.05201186181800421,,,,User reported round07 results in S/T/U order
+validation,round08,V_S_MAIN15,13,1,0.05201186181800321,,,,User reported round08 results in V/W/X order
+validation,round08,W_T_MAIN7,5,1,0.05201186181800388,,,,User reported round08 results in V/W/X order
+validation,round08,X_T_REST10,1,1,0.05201186181800366,,,,User reported round08 results in V/W/X order
+validation,round09,Y_X_THIENO4,1,1,0.05201186181800421,,,,User reported round09 results in Y/Z/AA order
+validation,round09,Z_X_ISOXAZOLE3,0,0,,,,,User reported round09 results in Y/Z/AA order
+validation,round09,AA_X_SINGLETONS3,0,0,,,,,User reported round09 results in Y/Z/AA order
+validation,round10,AB_Y_PAIR_SPLIT,0,0,,,,,User reported revised round10 results in AB/AC/AD order
+validation,round10,AC_Y4_EXPANSION,1,1,0.05201186181800388,,,,User reported revised round10 results in AB/AC/AD order
+validation,round10,AD_SERIES_EXPLORATION,2,2,0.001306315865095442,,,,User reported revised round10 results in AB/AC/AD order
+validation,round11,AE_K_GROUP10,8,1,0.052011861818003324,,,,User reported round11 results in AE/AF/AG order
+validation,round11,AF_K_GROUP7,7,1,0.05201186181800377,,,,User reported round11 results in AE/AF/AG order; all seven diagnostic candidates are therefore individually confirmed hits
+validation,round11,AG_K_REST22,6,2,0.001306315865095553,,,,User reported round11 results in AE/AF/AG order
+validation,round12,AH_ERG_SCAFFOLD_HOPS,2,1,0.052011861818003435,,,,User reported round12 result
+validation,round13,AI_CHEMBERTA_OOD,1,1,0.052011861818003546,,,,User reported round13 result
+validation,round14,AJ_AI_HIT_SPLIT1,1,1,0.0520118618180031,,,,User reported round14 result
+validation,round15,AK_AI_HIT_SPLIT2,1,1,0.05201186181800421,,,,User reported round15 result
+validation,round16,AL_AI_CODE_BIT1,1,1,0.052011861818003546,,,,User reported round16 results in AL/AM order
+validation,round16,AM_AI_CODE_BIT2,1,1,0.0520118618180041,,,,User reported round16 results in AL/AM order
+validation,round17,AN_AI_SINGLETON_1,1,1,0.05201186181800388,,,,User reported round17 results in AN/AO order
+validation,round17,AO_AI_SINGLETON_2,0,0,,,,,User reported round17 results in AN/AO order
+validation,round18,AP_EXACT_HIT_ANALOGS,0,0,,,,,User reported round18 results in AP/AQ order
+validation,round18,AQ_EXACT_HIT_SCAFFOLD_HOPS,0,0,,,,,User reported round18 results in AP/AQ order
+validation,round19,AR_LIGAND21_CRYSTAL_3D,0,0,,,,,User reported round19 results in AR/AS order
+validation,round19,AS_GK_3D_SERIES_PORTFOLIO,1,1,0.05201186181800321,,,,User reported round19 results in AR/AS order
+validation,round20,AT_TESTSTYLE_CONSENSUS,0,0,,,,,User reported round20 results in AT/AU order
+validation,round20,AU_TESTSTYLE_SERIES_PORTFOLIO,0,0,,,,,User reported round20 results in AT/AU order
+validation,round21,AV_AS_KLIKE_HALF,0,0,,,,,User reported 0; final validation completed
+test,blind,T1_FROZEN_G,0,,,0.7012738792787586,0.002038178907110336,9780475,User reported frozen test result
+test,blind,T2_REVISED_COUNTS,0,,,0.740041882758066,0.004525401201208069,,User reported revised second test result

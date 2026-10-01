@@ -1,0 +1,4 @@
+Round 16 - submit AL and AM to VALIDATION in filename order.
+
+Send both hit counts back in the same AL/AM order. The two results locate the active molecule within one group of three.
+Eleven validations remain before these files; nine afterward.

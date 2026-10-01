@@ -1,0 +1,4 @@
+Final validation - submit AV_AS_KLIKE_HALF to VALIDATION.
+
+A hit favors K/learned evidence for the blind test. Zero favors ligand/ErG evidence.
+This uses the final validation submission.

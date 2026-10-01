@@ -1,0 +1,36 @@
+{
+  "round": 10,
+  "known_fact": "Exactly one of the four ordered Y candidates is active.",
+  "revision": "Exploration-weighted replacement; do not submit the earlier AB/AC diagnostic version.",
+  "AB_decoding": "AB=1 means the hit is Y candidate 1 or 2; AB=0 means it is Y candidate 3 or 4.",
+  "AC_strategy": "50 new molecules ranked by ECFP/FCFP support from Y4, penalizing similarity to confirmed-negative Z/AA.",
+  "AD_strategy": "Scaffold-diverse search supported by multi-cluster N/O bags, penalizing the exhausted S/W dominant series.",
+  "sets": {
+    "AB_Y_PAIR_SPLIT": {
+      "file": "Team_MMELON_R10_AB_Y_PAIR_SPLIT.txt",
+      "real_candidates": 2,
+      "zero_fillers": 48,
+      "sha256": "4a25e80a1b81bd2902fce1c8968e923f40560af4c414154a11e459374954720c"
+    },
+    "AC_Y4_EXPANSION": {
+      "file": "Team_MMELON_R10_AC_Y4_EXPANSION.txt",
+      "real_candidates": 50,
+      "zero_fillers": 0,
+      "sha256": "624f0ba90e14384dbf5018efe2b97fa2d3284a9cebfd164343710d91c1f854e6"
+    },
+    "AD_SERIES_EXPLORATION": {
+      "file": "Team_MMELON_R10_AD_SERIES_EXPLORATION.txt",
+      "real_candidates": 50,
+      "zero_fillers": 0,
+      "sha256": "8e75d7a6cf62c862f0854d97dd9f04d7912af28d511dfcf18bfe767072107c1f"
+    }
+  },
+  "remaining_before": 21,
+  "remaining_after": 18,
+  "verification": [
+    "AB narrows the Y hit to one of two molecules",
+    "AC and AD contain 100 mutually disjoint new valid structures",
+    "AD uses a fingerprint diversity gate",
+    "All diagnostic padding comes from zero-hit J"
+  ]
+}

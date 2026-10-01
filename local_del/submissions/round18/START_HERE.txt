@@ -1,0 +1,4 @@
+Round 18 - submit AP and AQ to VALIDATION in filename order.
+
+AP exploits close analogs of the exact active. AQ tests scaffold hops. Send both full results back in AP/AQ order.
+Seven validations remain before these files; five afterward.

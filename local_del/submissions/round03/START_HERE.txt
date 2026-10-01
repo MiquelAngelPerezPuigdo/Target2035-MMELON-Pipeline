@@ -1,0 +1,9 @@
+Round 3: submit the three Team_MMELON_R03_*.txt files to VALIDATION.
+
+G: public crystal-bound PGK2 ligand similarity plus DEL ML.
+H: public PGK2-selective DEL signal versus NTC controls.
+I: size-aware, read- and library-weighted DEL signal versus controls.
+
+All 244,328 validation candidates were scored. Exactly 50 IDs per submission; 196 IDs from prior zero-hit submissions are excluded. The one earlier hit is still unidentified. These are adaptive validation experiments, not proof of improved blind-test performance. External public data are used in this round.
+
+Send G/H/I hit counts and cluster counts, plus p-values if available. 42 validations remain before these submissions, 39 afterward.

@@ -1,0 +1,3 @@
+Round 11 — submit AE, AF and AG separately to VALIDATION.
+
+These sets partition all 39 informative K-minus-J molecules. K-minus-J has exactly 21 hits in two assay clusters, so AE+AF+AG must equal 21 hits. Report results in AE/AF/AG order. 18 validations remain before this batch; 15 afterward.

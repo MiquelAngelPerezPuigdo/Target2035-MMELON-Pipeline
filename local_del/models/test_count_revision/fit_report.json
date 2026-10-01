@@ -1,0 +1,107 @@
+{
+  "models": [
+    {
+      "name": "ecfp_0.001",
+      "objective": 0.13422478643729807,
+      "bag_count_MAE_in_sample": 0.46971356095697836,
+      "mean_forced_positive": 0.9550830324850883,
+      "mean_forced_negative": 0.004217646665295389,
+      "mean_test_negative": 0.004827462083506798
+    },
+    {
+      "name": "ecfp_0.01",
+      "objective": 0.15279592118230864,
+      "bag_count_MAE_in_sample": 1.1686468894424176,
+      "mean_forced_positive": 0.800546631343499,
+      "mean_forced_negative": 0.014961352060512549,
+      "mean_test_negative": 0.019505379469809805
+    },
+    {
+      "name": "ecfp_0.1",
+      "objective": 0.1990219951624162,
+      "bag_count_MAE_in_sample": 2.9750126958294927,
+      "mean_forced_positive": 0.4058583167426083,
+      "mean_forced_negative": 0.03875794632668086,
+      "mean_test_negative": 0.04601463052387245
+    },
+    {
+      "name": "fcfp_0.001",
+      "objective": 0.1369728820378557,
+      "bag_count_MAE_in_sample": 0.5228557549442102,
+      "mean_forced_positive": 0.9315275335474067,
+      "mean_forced_negative": 0.006062521144193232,
+      "mean_test_negative": 0.010638222563212668
+    },
+    {
+      "name": "fcfp_0.01",
+      "objective": 0.15832347992112708,
+      "bag_count_MAE_in_sample": 1.426626504590775,
+      "mean_forced_positive": 0.7584147363062658,
+      "mean_forced_negative": 0.016856631762032635,
+      "mean_test_negative": 0.0327006842451508
+    },
+    {
+      "name": "fcfp_0.1",
+      "objective": 0.20742062264159514,
+      "bag_count_MAE_in_sample": 3.460545555014467,
+      "mean_forced_positive": 0.3191885833846976,
+      "mean_forced_negative": 0.042458537001966515,
+      "mean_test_negative": 0.057699504477500954
+    }
+  ],
+  "known_positive": 8,
+  "known_negative": 678,
+  "unique_reduced_bags": 23,
+  "bag_names": [
+    "C_NEIGHBORS",
+    "G_KNOWN_LIGANDS",
+    "I_SIZE_AWARE_KERNEL",
+    "K_NEW_CORES",
+    "L_DISTANT_TRANSFER",
+    "M_K_BAG",
+    "N_GROUP_A_B",
+    "O_DIVERSE_BAG",
+    "P_M_EXPANSION",
+    "Q_K_M_CONSENSUS",
+    "R_SERIES_SEARCH",
+    "S_M_PART1",
+    "T_M_PART2",
+    "U_M_PART3",
+    "V_S_MAIN15",
+    "W_T_MAIN7",
+    "X_T_REST10",
+    "AC_Y4_EXPANSION",
+    "AD_SERIES_EXPLORATION",
+    "AE_K_GROUP10",
+    "AG_K_REST22",
+    "AH_ERG_SCAFFOLD_HOPS",
+    "AS_GK_3D_SERIES_PORTFOLIO"
+  ],
+  "hits": [
+    1.0,
+    25.0,
+    1.0,
+    14.0,
+    1.0,
+    21.0,
+    8.0,
+    4.0,
+    2.0,
+    3.0,
+    1.0,
+    13.0,
+    6.0,
+    2.0,
+    13.0,
+    5.0,
+    1.0,
+    1.0,
+    2.0,
+    8.0,
+    6.0,
+    2.0,
+    1.0
+  ],
+  "warning": "In-sample diagnostics only. Scores learned on adaptively selected molecules are not calibrated binding probabilities.",
+  "test_feedback_use": "50 T1 negatives included with weight 3; user explicitly confirmed revisions are permitted."
+}

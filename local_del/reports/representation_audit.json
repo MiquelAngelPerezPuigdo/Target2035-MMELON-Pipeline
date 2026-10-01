@@ -1,0 +1,30 @@
+{
+  "forced_examples": 311,
+  "positives": 7,
+  "representations": {
+    "ECFP4": {
+      "average_precision": 0.9999999999999999,
+      "roc_auc": 1.0,
+      "positive_score_mean": 0.599553108215332,
+      "negative_score_mean": 0.1566716730594635
+    },
+    "FCFP4_plus_descriptors": {
+      "average_precision": 0.33157156076226313,
+      "roc_auc": 0.7932330827067668,
+      "positive_score_mean": 0.9975059628486633,
+      "negative_score_mean": 0.981722891330719
+    },
+    "ErG_pharmacophore": {
+      "average_precision": 0.9617346938775511,
+      "roc_auc": 0.9990601503759399,
+      "positive_score_mean": 0.8752411603927612,
+      "negative_score_mean": 0.42737969756126404
+    },
+    "ChemBERTa_mean_pool": {
+      "average_precision": 1.0,
+      "roc_auc": 1.0,
+      "positive_score_mean": 0.9342575669288635,
+      "negative_score_mean": 0.7826964855194092
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "structural_label_conflicts_removed": 15,
+  "eligible_rows": 193091,
+  "unobserved_library_policy": "Exclude enumerated background from libraries absent from supplied target selection; retain directly observed NTC controls.",
+  "heldout_rule": "SHA256(non-chiral Bemis-Murcko scaffold) modulo 5 == 0; no held-out scaffolds in training",
+  "warning": "DEL-derived labels are noisy proxies; these metrics do not estimate ASMS hit rates.",
+  "validation_labels_used": false,
+  "models": {
+    "ecfp": {
+      "n": 38579,
+      "positive_n": 5384,
+      "prevalence": 0.13955779050778921,
+      "roc_auc": 0.9691226614223172,
+      "average_precision": 0.8983392514596743,
+      "precision_at_50": 1.0,
+      "precision_at_500": 1.0,
+      "iterations": 900,
+      "training_rows": 62460,
+      "training_positives": 20820
+    },
+    "fcfp": {
+      "n": 38654,
+      "positive_n": 5459,
+      "prevalence": 0.14122729859781652,
+      "roc_auc": 0.962932320439588,
+      "average_precision": 0.8888568166113404,
+      "precision_at_50": 1.0,
+      "precision_at_500": 0.998,
+      "iterations": 900,
+      "training_rows": 105530,
+      "training_positives": 21106
+    }
+  }
+}

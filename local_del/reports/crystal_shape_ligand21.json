@@ -1,0 +1,10 @@
+{
+  "crystal_ligand": 21,
+  "shortlist": 6983,
+  "successful": 6983,
+  "median_conformers": 4.0,
+  "usrcat_max": 0.3521061303871926,
+  "usrcat_median": 0.19286192950809697,
+  "workers": 10,
+  "conformers_requested": 4
+}

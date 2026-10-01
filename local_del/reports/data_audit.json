@@ -1,0 +1,17 @@
+{
+  "seed": 2035,
+  "deduplicated_rows": 7487569,
+  "strict_positives": 26466,
+  "broad_positives": 26829,
+  "selection_negative_pool": 7216209,
+  "positive_ntc_presence_overlap": 35,
+  "training_rows": 203419,
+  "sources": {
+    "library_unlabeled": 59289,
+    "ntc_presence": 30000,
+    "selection_negative": 87301,
+    "selection_positive": 26829
+  },
+  "supplement_handling": "Presence flag only; observed only in NTC used as downweighted negatives; overlapping positives retained at reduced weight.",
+  "enumeration_handling": "10 random row groups/library, weighted by group size, 500 rows/group. Absent from selection and NTC treated as weak unlabeled negatives."
+}

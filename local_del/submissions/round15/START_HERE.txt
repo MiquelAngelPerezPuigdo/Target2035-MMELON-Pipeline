@@ -1,0 +1,4 @@
+Round 15 - submit AK_AI_HIT_SPLIT2 only to VALIDATION.
+
+Send back the result before submitting anything else.
+Twelve validations remain before this submission; eleven afterward.

@@ -1,0 +1,45 @@
+{
+  "recovered_on": "2026-10-01",
+  "segments": [
+    {
+      "thread_id": "01a08ef6-a48f-7163-9e7d-82474551ff91",
+      "source_path": "/Users/perezmi/.codex/sessions/2026/09/11/rollout-2026-09-11T07-35-23-01a08ef6-a48f-7163-9e7d-82474551ff91.jsonl",
+      "source_sha256": "e62db1a7d6166afa8f771bb1ba9b277c7f39fecbd1b2075495c3efafee606cd2",
+      "export_path": ".local/chats/rollout-2026-09-11T07-35-23-01a08ef6-a48f-7163-9e7d-82474551ff91.txt",
+      "export_sha256": "e53b635d49b9ad398c2d355e823ca433c89a55300cede79a0ee19aced4a8508e",
+      "messages": 85,
+      "first_timestamp": "2026-09-11T05:35:25.416Z",
+      "last_timestamp": "2026-09-11T10:25:35.683Z"
+    },
+    {
+      "thread_id": "01a08ef6-a48f-7163-9e7d-82474551ff91",
+      "source_path": "/Users/perezmi/.codex/sessions/2026/09/11/rollout-2026-09-11T12-26-40-01a08ef6-a48f-7163-9e7d-82474551ff91_01a09001-51d5-7c53-9f8e-35ace0044b5f.jsonl",
+      "source_sha256": "32a0e0cdd83cb23e96ec25d86c63c76114491cfc94c01dbc636047f6f71b606d",
+      "export_path": ".local/chats/rollout-2026-09-11T12-26-40-01a08ef6-a48f-7163-9e7d-82474551ff91_01a09001-51d5-7c53-9f8e-35ace0044b5f.txt",
+      "export_sha256": "6857c98d2ac0e3c3c3e44ff3d497febac99d6724c6eb877b1df21f72f6c618ba",
+      "messages": 9,
+      "first_timestamp": "2026-09-11T10:26:42.533Z",
+      "last_timestamp": "2026-09-11T10:41:22.625Z"
+    },
+    {
+      "thread_id": "01a08ef6-a48f-7163-9e7d-82474551ff91",
+      "source_path": "/Users/perezmi/.codex/sessions/2026/09/11/rollout-2026-09-11T12-42-06-01a08ef6-a48f-7163-9e7d-82474551ff91_01a0900f-735e-7933-abe2-d6eb65d67ea0.jsonl",
+      "source_sha256": "b27c143b5e5205eb20f1b93b9b6b235c39196376daf691a161bc8d4896126769",
+      "export_path": ".local/chats/rollout-2026-09-11T12-42-06-01a08ef6-a48f-7163-9e7d-82474551ff91_01a0900f-735e-7933-abe2-d6eb65d67ea0.txt",
+      "export_sha256": "a5f15573cd4f846ce937398c489ce5bdb4ba33bd2d8d1dd46801e3745977383b",
+      "messages": 49,
+      "first_timestamp": "2026-09-11T10:42:08.623Z",
+      "last_timestamp": "2026-09-11T12:30:34.868Z"
+    },
+    {
+      "thread_id": "01a08ef6-a48f-7163-9e7d-82474551ff91",
+      "source_path": "/Users/perezmi/.codex/sessions/2026/09/11/rollout-2026-09-11T14-30-54-01a08ef6-a48f-7163-9e7d-82474551ff91_01a09073-0f8c-7820-a235-3e3cacd0ffa7.jsonl",
+      "source_sha256": "ef1b458a077127bb627630325b392d21a2cd30b95ea20b835211094f218f3578",
+      "export_path": ".local/chats/rollout-2026-09-11T14-30-54-01a08ef6-a48f-7163-9e7d-82474551ff91_01a09073-0f8c-7820-a235-3e3cacd0ffa7.txt",
+      "export_sha256": "babf635db5b9b00da38219f907a7f5e93ecf76e6715bacd9c924f61efafffdb3",
+      "messages": 41,
+      "first_timestamp": "2026-09-11T12:30:57.208Z",
+      "last_timestamp": "2026-09-11T14:18:04.914Z"
+    }
+  ]
+}

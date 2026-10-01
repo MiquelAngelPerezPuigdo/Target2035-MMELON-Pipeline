@@ -1,0 +1,25 @@
+{
+  "round": 20,
+  "submissions": [
+    "Team_MMELON_R20_AT_TESTSTYLE_CONSENSUS",
+    "Team_MMELON_R20_AU_TESTSTYLE_SERIES_PORTFOLIO"
+  ],
+  "AT_method": "Hit-focused consensus of G, weak validation labels, K and DEL ML",
+  "AU_method": "Series-focused quotas across G, weak labels, K, O, AD and DEL ML",
+  "AU_quotas": {
+    "G": 14,
+    "weak": 12,
+    "K": 10,
+    "O": 6,
+    "AD": 5,
+    "DEL": 3
+  },
+  "weak_references": 182,
+  "overlap": 0,
+  "sha256": {
+    "Team_MMELON_R20_AT_TESTSTYLE_CONSENSUS.txt": "30f1c9edfa5fb262e2eea91bdc1ff9cd5e6a9be8296b93c494e1936cf2d920d1",
+    "Team_MMELON_R20_AU_TESTSTYLE_SERIES_PORTFOLIO.txt": "d3c749e4dfd7d637a77d31973b2d6256c7a9f86b91242b32332532b6ba4b9c88"
+  },
+  "remaining_before": 3,
+  "remaining_after": 1
+}

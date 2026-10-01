@@ -1,0 +1,58 @@
+{
+  "round": 6,
+  "feedback": {
+    "M": {
+      "hits": 21,
+      "clusters": 2
+    },
+    "N": {
+      "hits": 8,
+      "clusters": 2
+    },
+    "O": {
+      "hits": 4,
+      "clusters": 3
+    }
+  },
+  "individual_labels_inferred": false,
+  "strategy": {
+    "P": "Fresh nearest-supported analogues of M, which yielded 21/50.",
+    "Q": "Fresh candidates supported by both K-minus-J (21/39) and M (21/50), using geometric-mean support.",
+    "R": "Fresh scaffold-diverse candidates supported by M/N/O, weighted 30/25/45 toward observed series breadth."
+  },
+  "warning": "Aggregate hit bags remain ambiguously labelled. RDKit diversity groups are not organizer assay clusters.",
+  "sets": {
+    "P_M_EXPANSION": {
+      "file": "Team_MMELON_R06_P_M_EXPANSION.txt",
+      "sha256": "00d5166789c0e28175c75238557e3f07b9cc30b89ca1224119232eac4c2bb77d",
+      "unique_Murcko_scaffolds": 34,
+      "median_score": 0.5540671348571777
+    },
+    "Q_K_M_CONSENSUS": {
+      "file": "Team_MMELON_R06_Q_K_M_CONSENSUS.txt",
+      "sha256": "7448c98898d2488e8ece83b0f6a5fc5fadf6b2f083d26bd578fc9808d1bc7788",
+      "unique_Murcko_scaffolds": 43,
+      "median_score": 0.4595225155353546
+    },
+    "R_SERIES_SEARCH": {
+      "file": "Team_MMELON_R06_R_SERIES_SEARCH.txt",
+      "sha256": "485b4021dfa210445e2cc8d67e9fa41278f686bbc82f531d59b1f3aef743acfa",
+      "unique_Murcko_scaffolds": 44,
+      "median_score": 0.47037750482559204
+    }
+  },
+  "overlap": {
+    "P_M_EXPANSION__Q_K_M_CONSENSUS": 0,
+    "P_M_EXPANSION__R_SERIES_SEARCH": 0,
+    "Q_K_M_CONSENSUS__R_SERIES_SEARCH": 0
+  },
+  "previously_submitted_excluded": 597,
+  "remaining_before": 33,
+  "remaining_after": 30,
+  "distinct_new_candidates": 150,
+  "verification": [
+    "150 new valid mutually-disjoint CatalogIDs",
+    "50 unique parent structures per file",
+    "No individual hit identities assumed"
+  ]
+}

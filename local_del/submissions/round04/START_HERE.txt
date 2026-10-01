@@ -1,0 +1,7 @@
+Round 4 — VALIDATION only. Submit all three Team_MMELON_R04_*.txt files separately.
+
+J: fresh predictions from ligand 47.
+K: predictions with different cores (no quinazoline).
+L: predictions distant from the original successful set and reference ligands.
+
+These are deliberately harder transfer tests. None of the selected IDs occurred in our earlier submissions. Lower hit counts are possible; report hits AND clusters for J/K/L. We are preserving the successful G method unchanged. No test submission has been made. 39 validations before this batch; 36 after.

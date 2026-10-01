@@ -1,0 +1,87 @@
+{
+  "test_activity_labels_accessed": false,
+  "test_submissions_made": 0,
+  "meaning": "Unlabelled chemistry coverage only; not an estimate of test hits or successful scaffold transfer.",
+  "method": "Frozen round03 G: 95% verified-ligand similarity, 5% DEL-trained ECFP ensemble",
+  "reference_order": [
+    "PGK2_cmp21",
+    "PGK2_cmp47"
+  ],
+  "validation": {
+    "rows": 244328,
+    "top50": {
+      "anchor_preference_counts": [
+        36,
+        14
+      ],
+      "max_ECFP_similarity_quantiles": {
+        "min": 0.2795698940753937,
+        "q25": 0.3048780560493469,
+        "median": 0.32163383066654205,
+        "q75": 0.35048701614141464,
+        "max": 0.5625
+      },
+      "quinazoline_core_count": 35,
+      "unique_Murcko_scaffolds": 43,
+      "score_range": [
+        0.3197458549316494,
+        0.5881505846863052
+      ]
+    },
+    "full_library_similarity_counts": {
+      "0.3": 45,
+      "0.35": 14,
+      "0.4": 4,
+      "0.45": 3,
+      "0.5": 3
+    },
+    "full_library_similarity_fractions": {
+      "0.3": 0.00018417864510002948,
+      "0.35": 5.730002292000917e-05,
+      "0.4": 1.637143512000262e-05,
+      "0.45": 1.2278576340001965e-05,
+      "0.5": 1.2278576340001965e-05
+    }
+  },
+  "test": {
+    "rows": 184632,
+    "top50": {
+      "anchor_preference_counts": [
+        19,
+        31
+      ],
+      "max_ECFP_similarity_quantiles": {
+        "min": 0.23863635957241058,
+        "q25": 0.2839856967329979,
+        "median": 0.30337077379226685,
+        "q75": 0.31750359386205673,
+        "max": 0.3611111044883728
+      },
+      "quinazoline_core_count": 14,
+      "unique_Murcko_scaffolds": 32,
+      "score_range": [
+        0.3071067125238581,
+        0.41118756479639207
+      ]
+    },
+    "full_library_similarity_counts": {
+      "0.3": 33,
+      "0.35": 3,
+      "0.4": 0,
+      "0.45": 0,
+      "0.5": 0
+    },
+    "full_library_similarity_fractions": {
+      "0.3": 0.0001787339139477447,
+      "0.35": 1.6248537631613156e-05,
+      "0.4": 0.0,
+      "0.45": 0.0,
+      "0.5": 0.0
+    }
+  },
+  "exact_Murcko_overlap_between_top50": 0,
+  "note": "Our Murcko scaffold counts are not the organizers chemical-series assignments. Test top50 is an audit snapshot, not a submission recommendation.",
+  "method_defined_before_result": true,
+  "method_archived_after_result": true,
+  "frozen_model_weights_verified_identical": true
+}

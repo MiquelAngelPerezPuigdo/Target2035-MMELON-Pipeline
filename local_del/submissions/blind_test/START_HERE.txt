@@ -1,0 +1,5 @@
+Submit the two Team_MMELON_*.csv files separately to the BLIND TEST queue.
+Each contains all 184,632 test IDs, scores for every row, and exactly 50 Sel_50=1 flags.
+T1 preserves frozen G. T2 adds modest exact-active transfer and structural diversity.
+Do not submit detail CSVs or the ZIP itself. Both files are prepared locally; neither has been uploaded or submitted.
+No Boltz credits were spent. Scores are uncalibrated confidence rankings.

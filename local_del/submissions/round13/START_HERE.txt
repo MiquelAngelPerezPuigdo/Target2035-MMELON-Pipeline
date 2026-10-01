@@ -1,0 +1,4 @@
+Round 13 - submit AI_CHEMBERTA_OOD only to VALIDATION.
+
+This is one 50-compound ChemBERTa OOD probe. Report hits, clusters, and p-value.
+Fourteen validation submissions remain before this submission; thirteen afterward.

@@ -1,0 +1,11 @@
+# Versions recovered from the existing Python 3.9 environment on 2026-10-01.
+# These describe phase-one replay, not a recommendation to upgrade another env.
+numpy==2.0.2
+pandas==2.3.3
+polars==1.36.1
+pyarrow==21.0.0
+scipy==1.13.1
+scikit-learn==1.6.1
+rdkit==2025.9.2
+torch==2.8.0
+lightgbm==4.6.0

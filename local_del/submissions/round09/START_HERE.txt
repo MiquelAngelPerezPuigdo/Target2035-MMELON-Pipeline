@@ -1,0 +1,3 @@
+Round 9 — submit Y, Z and AA separately to VALIDATION.
+
+These three files exactly partition the ten real candidates in X, which had one hit. The other rows are proven-zero J fillers. Therefore Y+Z+AA must equal one hit, and exactly one set should contain one cluster. Report results in Y/Z/AA order. 24 validations remain before this batch; 21 afterward.

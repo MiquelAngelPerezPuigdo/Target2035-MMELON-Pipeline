@@ -1,0 +1,20 @@
+[
+  {
+    "name": "PGK2_cmp21",
+    "SMILES": "CN(CCCc1[nH]nc(N)c1C#N)c1nc(-c2cccnc2)nc2ccccc12",
+    "nonchiral_SMILES": "CN(CCCc1[nH]nc(N)c1C#N)c1nc(-c2cccnc2)nc2ccccc12",
+    "heavy_atoms": 29,
+    "MW": 384.4470000000001,
+    "verification": "Manual figure transcription checked by full heavy-atom graph match to deposited ligand; bond orders assigned from template; stereochemistry from coordinates",
+    "source": "https://cache-challenge.org/challenges/finding-selective-inhibitors-of-phosphoglycerate-kinase-2"
+  },
+  {
+    "name": "PGK2_cmp47",
+    "SMILES": "CNC(=O)C[C@H](Nc1nc(-c2cncc(OC)c2)nc2cc(OC)c(OC)cc12)c1ccc(C#N)cc1",
+    "nonchiral_SMILES": "CNC(=O)CC(Nc1nc(-c2cncc(OC)c2)nc2cc(OC)c(OC)cc12)c1ccc(C#N)cc1",
+    "heavy_atoms": 37,
+    "MW": 498.5430000000001,
+    "verification": "Manual figure transcription checked by full heavy-atom graph match to deposited ligand; bond orders assigned from template; stereochemistry from coordinates",
+    "source": "https://cache-challenge.org/challenges/finding-selective-inhibitors-of-phosphoglycerate-kinase-2"
+  }
+]

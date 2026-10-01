@@ -1,0 +1,108 @@
+{
+  "round": 3,
+  "validation_rows_scored": 244328,
+  "candidate_prescreen": false,
+  "GPU": {
+    "device": "Apple MPS GPU",
+    "validation_rows": 244328,
+    "reference_rows": 26544,
+    "control_rows": 2022,
+    "batch_rows": 8192,
+    "peak_driver_allocated_bytes": 12061442048,
+    "gpu_memory_limit_bytes": 14302248960,
+    "seconds": 50.1782488822937,
+    "full_candidate_arrays_resident_on_gpu": true,
+    "verification": "8 native RDKit kernel checks (4 random molecules x 2 fingerprints) passed",
+    "positive_weighting": "Read-count reliability capped at 4; inverse-square-root library balance capped 0.4..3; normalized over full bank",
+    "channels": [
+      "positive_Tanimoto_power4",
+      "public_Tanimoto_power4",
+      "positive_Tversky_power8",
+      "public_Tversky_power8",
+      "control_Tanimoto_power4",
+      "control_Tversky_power8",
+      "control_Tversky_max"
+    ]
+  },
+  "sets": {
+    "G_KNOWN_LIGANDS": {
+      "file": "Team_MMELON_R03_G_KNOWN_LIGANDS.txt",
+      "sha256": "f5e4a11dfca8aa305d4e4b98762821bc4f828591d8d41e73f861d7e609b9632c",
+      "unique_scaffolds": 43,
+      "replaced_known_zero_ids_from_raw_top50": 0,
+      "new_candidates": 50,
+      "overlap_with_previous_sets": {
+        "Team_MMELON_R01_A_ECFP.txt": 0,
+        "Team_MMELON_R01_B_FCFP.txt": 0,
+        "Team_MMELON_R01_C_NEIGHBORS.txt": 0,
+        "Team_MMELON_R02_D_STRUCTURAL.txt": 0,
+        "Team_MMELON_R02_E_CHEMICAL_FEATURES.txt": 0,
+        "Team_MMELON_R02_F_CONTROL_CONTRAST.txt": 0
+      }
+    },
+    "H_SELECTIVE_DEL": {
+      "file": "Team_MMELON_R03_H_SELECTIVE_DEL.txt",
+      "sha256": "fca860ded32ecfc03122dd2f22b40dba2d127bf94f870dcc63d63f924d6c8d54",
+      "unique_scaffolds": 44,
+      "replaced_known_zero_ids_from_raw_top50": 4,
+      "new_candidates": 50,
+      "overlap_with_previous_sets": {
+        "Team_MMELON_R01_A_ECFP.txt": 0,
+        "Team_MMELON_R01_B_FCFP.txt": 0,
+        "Team_MMELON_R01_C_NEIGHBORS.txt": 0,
+        "Team_MMELON_R02_D_STRUCTURAL.txt": 0,
+        "Team_MMELON_R02_E_CHEMICAL_FEATURES.txt": 0,
+        "Team_MMELON_R02_F_CONTROL_CONTRAST.txt": 0
+      }
+    },
+    "I_SIZE_AWARE_KERNEL": {
+      "file": "Team_MMELON_R03_I_SIZE_AWARE_KERNEL.txt",
+      "sha256": "c9b6b195861548f7e3d6a0a0981114d4dc419e5c4ae40955b6e7e2f502a34372",
+      "unique_scaffolds": 40,
+      "replaced_known_zero_ids_from_raw_top50": 5,
+      "new_candidates": 47,
+      "overlap_with_previous_sets": {
+        "Team_MMELON_R01_A_ECFP.txt": 0,
+        "Team_MMELON_R01_B_FCFP.txt": 0,
+        "Team_MMELON_R01_C_NEIGHBORS.txt": 3,
+        "Team_MMELON_R02_D_STRUCTURAL.txt": 0,
+        "Team_MMELON_R02_E_CHEMICAL_FEATURES.txt": 0,
+        "Team_MMELON_R02_F_CONTROL_CONTRAST.txt": 0
+      }
+    }
+  },
+  "overlap": {
+    "G_KNOWN_LIGANDS__H_SELECTIVE_DEL": 0,
+    "G_KNOWN_LIGANDS__I_SIZE_AWARE_KERNEL": 0,
+    "H_SELECTIVE_DEL__I_SIZE_AWARE_KERNEL": 30
+  },
+  "feedback_policy": "Exclude 196 IDs in five user-reported zero-hit submissions from validation selection only. No candidate is labelled positive from the one-hit aggregate result. Raw model rankings are preserved.",
+  "external_data_used": true,
+  "external_sources": [
+    "https://cache-challenge.org/challenges/finding-selective-inhibitors-of-phosphoglycerate-kinase-2"
+  ],
+  "warning": "Adaptive validation experiments, not independent evidence of blind-test improvement. External public DEL candidates are not off-DNA confirmed hits. No quinazoline exclusion is imported from the separate CACHE #7 challenge.",
+  "quota_before_submission": 42,
+  "quota_after_three_submissions": 39,
+  "score_formulas": {
+    "G": "0.95 * max over crystal ligands [0.65 ECFP Tanimoto + 0.20 FCFP Tanimoto + 0.15 ECFP Tversky(1,0.2)] + 0.05 DEL-trained ECFP ensemble",
+    "H": "70% ECFP + 30% FCFP; each is 60% log(public-selective TV^8 density / control TV^8 density) + 40% log(public-selective Tanimoto^4 density / control Tanimoto^4 density)",
+    "I": "70% ECFP + 30% FCFP; each is 65% log(weighted-positive TV^8 density / control TV^8 density) + 35% log(weighted-positive Tanimoto^4 density / control Tanimoto^4 density)",
+    "density_floor": "1e-8 added to numerator and denominator; scores are not calibrated probabilities"
+  },
+  "distinct_candidates": 120,
+  "new_candidates": 117,
+  "verification": [
+    "Full candidate coverage; finite GPU-derived scores",
+    "GPU densities checked against CPU RDKit on 16 fingerprint/molecule pairs",
+    "Exactly three files of 50 valid unique CatalogIDs and distinct parent structures",
+    "All 196 previously zero-hit IDs excluded from selected validation sets"
+  ],
+  "provenance": {
+    "round03.py": "a6758e3a52c7751e31ff0e7053f47b67dbf0d16f475bcd5951413837c43ffce5",
+    "gpu_kernel.py": "7991ee1ec0da36d1be0ca25a1d85a822522aed7118e6517aaf02e4e54acc5dc0",
+    "deep_audit.py": "44ea123504c5bc75d14577435b6e4763754485a7f9e1ed23d701b0da65f1905d",
+    "external/pgk2/verified_ligands.json": "77f599a04e54376ef0d2aa673c675138ae9fc324b20735f276e43a8eecfa22e4",
+    "external/pgk2/DEL_hit_candidates_1.csv": "52d8d3fdcfbfa04b56b6f8a8ecdedecf02dc5883031c5cff8bf79268bc86df0c"
+  }
+}

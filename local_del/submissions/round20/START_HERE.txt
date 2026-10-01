@@ -1,0 +1,4 @@
+Round 20 - submit AT and AU to VALIDATION in filename order.
+
+AT rehearses the hit-focused blind-test model. AU rehearses the series-diverse model. Send both results back in AT/AU order.
+Three validations remain before these files; one afterward.

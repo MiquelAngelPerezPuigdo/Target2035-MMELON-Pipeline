@@ -1,0 +1,42 @@
+{
+  "source_rows": 184632,
+  "source_sha256": "be2de34a65e1efbe9fe17b228d8713806855dee547af1e8e3896e9169b33795f",
+  "test_labels_accessed": false,
+  "test_submissions_made": 0,
+  "boltz_spend_usd": 0,
+  "files": {
+    "Team_MMELON_T1_FROZEN_G.csv": {
+      "rows": 184632,
+      "selected": 50,
+      "unique_Murcko_scaffolds": 32,
+      "sha256": "9ec414f4a2fc369d93665e7b4c97a65ee8ac84a9a60a285510482b030d9ca484"
+    },
+    "Team_MMELON_T2_DIVERSE_TRANSFER.csv": {
+      "rows": 184632,
+      "selected": 50,
+      "unique_Murcko_scaffolds": 48,
+      "sha256": "3be351e897e5ba1c866356851a59ae4ab2a68593096c7af0112cf194cfa5251f"
+    }
+  },
+  "methods": {
+    "T1": "0.95 * original two-ligand similarity + 0.05 * frozen DEL ensemble; top 50 unique parent structures",
+    "T2": "0.80 * T1 score + 0.20 * max ECFP similarity to eight forced positives; selected pairwise ECFP <0.60 and at most two per Murcko scaffold"
+  },
+  "limitations": [
+    "Scores are ranking confidences, not calibrated binding probabilities.",
+    "T2 weights and diversity constraints are heuristic, not independently validated.",
+    "Murcko scaffold diversity does not equal organizer chemical-series diversity.",
+    "Validation feedback was adaptively reused; it cannot estimate blind-test performance."
+  ],
+  "selected_overlap": 23,
+  "confirmed_positive_references": [
+    "Z1514105447",
+    "Z212146278",
+    "Z31246568",
+    "Z31198918",
+    "Z204004646",
+    "Z1192168518",
+    "Z90130869",
+    "Z211300696"
+  ]
+}

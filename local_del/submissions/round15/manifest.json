@@ -1,0 +1,14 @@
+{
+  "round": 15,
+  "submission": "AK_AI_HIT_SPLIT2",
+  "purpose": "Second adaptive split to locate the one round-13 hit",
+  "diagnostic_candidates": 12,
+  "confirmed_negative_fillers": 38,
+  "interpretation": {
+    "0 hits": "The active molecule is among the other 13 round-14 candidates",
+    "1 hit": "The active molecule is among these 12 diagnostic candidates"
+  },
+  "sha256": "64b1392081de96decaca0f95c065fb22847b984ebe7abc1a6e4227af7e299f3f",
+  "remaining_before": 12,
+  "remaining_after": 11
+}

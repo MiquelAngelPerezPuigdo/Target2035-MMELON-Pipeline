@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "validation": {
+    "bags": 48,
+    "unique_submitted": 1247,
+    "forced_positive": 8,
+    "forced_negative": 628,
+    "unresolved_submitted": 611
+  },
+  "checks": [
+    "21 original ZIP archives and 48 lists of 50 unique IDs",
+    "No contradictory aggregate counts; exported individual deductions match",
+    "Original validation and test ID universes",
+    "Two full test CSVs, finite scores, 50 selections each, zero overlap",
+    "100 user-reported selected test negatives",
+    "Seven frozen round-three hashes and all copied asset hashes",
+    "Scaffold separation, fingerprint parity, four saved-model prediction replays"
+  ],
+  "mode": "full",
+  "models": {
+    "models_replayed": 4,
+    "sample_per_model": 100,
+    "eligible_training_rows": 193091,
+    "scaffold_overlap": 0,
+    "fingerprint_parity": "passed"
+  },
+  "checked_on": "2026-10-01",
+  "copied_files_verified": 368,
+  "source_workspace_modified": false
+}

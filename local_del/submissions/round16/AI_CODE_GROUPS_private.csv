@@ -1,0 +1,13 @@
+code_group,CatalogID,anchor,SMILES,consensus_percentile
+A,Z1993862266,AD_2hits_2series,Cc1sc2ncnc(SCc3ncnn3CCF)c2c1C,0.99645555
+A,Z1514105447,G_25hits_3series,c1cncc(-c2nc(NC3C4CCOC4C34CCCC4)c3ccccc3n2)c1,0.9997053
+A,Z31254272,K_21hits_2series,CCCNc1nc(CN2CCCC2)nc2sc(C)c(C)c12,0.9973601
+B,Z2974918065,AF_7confirmed,c1nc(N2CCCC(c3nc4c(s3)CCC4)C2)c2cn[nH]c2n1,0.99979126
+B,Z4661331921,G_25hits_3series,c1ccc(-c2nc(NCc3nnc(C4CCOC4)[nH]3)c3ccsc3n2)nc1,0.9971104
+B,Z2384709145,K_21hits_2series,N#Cc1ncccc1NC[C@@H]1CCCO[C@H]1c1cn[nH]c1,0.9936642
+C,Z64632059,AF_7confirmed,c1nc(Sc2nnc(CN3CCCC3)o2)c2c3c(sc2n1)CCCC3,0.998281
+C,Z1137689680,G_25hits_3series,Nc1nc(CSC2CCCCNC2=O)nc2ccccc12,0.9844512
+C,Z367557450,O_4hits_3series,c1csc(-c2noc(CN3CCCC(c4nc5ccccc5o4)C3)n2)c1,0.99969715
+D,Z194421928,AF_7confirmed,Nc1nc(CSc2nnnn2C2CCCC2)nc2sc3c(c12)CCCCC3,0.99618953
+D,Z1626099971,K_21hits_2series,c1ccc(-c2cn(C3CN(c4ncnc5sc6c(c45)CCC6)C3)nn2)cc1,0.9990136
+D,Z1139738872,O_4hits_3series,c1csc(-c2noc(CN3CCc4c(ncn4C4CC4)C3)n2)c1,0.99861664

@@ -1,0 +1,101 @@
+{
+  "diagnostics": [
+    {
+      "kind": "ecfp",
+      "heldout_bag": "G_KNOWN_LIGANDS",
+      "observed_hits": 25,
+      "sum_scores": 4.712157115308421,
+      "remaining_constraints": 22,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "ecfp",
+      "heldout_bag": "K_NEW_CORES",
+      "observed_hits": 21,
+      "sum_scores": 9.633857911095065,
+      "remaining_constraints": 19,
+      "remaining_exact_positives": 1
+    },
+    {
+      "kind": "ecfp",
+      "heldout_bag": "O_DIVERSE_BAG",
+      "observed_hits": 4,
+      "sum_scores": 3.7377769434148997,
+      "remaining_constraints": 22,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "ecfp",
+      "heldout_bag": "AI_CHEMBERTA_OOD",
+      "observed_hits": 1,
+      "sum_scores": 1.9489625700049578,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 7
+    },
+    {
+      "kind": "ecfp",
+      "heldout_bag": "AP_EXACT_HIT_ANALOGS",
+      "observed_hits": 0,
+      "sum_scores": 2.8205119243658117,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "ecfp",
+      "heldout_bag": "AQ_EXACT_HIT_SCAFFOLD_HOPS",
+      "observed_hits": 0,
+      "sum_scores": 0.6700993492271533,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "G_KNOWN_LIGANDS",
+      "observed_hits": 25,
+      "sum_scores": 6.019734618949439,
+      "remaining_constraints": 22,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "K_NEW_CORES",
+      "observed_hits": 21,
+      "sum_scores": 11.316072495542125,
+      "remaining_constraints": 19,
+      "remaining_exact_positives": 1
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "O_DIVERSE_BAG",
+      "observed_hits": 4,
+      "sum_scores": 3.5341079576801957,
+      "remaining_constraints": 22,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "AI_CHEMBERTA_OOD",
+      "observed_hits": 1,
+      "sum_scores": 1.6090831029604427,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 7
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "AP_EXACT_HIT_ANALOGS",
+      "observed_hits": 0,
+      "sum_scores": 2.8971007003102742,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 8
+    },
+    {
+      "kind": "fcfp",
+      "heldout_bag": "AQ_EXACT_HIT_SCAFFOLD_HOPS",
+      "observed_hits": 0,
+      "sum_scores": 0.827696891519702,
+      "remaining_constraints": 23,
+      "remaining_exact_positives": 8
+    }
+  ],
+  "limitation": "Bag-disjoint labels, but adaptively collected data and related chemistry remain. Sum scores is not a calibrated count forecast."
+}

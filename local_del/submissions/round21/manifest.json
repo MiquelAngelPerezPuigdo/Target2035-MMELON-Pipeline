@@ -1,0 +1,14 @@
+{
+  "round": 21,
+  "submission": "AV_AS_KLIKE_HALF",
+  "purpose": "Use the final validation to locate AS's one hit in the K-like or ligand/shape half",
+  "diagnostic_candidates": 25,
+  "confirmed_negative_fillers": 25,
+  "interpretation": {
+    "1 hit": "Favor the K/learned branch in blind-test scoring",
+    "0 hits": "Favor the compound-21 ligand/ErG branch; the AS hit is in the complementary half"
+  },
+  "sha256": "4be1e043c511316f60844c0db1447d780ab9ee5faeb2dd75e35c165eec6fefb2",
+  "remaining_before": 1,
+  "remaining_after": 0
+}

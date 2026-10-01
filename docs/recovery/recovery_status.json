@@ -1,0 +1,31 @@
+{
+  "recovered_on": "2026-10-01",
+  "source_workspace": "/Users/perezmi/.codex/.chatgpt-projects/g-p-6aa392213d008191a42dc240e16bc733/local_del",
+  "original_workspace_unchanged": true,
+  "validation_rounds": 21,
+  "validation_lists_with_reported_results": 48,
+  "evaluated_test_lists": 2,
+  "blind_selected_hits": 0,
+  "quota_correction": "The original remaining_now=0 is an obsolete estimate. The final chat corrected the official phase allowance to 100; exact account history is unreconciled.",
+  "extra_50_validation_lists": "Requested in final chat; no completed lists or outcomes found in recovered workspace.",
+  "known_stale_artifacts": [
+    "quota_estimate in official_results.json",
+    "README and START_HERE text snapshots",
+    "prepared-not-submitted statuses in old verification files"
+  ],
+  "excluded_from_copy": [
+    "mmelon_env",
+    "vendor/biomed-multi-view-src",
+    "__pycache__",
+    ".DS_Store"
+  ],
+  "portable_changes": [
+    "local_del/prepare.py",
+    "local_del/features.py",
+    "local_del/build_blind_test.py",
+    "local_del/export_revised_test.py",
+    "local_del/run_local.sh"
+  ],
+  "original_readme_preserved_as": "docs/archive/LOCAL_DEL_README.md",
+  "phase_two_started": false
+}

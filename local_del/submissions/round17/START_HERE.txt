@@ -1,0 +1,4 @@
+Round 17 - submit AN and AO to VALIDATION in filename order.
+
+Send both hit counts back in the same AN/AO order. The pair identifies the exact active molecule.
+Nine validations remain before these files; seven afterward.

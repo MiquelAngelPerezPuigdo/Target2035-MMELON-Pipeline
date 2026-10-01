@@ -1,0 +1,5 @@
+Round 7 — diagnostic VALIDATION batch. Submit S, T and U separately.
+
+Together they partition all 50 molecules from M, which contained 21 hits. Each is padded to 50 using molecules from J, which had zero hits. Therefore S+T+U must equal 21 hits. Chemistry groups were kept together where possible.
+
+This batch identifies which portions of M carry the active series; it does not test new molecules. Report hits, clusters and p-values in S/T/U order. 30 validations remain before this batch; 27 afterward.

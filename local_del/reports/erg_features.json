@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rows": 244328,
+    "features": 315,
+    "seconds": 25.5211398601532,
+    "file": "features/validation_erg.npy"
+  },
+  "test": {
+    "rows": 184632,
+    "features": 315,
+    "seconds": 19.0075900554657,
+    "file": "features/test_erg.npy"
+  }
+}

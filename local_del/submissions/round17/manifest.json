@@ -1,0 +1,22 @@
+{
+  "round": 17,
+  "submissions": [
+    "Team_MMELON_R17_AN_AI_SINGLETON_1",
+    "Team_MMELON_R17_AO_AI_SINGLETON_2"
+  ],
+  "purpose": "Identify the exact active molecule among code group A's three candidates",
+  "diagnostic_candidates_per_file": 1,
+  "confirmed_negative_fillers_per_file": 49,
+  "decoding": {
+    "AN=1, AO=0": "Z1514105447",
+    "AN=0, AO=1": "Z1993862266",
+    "AN=0, AO=0": "Z31254272",
+    "AN=1, AO=1": "Contradiction: recheck submission order/results"
+  },
+  "sha256": {
+    "Team_MMELON_R17_AN_AI_SINGLETON_1.txt": "6d27d968105596fa8bd38062544e4f256281f263f969247d7e909db9f2c54afe",
+    "Team_MMELON_R17_AO_AI_SINGLETON_2.txt": "5706a25561fc716b78bb157cb6c3e6fd0ef8e79eedeb6052b57192f30e876e56"
+  },
+  "remaining_before": 9,
+  "remaining_after": 7
+}

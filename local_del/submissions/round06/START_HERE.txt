@@ -1,0 +1,7 @@
+Round 6 — submit P, Q and R separately to VALIDATION.
+
+P: M analogue expansion for hit yield.
+Q: K/M consensus chemistry.
+R: diverse series-search arm weighted toward O's three clusters.
+
+All 150 candidates are new and mutually disjoint. Report hits, clusters and p-values in P/Q/R order. 33 validations remain before this batch; 30 afterward.

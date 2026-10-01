@@ -1,0 +1,61 @@
+{
+  "selection_rows_audited": 7487569,
+  "strict_positive_rows": 26466,
+  "note": "Building-block marginals describe the supplied target-selected export, not enrichment against a sequenced naive library.",
+  "chemical_space": {
+    "DEL_positive": {
+      "MW": {
+        "q10": 469.4809875488281,
+        "median": 583.0479736328125,
+        "q90": 693.8914794921875
+      },
+      "LogP": {
+        "q10": 2.038409948348999,
+        "median": 4.004759788513184,
+        "q90": 6.298379898071289
+      },
+      "TPSA": {
+        "q10": 83.46000671386719,
+        "median": 120.5199966430664,
+        "q90": 157.89999389648438
+      },
+      "RotatableBonds": {
+        "q10": 6.0,
+        "median": 9.0,
+        "q90": 12.0
+      },
+      "HeavyAtoms": {
+        "q10": 34.0,
+        "median": 43.0,
+        "q90": 50.0
+      }
+    },
+    "validation": {
+      "MW": {
+        "q10": 281.7640075683594,
+        "median": 332.3999938964844,
+        "q90": 385.8983154296875
+      },
+      "LogP": {
+        "q10": 1.1018999814987183,
+        "median": 2.439300060272217,
+        "q90": 3.708120107650757
+      },
+      "TPSA": {
+        "q10": 47.779998779296875,
+        "median": 69.22000122070312,
+        "q90": 94.4800033569336
+      },
+      "RotatableBonds": {
+        "q10": 3.0,
+        "median": 4.0,
+        "q90": 6.0
+      },
+      "HeavyAtoms": {
+        "q10": 20.0,
+        "median": 23.0,
+        "q90": 27.0
+      }
+    }
+  }
+}

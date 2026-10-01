@@ -1,0 +1,3 @@
+Round 10 REVISED — submit AB, AC and AD separately to VALIDATION. Do not use an older round10 ZIP.
+
+AB splits Y's four-member one-hit bag into two halves. AC tests 50 new Y-supported analogues. AD searches broadly for additional series using the multi-cluster N/O evidence while avoiding the exhausted S/W core. Report hits, clusters and p-values in AB/AC/AD order. 21 validations remain before this batch; 18 afterward.

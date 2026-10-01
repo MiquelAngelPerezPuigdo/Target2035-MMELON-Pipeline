@@ -1,0 +1,22 @@
+{
+  "device": "Apple MPS GPU",
+  "validation_rows": 244328,
+  "reference_rows": 26544,
+  "control_rows": 2022,
+  "batch_rows": 8192,
+  "peak_driver_allocated_bytes": 12061442048,
+  "gpu_memory_limit_bytes": 14302248960,
+  "seconds": 50.1782488822937,
+  "full_candidate_arrays_resident_on_gpu": true,
+  "verification": "8 native RDKit kernel checks (4 random molecules x 2 fingerprints) passed",
+  "positive_weighting": "Read-count reliability capped at 4; inverse-square-root library balance capped 0.4..3; normalized over full bank",
+  "channels": [
+    "positive_Tanimoto_power4",
+    "public_Tanimoto_power4",
+    "positive_Tversky_power8",
+    "public_Tversky_power8",
+    "control_Tanimoto_power4",
+    "control_Tversky_power8",
+    "control_Tversky_max"
+  ]
+}

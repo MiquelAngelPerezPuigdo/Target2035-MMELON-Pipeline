@@ -1,0 +1,17 @@
+{
+  "signature": "439719b270af360fc4b3ba9a74d6dc85330e507adf1bc0122d65419499a65675",
+  "validation_rows": 244328,
+  "references": 26544,
+  "public_selective_references": 1366,
+  "control_references": 2022,
+  "workers": 8,
+  "seconds": 484.925696849823,
+  "metrics": [
+    "ECFP Tanimoto",
+    "FCFP Tanimoto",
+    "ECFP Tversky alpha=1 beta=.2",
+    "FCFP Tversky alpha=1 beta=.2"
+  ],
+  "verification": "Full row coverage; deterministic replay on 8 random rows; Tversky checked against native RDKit",
+  "new_submissions_created": false
+}

@@ -1,0 +1,17 @@
+{
+  "round": 19,
+  "submissions": [
+    "Team_MMELON_R19_AR_LIGAND21_CRYSTAL_3D",
+    "Team_MMELON_R19_AS_GK_3D_SERIES_PORTFOLIO"
+  ],
+  "AR_method": "Compound-21 crystal USRCAT shape plus original known-ligand and ErG scores",
+  "AS_method": "Scaffold-diverse 3D/ErG portfolio with K-bag ChemBERTa evidence",
+  "shortlist_conformers": 6983,
+  "overlap": 0,
+  "sha256": {
+    "Team_MMELON_R19_AR_LIGAND21_CRYSTAL_3D.txt": "00705c7c50b825ce6e1e133ae2c31381a30d63453f7c0c3ead7646db983f743f",
+    "Team_MMELON_R19_AS_GK_3D_SERIES_PORTFOLIO.txt": "34c52f76fd7bdff34f459e6e3193e8cda79c7886ac306ef054242d587f5f4f02"
+  },
+  "remaining_before": 5,
+  "remaining_after": 3
+}

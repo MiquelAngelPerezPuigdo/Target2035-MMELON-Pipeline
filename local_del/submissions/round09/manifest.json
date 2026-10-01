@@ -1,0 +1,34 @@
+{
+  "round": 9,
+  "type": "diagnostic partition of X's one-hit bag",
+  "known_fact": "X contains exactly one hit in one organizer cluster among ten molecules.",
+  "strategy": "Partition X into its 4-member thienopyrimidine group, 3-member isoxazole group, and three remaining singletons.",
+  "expected_check": "Y + Z + AA must equal exactly one hit; exactly one set should report one cluster.",
+  "sets": {
+    "Y_X_THIENO4": {
+      "file": "Team_MMELON_R09_Y_X_THIENO4.txt",
+      "X_candidates": 4,
+      "zero_fillers": 46,
+      "sha256": "4f91da7eeedd33cec5c79b6a422efd3adc649877b596210c90a4fb4ed47ec295"
+    },
+    "Z_X_ISOXAZOLE3": {
+      "file": "Team_MMELON_R09_Z_X_ISOXAZOLE3.txt",
+      "X_candidates": 3,
+      "zero_fillers": 47,
+      "sha256": "876119bfe3346b42357a9a709141ff509b222834979523ba55e6aa16dbbdb517"
+    },
+    "AA_X_SINGLETONS3": {
+      "file": "Team_MMELON_R09_AA_X_SINGLETONS3.txt",
+      "X_candidates": 3,
+      "zero_fillers": 47,
+      "sha256": "2a40113b493d5af059aea63032e9d14e4c2bfe241fb80ec63084aa288f117a83"
+    }
+  },
+  "remaining_before": 24,
+  "remaining_after": 21,
+  "verification": [
+    "The three candidate buckets exactly partition X",
+    "All fillers are from independently zero-hit J",
+    "Every submission has 50 unique valid IDs"
+  ]
+}

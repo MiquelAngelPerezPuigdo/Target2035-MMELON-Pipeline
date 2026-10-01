@@ -1,0 +1,32 @@
+{
+  "file": "Team_MMELON_T2_REVISED_COUNTS.csv",
+  "sha256": "694bce3c2f91112b6c492f3e96a4a42324a6deef9a32d34833bd495a5d632099",
+  "rows": 184632,
+  "selected": 50,
+  "overlap_with_failed_T1": 0,
+  "overlap_with_old_unsubmitted_T2": 9,
+  "distinct_Murcko_scaffolds": 48,
+  "aromatic_core_counts": {
+    "c1cnc(-c2cccnc2)nc1": 8,
+    "c1ccc2nc(-c3ccncc3)ncc2c1": 5,
+    "c1cncc(-c2ncon2)c1": 8,
+    "c1ccc2nc(-c3ccsc3)ncc2c1": 6,
+    "c1cncc(-c2nnc3cccnn23)c1": 1,
+    "c1cncc(-c2nncn2)c1": 8,
+    "c1ccc(-c2ncc3ccccc3n2)cc1": 5,
+    "c1ncc2ccsc2n1": 1,
+    "c1cncc(-c2cc[nH]n2)c1": 2,
+    "c1cncc(-c2nocn2)c1": 1,
+    "c1ccc(-c2ncccn2)cc1": 1,
+    "c1cncc(-c2nnco2)c1": 1,
+    "c1cnc(-c2ccncc2)nc1": 1,
+    "c1cncc(-c2ccc3ccccc3n2)c1": 1,
+    "c1cncc(-c2ccnn2)c1": 1
+  },
+  "formula": "85% sigmoid(mean six-model logit minus 0.25 logit standard deviation) + 10% ligand21 raw similarity + 5% frozen DEL ensemble",
+  "selection": "Exclude all T1 parent structures; unique parent structures; pairwise ECFP <0.60; at most two per Murcko and eight per largest connected aromatic core",
+  "feedback_permission": "User explicitly confirmed first-test feedback may be used to revise remaining test submission.",
+  "calibration": "Score is uncalibrated ranking confidence; no numerical forecast of test hits.",
+  "status": "Prepared locally, not submitted",
+  "boltz_spent_usd": 0
+}

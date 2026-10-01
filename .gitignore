@@ -24,3 +24,11 @@ mock_data/
 .vscode/
 .idea/
 .DS_Store
+
+# Local challenge inputs and private recovery exports
+OpeDELLibrary/
+Val-Test-set/
+.local/
+phase2/data/
+phase2/models/
+phase2/submissions/

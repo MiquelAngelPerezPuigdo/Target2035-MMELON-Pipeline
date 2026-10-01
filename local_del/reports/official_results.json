@@ -1,0 +1,479 @@
+{
+  "round01": {
+    "A_ECFP": {
+      "submission_id": null,
+      "hits": 0,
+      "chemical_series": 0,
+      "feedback_source": "User: only Neighbors hit"
+    },
+    "B_FCFP": {
+      "submission_id": null,
+      "hits": 0,
+      "chemical_series": 0,
+      "feedback_source": "User: only Neighbors hit"
+    },
+    "C_NEIGHBORS": {
+      "submission_id": null,
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800377,
+      "feedback_source": "User supplied evaluation result"
+    }
+  },
+  "quota_estimate": {
+    "remaining_now": 0,
+    "basis": "45 before round02 minus nine evaluated submissions in rounds02 through round04",
+    "reserved_for_later_confirmation": 10,
+    "independently_verified": false,
+    "last_confirmed_after_round": 21,
+    "remaining_after_planned_round04": 36,
+    "round06_interpretation": "P/Q/R hit rates fell sharply versus M; stop unconstrained nearest-neighbor expansion.",
+    "remaining_after_planned_round07": 27,
+    "remaining_after_planned_round08": 24,
+    "remaining_after_planned_round09": 21,
+    "remaining_after_planned_round10": 18,
+    "remaining_after_planned_round11": 15,
+    "remaining_after_planned_round12": 14,
+    "remaining_after_planned_round13": 13,
+    "remaining_after_planned_round14": 12,
+    "remaining_after_planned_round15": 11,
+    "remaining_after_planned_round16": 9,
+    "remaining_after_planned_round17": 7,
+    "remaining_after_planned_round18": 5,
+    "remaining_after_planned_round19": 3,
+    "remaining_after_planned_round20": 1,
+    "remaining_after_planned_round21": 0
+  },
+  "challenge_constraints": {
+    "leaderboard_observed_max_clusters": 10,
+    "leaderboard_value_interpretation": "Observed ranking value reported by user; not assumed to be the total number of clusters in the dataset.",
+    "confirmed_hits_across_validation_and_test": 431,
+    "primary_ranking_metric": "Number of chemically distinct hit series; number of hits is the first tie-breaker.",
+    "source": "User report plus official challenge overview and evaluation pages",
+    "test_submissions_total": 2,
+    "test_submissions_used": 2,
+    "implication": "Allocate final test selections across plausible independent chemical series; avoid spending both lists on the validation-dominant scaffold.",
+    "boltz_credit_usd": 4.75,
+    "boltz_policy": "Reserve for tie-breaking on a small final blind-test shortlist; do not use as a full-library screen or spend without first stating the candidate scope and intended decision."
+  },
+  "round02": {
+    "D_STRUCTURAL": {
+      "submission_id": null,
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "feedback_source": "User: zero hits in all three"
+    },
+    "E_CHEMICAL_FEATURES": {
+      "submission_id": null,
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "feedback_source": "User: zero hits in all three"
+    },
+    "F_CONTROL_CONTRAST": {
+      "submission_id": null,
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "feedback_source": "User: zero hits in all three"
+    }
+  },
+  "round03": {
+    "G_KNOWN_LIGANDS": {
+      "hits": 25,
+      "chemical_series": 3,
+      "p_value": 2.0888282834863325e-05,
+      "submission_id": null,
+      "feedback_source": "User reported round03 results"
+    },
+    "H_SELECTIVE_DEL": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round03 results"
+    },
+    "I_SIZE_AWARE_KERNEL": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003435,
+      "submission_id": null,
+      "feedback_source": "User reported round03 results"
+    }
+  },
+  "round04": {
+    "J_LIGAND47": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round04 results"
+    },
+    "K_NEW_CORES": {
+      "hits": 21,
+      "chemical_series": 2,
+      "p_value": 0.001306315865095553,
+      "submission_id": null,
+      "feedback_source": "User reported round04 results"
+    },
+    "L_DISTANT_TRANSFER": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003546,
+      "submission_id": null,
+      "feedback_source": "User reported round04 results"
+    }
+  },
+  "round05": {
+    "M_K_BAG": {
+      "hits": 21,
+      "chemical_series": 2,
+      "p_value": 0.00130631586509522,
+      "submission_id": null,
+      "feedback_source": "User reported round05 results in M/N/O order"
+    },
+    "N_GROUP_A_B": {
+      "hits": 8,
+      "chemical_series": 2,
+      "p_value": 0.0013063158650958862,
+      "submission_id": null,
+      "feedback_source": "User reported round05 results in M/N/O order"
+    },
+    "O_DIVERSE_BAG": {
+      "hits": 4,
+      "chemical_series": 3,
+      "p_value": 2.0888282834752303e-05,
+      "submission_id": null,
+      "feedback_source": "User reported round05 results in M/N/O order"
+    }
+  },
+  "round06": {
+    "P_M_EXPANSION": {
+      "hits": 2,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800388,
+      "submission_id": null,
+      "feedback_source": "User reported round06 results in P/Q/R order"
+    },
+    "Q_K_M_CONSENSUS": {
+      "hits": 3,
+      "chemical_series": 2,
+      "p_value": 0.001306315865095664,
+      "submission_id": null,
+      "feedback_source": "User reported round06 results in P/Q/R order"
+    },
+    "R_SERIES_SEARCH": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800421,
+      "submission_id": null,
+      "feedback_source": "User reported round06 results in P/Q/R order"
+    }
+  },
+  "round07": {
+    "S_M_PART1": {
+      "hits": 13,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800377,
+      "submission_id": null,
+      "feedback_source": "User reported round07 results in S/T/U order"
+    },
+    "T_M_PART2": {
+      "hits": 6,
+      "chemical_series": 2,
+      "p_value": 0.001306315865095664,
+      "submission_id": null,
+      "feedback_source": "User reported round07 results in S/T/U order"
+    },
+    "U_M_PART3": {
+      "hits": 2,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800421,
+      "submission_id": null,
+      "feedback_source": "User reported round07 results in S/T/U order"
+    }
+  },
+  "round08": {
+    "V_S_MAIN15": {
+      "hits": 13,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800321,
+      "submission_id": null,
+      "feedback_source": "User reported round08 results in V/W/X order"
+    },
+    "W_T_MAIN7": {
+      "hits": 5,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800388,
+      "submission_id": null,
+      "feedback_source": "User reported round08 results in V/W/X order"
+    },
+    "X_T_REST10": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800366,
+      "submission_id": null,
+      "feedback_source": "User reported round08 results in V/W/X order"
+    }
+  },
+  "round09": {
+    "Y_X_THIENO4": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800421,
+      "submission_id": null,
+      "feedback_source": "User reported round09 results in Y/Z/AA order"
+    },
+    "Z_X_ISOXAZOLE3": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round09 results in Y/Z/AA order"
+    },
+    "AA_X_SINGLETONS3": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round09 results in Y/Z/AA order"
+    }
+  },
+  "round10": {
+    "AB_Y_PAIR_SPLIT": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported revised round10 results in AB/AC/AD order"
+    },
+    "AC_Y4_EXPANSION": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800388,
+      "submission_id": null,
+      "feedback_source": "User reported revised round10 results in AB/AC/AD order"
+    },
+    "AD_SERIES_EXPLORATION": {
+      "hits": 2,
+      "chemical_series": 2,
+      "p_value": 0.001306315865095442,
+      "submission_id": null,
+      "feedback_source": "User reported revised round10 results in AB/AC/AD order"
+    }
+  },
+  "round11": {
+    "AE_K_GROUP10": {
+      "hits": 8,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003324,
+      "submission_id": null,
+      "feedback_source": "User reported round11 results in AE/AF/AG order"
+    },
+    "AF_K_GROUP7": {
+      "hits": 7,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800377,
+      "submission_id": null,
+      "feedback_source": "User reported round11 results in AE/AF/AG order; all seven diagnostic candidates are therefore individually confirmed hits"
+    },
+    "AG_K_REST22": {
+      "hits": 6,
+      "chemical_series": 2,
+      "p_value": 0.001306315865095553,
+      "submission_id": null,
+      "feedback_source": "User reported round11 results in AE/AF/AG order"
+    }
+  },
+  "round12": {
+    "AH_ERG_SCAFFOLD_HOPS": {
+      "hits": 2,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003435,
+      "submission_id": null,
+      "feedback_source": "User reported round12 result"
+    }
+  },
+  "round13": {
+    "AI_CHEMBERTA_OOD": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003546,
+      "submission_id": null,
+      "feedback_source": "User reported round13 result"
+    }
+  },
+  "round14": {
+    "AJ_AI_HIT_SPLIT1": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.0520118618180031,
+      "submission_id": null,
+      "feedback_source": "User reported round14 result"
+    }
+  },
+  "round15": {
+    "AK_AI_HIT_SPLIT2": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800421,
+      "submission_id": null,
+      "feedback_source": "User reported round15 result"
+    }
+  },
+  "round16": {
+    "AL_AI_CODE_BIT1": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.052011861818003546,
+      "submission_id": null,
+      "feedback_source": "User reported round16 results in AL/AM order"
+    },
+    "AM_AI_CODE_BIT2": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.0520118618180041,
+      "submission_id": null,
+      "feedback_source": "User reported round16 results in AL/AM order"
+    }
+  },
+  "round17": {
+    "AN_AI_SINGLETON_1": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800388,
+      "submission_id": null,
+      "feedback_source": "User reported round17 results in AN/AO order"
+    },
+    "AO_AI_SINGLETON_2": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round17 results in AN/AO order"
+    }
+  },
+  "round18": {
+    "AP_EXACT_HIT_ANALOGS": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round18 results in AP/AQ order"
+    },
+    "AQ_EXACT_HIT_SCAFFOLD_HOPS": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round18 results in AP/AQ order"
+    }
+  },
+  "round19": {
+    "AR_LIGAND21_CRYSTAL_3D": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round19 results in AR/AS order"
+    },
+    "AS_GK_3D_SERIES_PORTFOLIO": {
+      "hits": 1,
+      "chemical_series": 1,
+      "p_value": 0.05201186181800321,
+      "submission_id": null,
+      "feedback_source": "User reported round19 results in AR/AS order"
+    }
+  },
+  "round20": {
+    "AT_TESTSTYLE_CONSENSUS": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round20 results in AT/AU order"
+    },
+    "AU_TESTSTYLE_SERIES_PORTFOLIO": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported round20 results in AT/AU order"
+    }
+  },
+  "round21": {
+    "AV_AS_KLIKE_HALF": {
+      "hits": 0,
+      "chemical_series": 0,
+      "p_value": null,
+      "submission_id": null,
+      "feedback_source": "User reported 0; final validation completed",
+      "interpretation": "The AS hit is in the untested complementary 25; this does not identify its mechanism or prove relative model generalization."
+    }
+  },
+  "blind_test_preparation": {
+    "files": [
+      "Team_MMELON_T1_FROZEN_G.csv",
+      "Team_MMELON_T2_DIVERSE_TRANSFER.csv"
+    ],
+    "status": "Both test submissions evaluated per user: T1 and revised T2 each returned zero selected hits.",
+    "selected_overlap": 23,
+    "boltz_spent_usd": 0
+  },
+  "blind_test_results": {
+    "T1_FROZEN_G": {
+      "hits": 0,
+      "roc_auc": 0.7012738792787586,
+      "pr_auc": 0.002038178907110336,
+      "feedback_source": "User reported frozen test result",
+      "submission_id": null
+    },
+    "T2_REVISED_COUNTS": {
+      "hits": 0,
+      "roc_auc": 0.740041882758066,
+      "pr_auc": 0.004525401201208069,
+      "feedback_source": "User reported revised second test result",
+      "submission_id": null
+    }
+  },
+  "blind_test_revision": {
+    "file": "Team_MMELON_T2_REVISED_COUNTS.csv",
+    "sha256": "694bce3c2f91112b6c492f3e96a4a42324a6deef9a32d34833bd495a5d632099",
+    "rows": 184632,
+    "selected": 50,
+    "overlap_with_failed_T1": 0,
+    "overlap_with_old_unsubmitted_T2": 9,
+    "distinct_Murcko_scaffolds": 48,
+    "aromatic_core_counts": {
+      "c1cnc(-c2cccnc2)nc1": 8,
+      "c1ccc2nc(-c3ccncc3)ncc2c1": 5,
+      "c1cncc(-c2ncon2)c1": 8,
+      "c1ccc2nc(-c3ccsc3)ncc2c1": 6,
+      "c1cncc(-c2nnc3cccnn23)c1": 1,
+      "c1cncc(-c2nncn2)c1": 8,
+      "c1ccc(-c2ncc3ccccc3n2)cc1": 5,
+      "c1ncc2ccsc2n1": 1,
+      "c1cncc(-c2cc[nH]n2)c1": 2,
+      "c1cncc(-c2nocn2)c1": 1,
+      "c1ccc(-c2ncccn2)cc1": 1,
+      "c1cncc(-c2nnco2)c1": 1,
+      "c1cnc(-c2ccncc2)nc1": 1,
+      "c1cncc(-c2ccc3ccccc3n2)c1": 1,
+      "c1cncc(-c2ccnn2)c1": 1
+    },
+    "formula": "85% sigmoid(mean six-model logit minus 0.25 logit standard deviation) + 10% ligand21 raw similarity + 5% frozen DEL ensemble",
+    "selection": "Exclude all T1 parent structures; unique parent structures; pairwise ECFP <0.60; at most two per Murcko and eight per largest connected aromatic core",
+    "feedback_permission": "User explicitly confirmed first-test feedback may be used to revise remaining test submission.",
+    "calibration": "Score is uncalibrated ranking confidence; no numerical forecast of test hits.",
+    "status": "Submitted and evaluated per user; zero hits",
+    "boltz_spent_usd": 0
+  },
+  "blind_test_summary": {
+    "test_submissions_used": 2,
+    "selected_molecules_total": 100,
+    "selected_hits_total": 0,
+    "test_submissions_remaining": 0,
+    "interpretation": "Improved full-library ranking metrics did not translate into selected hits. Adaptive validation performance failed to transfer to the blind test."
+  }
+}

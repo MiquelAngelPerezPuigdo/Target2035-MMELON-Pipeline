@@ -1,0 +1,20 @@
+{
+  "round": 12,
+  "submissions": 1,
+  "method": "ErG reduced-graph pharmacophore scaffold hopping",
+  "anchor_quotas": {
+    "ligand21": 9,
+    "AF7_exact": 8,
+    "AE10_dense": 7,
+    "Y34_onehit": 7,
+    "AG22_two_series": 7,
+    "AD50_two_series": 6,
+    "O50_three_series": 6
+  },
+  "selection_diversity": "ECFP4 pairwise Tanimoto < 0.55",
+  "file": "Team_MMELON_R12_AH_ERG_SCAFFOLD_HOPS.txt",
+  "sha256": "a7e8c81b0d3019b468a0ecb9109ef9ba15916494563f7bf4841c0981adac20a3",
+  "remaining_before": 15,
+  "remaining_after": 14,
+  "test_preparation": "Frozen per-anchor pharmacophore features and a provisional full-library test score were saved; no test submission made."
+}

@@ -1,0 +1,4 @@
+Round 19 - submit AR and AS to VALIDATION in filename order.
+
+AR uses crystal-ligand 3D shape. AS is a diverse G/K 3D portfolio. Send both results back in AR/AS order.
+Five validations remain before these files; three afterward.

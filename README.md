@@ -34,6 +34,6 @@ The check validates original validation archives, logically forced labels, the t
 
 ## Current phase
 
-As checked on October 1, 2026, the official [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) lists Active Learning for October 1–31, with 100 validation credits after the additional data release and two test submissions. The actual account balance and released files still need checking. The old phase-one quota estimates must not be used as today's balance.
+As checked on October 1, 2026, the official [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) lists Active Learning for October 1–31, with 100 validation credits after the additional data release and two test submissions. The actual account balance still needs checking. The old phase-one quota estimates must not be used as today's balance.
 
-New models, datasets, and submissions belong in `phase2/`. The first task is to obtain and audit the organizers' newly revealed labels and verify the current eligible test IDs before fitting models or preparing submissions.
+The October 5 [release audit](phase2/DATA_AUDIT.md) confirms 6,580 experimental labels, including 39 binders, and an updated template with 178,052 eligible test IDs. The raw files and prepared tables are saved locally under ignored `phase2/data/`. New models and submissions belong in `phase2/`; the next task is to compare the frozen DEL baselines with adaptation using the released labels. No phase-two model or submission has been produced yet.

@@ -1,0 +1,11 @@
+CatalogID,Label,StructureStatus,Original_SMILES,RDKit_SMILES
+Z91201926,0,constitution_differs,Cc1nn(C2CCS(=O)(=O)C2)c(C)c1CN(C)C(=O)C1CCCCC1,Cc1nn(C2CCS(=O)(=O)C2)c(C)c1CN(C)C(=O)c1ccccc1
+Z85907564,0,constitution_differs,COc1ccc(C(CC(=O)O)NC(=O)c2cc3ccccc3o2)cc1OC,COc1ccc(C(CC(=O)O)NC(=O)C2Cc3ccccc3O2)cc1OC
+Z45989880,0,stereochemistry_differs,COc1ccc(C=Cc2nc3sc4c(c3c(=O)o2)CCCC4)cc1OC,COc1ccc(/C=C/c2nc3sc4c(c3c(=O)o2)CCCC4)cc1OC
+Z410630216,0,constitution_differs,Cc1nnc(NC(=O)NC2CCCc3ccccc32)s1,Cc1nnc(NC(=O)Nc2cccc3ccccc23)s1
+Z4066508650,0,stereochemistry_differs,O=C(NCCC1CN(c2ncnc3[nH]ncc23)c2ccccc21)[C@@H]1[C@@H]2CN[C@H]1C2,O=C(NCCC1CN(c2ncnc3[nH]ncc23)c2ccccc21)[C@@H]1[C@@H]2CN[C@@H]1C2
+Z368553602,0,constitution_differs,Cn1ncc2c(NC3CCC(c4ccccc4)CC3)ncnc21,Cn1ncc2c(Nc3ccc(-c4ccccc4)cc3)ncnc21
+Z30985904,0,constitution_differs,Cc1ccc(NC(=O)CNc2cccc3c2CCCC3)cc1S(=O)(=O)N(C)C,Cc1ccc(NC(=O)CNc2cccc3ccccc23)cc1S(=O)(=O)N(C)C
+Z1316760036,0,constitution_differs,O=C(O)C1CCN(C(=O)C2CSc3ccccc32)CC1,O=C(O)C1CCN(C(=O)c2csc3ccccc23)CC1
+Z1197877037,0,constitution_differs,O=C(O)[C@H]1CCCN1C(=O)C1COc2ccccc21,O=C(O)[C@H]1CCCN1C(=O)c1coc2ccccc12
+Z1139280676,0,constitution_differs,CCOc1ccnc(N2CCN(C(=O)c3ccco3)CC2)n1,CCOc1ccnc(N2CCN(C(=O)C3CCCO3)CC2)n1

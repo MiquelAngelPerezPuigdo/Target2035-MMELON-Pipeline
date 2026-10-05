@@ -1,0 +1,19 @@
+{
+  "recorded_on": "2026-10-05",
+  "source": "Organizer announcement pasted by the user; signed Luca Chiesa, SGC University of Toronto.",
+  "reported_blind_test_submissions": 237,
+  "reported_teams": 127,
+  "reported_distinct_selected_compounds": 6580,
+  "reported_true_hits": 39,
+  "release_contains": "All selected blind-test compounds and binary binder/non-binder labels, not just positives.",
+  "chemical_series_labels_released": false,
+  "blind_test_leaderboard_status": "Unofficial until further notice while organizer investigations continue.",
+  "prospective_invitations_status": "Paused for the moment.",
+  "workflow_requirement": "Significant use of DEL data; DEL-trained model or relevant DEL use must be a key component of the final workflow.",
+  "active_learning_test_submission_limit_per_team": 2,
+  "writeup_requirement": "For teams identifying at least two chemical series, the stated authorship and top-five Prospective invitations require a Synapse writeup using the official template. This is not a guarantee of our eligibility.",
+  "writeup_template_url": "https://www.synapse.org/Synapse:syn75400074",
+  "label_file_url": "https://www.synapse.org/Synapse:syn77795911",
+  "test_template_url": "https://www.synapse.org/Synapse:syn77796557",
+  "independently_checked": "Local release counts and ID membership agree with the announced 6580 compounds and 39 binders. Participation totals and investigation status are attributed to the supplied announcement."
+}

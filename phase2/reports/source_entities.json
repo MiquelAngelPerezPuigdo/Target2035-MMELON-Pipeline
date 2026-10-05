@@ -1,0 +1,38 @@
+{
+  "checked_on": "2026-10-05",
+  "metadata_endpoint": "https://repo-prod.prod.sagebase.org/repo/v1/entity/",
+  "entities": [
+    {
+      "name": "active_learning_data.csv",
+      "id": "syn77795911",
+      "etag": "b1a22905-cd66-4f15-b973-cb17c555dbf8",
+      "createdOn": "2026-10-02T15:17:45.655Z",
+      "modifiedOn": "2026-10-02T17:49:20.196Z",
+      "createdBy": "3539191",
+      "modifiedBy": "3539191",
+      "parentId": "syn77795859",
+      "concreteType": "org.sagebionetworks.repo.model.FileEntity",
+      "versionNumber": 2,
+      "versionLabel": "2",
+      "isLatestVersion": true,
+      "dataFileHandleId": "177775816"
+    },
+    {
+      "name": "active_learning_submission_example.csv",
+      "id": "syn77796557",
+      "etag": "7c323596-46f3-4717-89de-3b2dbe77facd",
+      "createdOn": "2026-10-02T16:03:33.626Z",
+      "modifiedOn": "2026-10-02T17:43:31.047Z",
+      "createdBy": "3539191",
+      "modifiedBy": "3539191",
+      "parentId": "syn75400072",
+      "concreteType": "org.sagebionetworks.repo.model.FileEntity",
+      "versionNumber": 2,
+      "versionLabel": "2",
+      "isLatestVersion": true,
+      "dataFileHandleId": "177775730"
+    }
+  ],
+  "local_file_hashes_in": "release_audit.json",
+  "local_bytes_not_independently_matched_to_remote_file_handle": true
+}

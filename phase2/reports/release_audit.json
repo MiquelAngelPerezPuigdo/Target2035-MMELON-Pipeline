@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-10-05",
+  "status": "passed",
+  "inputs": [
+    {
+      "path": "phase2/data/raw/active_learning_data.csv",
+      "source_url": "https://www.synapse.org/Synapse:syn77795911",
+      "bytes": 373280,
+      "sha256": "55fc2752c75a9aeb1aa0a9b10527768e4ce7f899f82d2efd99b31d41ef9223d5",
+      "provided_by_user_on": "2026-10-05"
+    },
+    {
+      "path": "phase2/data/raw/active_learning_submission_example.csv",
+      "source_url": "https://www.synapse.org/Synapse:syn77796557",
+      "bytes": 3996884,
+      "sha256": "1c45b7fa525333faa211f27ab0c045c32a46e7cc25a4d85d1ee2ee76e6aa18b2",
+      "provided_by_user_on": "2026-10-05"
+    }
+  ],
+  "released_rows": 6580,
+  "released_positive": 39,
+  "released_negative": 6541,
+  "positive_fraction_in_selected_release": 0.005927051671732523,
+  "original_test_rows": 184632,
+  "eligible_prediction_rows": 178052,
+  "template_columns_in_order": [
+    "CatalogID",
+    "Score",
+    "Sel_50"
+  ],
+  "template_flag_dtype": "float64",
+  "template_example_selected": 50,
+  "removed_ids_exactly_equal_all_released_ids": true,
+  "released_ids_in_prediction_template": 0,
+  "released_ids_in_validation": 0,
+  "historical_selected_test_negatives_confirmed": 100,
+  "historical_official_label_conflicts": 0,
+  "structure_comparison": {
+    "invalid_smiles": 0,
+    "isomeric_canonical_differences": 10,
+    "constitutional_differences": 8,
+    "stereochemical_only_differences": 2,
+    "labels_of_discrepant_rows": [
+      0
+    ],
+    "unique_nonchiral_parents": 6569,
+    "conflicting_parent_labels": 0,
+    "positive_murcko_scaffolds": 39,
+    "organizer_chemical_series_membership_available": false
+  },
+  "initial_fit_policy": "Use released structures; exclude eight constitutional discrepancies pending clarification; group duplicate parents in splits. Preserve stereochemistry in source records.",
+  "initial_fit_eligible_rows": 6572,
+  "selection_bias": "These compounds were selected by participant workflows. Their hit fraction does not estimate prevalence in the remaining library.",
+  "template_values_are_predictions": false,
+  "phase_two_models_trained": 0,
+  "phase_two_test_submissions_made": 0,
+  "outputs_sha256": {
+    "phase2/data/labeled_compounds.parquet": "35db27154c0d0c65b427bde45419d77f35f9d597f86b2194c2a32946e7844064",
+    "phase2/data/candidate_universe.parquet": "9274dc5f07e4b29e47e1c9c02f42ef21ef317b626fa088f55742b1ac0bf1267f",
+    "phase2/reports/structure_discrepancies.csv": "013268b698f45240ab301d32923f539978262c52c3606be339d5c600f92e809a"
+  }
+}

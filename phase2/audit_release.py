@@ -78,7 +78,8 @@ def main():
     require(not released & set(validation.CatalogID), 'Released labels overlap validation IDs.')
 
     # Joining by ID establishes the exact evidence universe. Do not reuse structure
-    # features for changed constitutions without resolving the discrepancy.
+    # features for changed constitutions. Released structures are the current
+    # modeling reference; retain discrepancies for a sensitivity analysis.
     merged = labels.merge(original, on='CatalogID', validate='one_to_one').rename(columns={'SMILES': 'Original_SMILES'})
     new_structures = merged.RDKit_SMILES.map(structure)
     old_structures = merged.Original_SMILES.map(structure)
@@ -91,7 +92,7 @@ def main():
     changed_parent = merged.ParentNonChiral.ne(merged.OriginalParentNonChiral)
     merged['StructureStatus'] = np.where(changed_parent, 'constitution_differs',
                                         np.where(different, 'stereochemistry_differs', 'matches'))
-    merged['EligibleForInitialFit'] = ~changed_parent
+    merged['EligibleForInitialFit'] = True
     merged['EvidenceSource'] = 'organizer_released_blind_test_assay_label'
     disagreements = merged.loc[different, ['CatalogID', 'Label', 'StructureStatus', 'Original_SMILES', 'RDKit_SMILES']]
     conflicts = merged.groupby('ParentNonChiral').Label.nunique()
@@ -142,7 +143,7 @@ def main():
                                  'conflicting_parent_labels': 0,
                                  'positive_murcko_scaffolds': int(merged.loc[merged.Label.eq(1), 'MurckoScaffold'].nunique()),
                                  'organizer_chemical_series_membership_available': False},
-        'initial_fit_policy': 'Use released structures; exclude eight constitutional discrepancies pending clarification; group duplicate parents in splits. Preserve stereochemistry in source records.',
+        'initial_fit_policy': 'Use all released labels with freshly generated features from released structures. Preserve discrepancies and source stereochemistry; group duplicate parents in splits. Compare inclusion/exclusion of eight constitutional discrepancies as a sensitivity analysis.',
         'initial_fit_eligible_rows': int(merged.EligibleForInitialFit.sum()),
         'selection_bias': 'These compounds were selected by participant workflows. Their hit fraction does not estimate prevalence in the remaining library.',
         'template_values_are_predictions': False,

@@ -25,7 +25,7 @@ The raw release has `CatalogID`, `Label`, and `RDKit_SMILES`. The example has `C
 
 RDKit successfully parsed every released structure. Comparing canonical structures by CatalogID against the original test file found ten differences, all in label-zero rows. Eight differ in constitution, such as aromatic versus saturated rings, and two differ only in stereochemistry. These are not merely reordered SMILES strings. [Individual discrepancies](reports/structure_discrepancies.csv).
 
-The initial modeling policy excludes the eight constitutional discrepancies pending clarification. It preserves the released and original structures, labels, and comparison flags rather than silently changing either source. The prepared table therefore has 6,572 eligible rows with all 39 positives retained. Two stereo differences are equivalent under the historical non-chiral parent representation; source stereochemistry is retained for other representations.
+The current modeling policy retains all 6,580 released labels and uses the released structures as the reference for fresh features. The original temporary exclusion of eight constitutional discrepancies was a precaution against reusing old features, not evidence that their labels were wrong. Both source structures and comparison flags remain preserved. Compare fits with and without these eight negatives as a sensitivity analysis. Two stereo differences are equivalent under the historical non-chiral parent representation; source stereochemistry is retained for other representations.
 
 The release has 6,569 unique non-chiral largest-fragment parent structures and no conflicting labels within those groups. Duplicate parents must stay together in evaluation splits. The positives have 39 distinct exact Murcko scaffolds. That does not imply 39 organizer chemical series, since structurally related compounds can have different exact scaffolds.
 
@@ -40,6 +40,8 @@ venv/bin/python phase2/audit_release.py --as-of 2026-10-05
 ```
 
 It checks the original split, template complement, labels, historical feedback, structures, and duplicate parents. It refuses to replace a raw snapshot with different bytes. It generates audit and preparation outputs, and does not fit a model or submit a file. [Audit receipt](reports/release_audit.json), [source entity metadata](reports/source_entities.json).
+
+Run `venv/bin/python phase2/build_labeled_features.py` after ingestion. It generates fresh ECFP4, FCFP4, and descriptors for every released SMILES, checks parent agreement and finite values, and verifies that all eight changed constitutions receive different fingerprints from their old structures. [Feature receipt](reports/labeled_features.json).
 
 The [label file](https://www.synapse.org/Synapse:syn77795911) and [template](https://www.synapse.org/Synapse:syn77796557) currently have Synapse version-two metadata. Local file hashes are recorded independently; the source metadata does not by itself prove a byte-for-byte match to the remote file handle.
 

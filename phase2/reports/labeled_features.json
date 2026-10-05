@@ -1,0 +1,49 @@
+{
+  "input": "phase2/data/labeled_compounds.parquet",
+  "input_sha256": "a5978faef3d9babc2f99651686c90004230d45befb826c2258a50034f612929e",
+  "rows": 6580,
+  "row_order_catalog_ids_sha256": "f82e42436fe70ab2a53ac45eb71cffae49766f4b1b263e367323fccdef9ddead",
+  "structure_source": "RDKit_SMILES from organizer active_learning_data.csv",
+  "phase_one_feature_cache_reused": false,
+  "rdkit_version": "2025.09.2",
+  "fingerprints": [
+    "ECFP4 2048-bit",
+    "FCFP4 2048-bit"
+  ],
+  "packed_bits_shape": [
+    6580,
+    2,
+    256
+  ],
+  "descriptor_names": [
+    "MW",
+    "LogP",
+    "TPSA",
+    "HBA",
+    "HBD",
+    "RotB",
+    "AromaticRings",
+    "FractionCSP3",
+    "FormalCharge",
+    "HeavyAtoms",
+    "Rings"
+  ],
+  "chirality": false,
+  "parent_policy": "largest fragment; no tautomer/charge normalization",
+  "constitutional_discrepancies_with_changed_fingerprints": [
+    "Z91201926",
+    "Z85907564",
+    "Z410630216",
+    "Z368553602",
+    "Z30985904",
+    "Z1316760036",
+    "Z1197877037",
+    "Z1139280676"
+  ],
+  "outputs_sha256": {
+    "phase2/data/labeled_bits.npy": "6a5b9f45a59f9808171506d7e6185be0468d498a94c508e4f73d42a0902d1de0",
+    "phase2/data/labeled_descriptors.npy": "bb15d03b96ae58a7e0590c739f46562edfa0bd73b63670bdbbde3b33390cbe73"
+  },
+  "status": "passed",
+  "models_trained": 0
+}

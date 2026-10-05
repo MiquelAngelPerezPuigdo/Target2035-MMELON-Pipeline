@@ -48,14 +48,14 @@
     "positive_murcko_scaffolds": 39,
     "organizer_chemical_series_membership_available": false
   },
-  "initial_fit_policy": "Use released structures; exclude eight constitutional discrepancies pending clarification; group duplicate parents in splits. Preserve stereochemistry in source records.",
-  "initial_fit_eligible_rows": 6572,
+  "initial_fit_policy": "Use all released labels with freshly generated features from released structures. Preserve discrepancies and source stereochemistry; group duplicate parents in splits. Compare inclusion/exclusion of eight constitutional discrepancies as a sensitivity analysis.",
+  "initial_fit_eligible_rows": 6580,
   "selection_bias": "These compounds were selected by participant workflows. Their hit fraction does not estimate prevalence in the remaining library.",
   "template_values_are_predictions": false,
   "phase_two_models_trained": 0,
   "phase_two_test_submissions_made": 0,
   "outputs_sha256": {
-    "phase2/data/labeled_compounds.parquet": "35db27154c0d0c65b427bde45419d77f35f9d597f86b2194c2a32946e7844064",
+    "phase2/data/labeled_compounds.parquet": "a5978faef3d9babc2f99651686c90004230d45befb826c2258a50034f612929e",
     "phase2/data/candidate_universe.parquet": "9274dc5f07e4b29e47e1c9c02f42ef21ef317b626fa088f55742b1ac0bf1267f",
     "phase2/reports/structure_discrepancies.csv": "013268b698f45240ab301d32923f539978262c52c3606be339d5c600f92e809a"
   }

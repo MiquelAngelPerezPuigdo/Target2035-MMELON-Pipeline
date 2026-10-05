@@ -84,7 +84,7 @@ The ledger's `remaining_now: 0` is an obsolete estimate. The final recovered con
 
 As of October 1, the official [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) specifies October 1–31 Active Learning and refreshed validation credits after the additional data release. Actual current account credits have not been read. The [overview](https://www.synapse.org/Synapse:syn75349604/wiki/641044) describes releasing true-positive labels from participant blind-test predictions; it does not imply that every other molecule becomes a confirmed negative.
 
-Historical claims about authorship were too definite. On October 1 the overview says better than random in Blind Test **or** Active Learning, while [Incentives](https://www.synapse.org/Synapse:syn75349604/wiki/641066) says **and**. No eligibility guarantee follows from our AUCs or zero-hit outcome. Preserve the discrepancy for organizer clarification; it does not block preparing the next campaign.
+Historical claims about authorship were too definite. On October 1 the overview says better than random in Blind Test **or** Active Learning, while [Incentives](https://www.synapse.org/Synapse:syn75349604/wiki/641066) says **and**. No eligibility guarantee follows from our AUCs or zero-hit outcome. The October 5 forum review resolves this as **or**, with an unadjusted p < 0.01 threshold and the best of two submissions considered. See the [current review](../phase2/SITE_REVIEW.md); this does not establish eligibility for our zero-hit blind submissions.
 
 ## October 5 experimental label release
 

@@ -1,0 +1,433 @@
+{
+  "checked_on": "2026-10-05",
+  "wiki_pages": [
+    {
+      "id": "641044",
+      "title": "Overview",
+      "modifiedOn": "2026-08-27T15:41:15.574Z",
+      "markdown_sha256": "2e0c153c350ef3b23d69e73a7d77ad4d905083f70cc100516e2d8325d9b64fe3",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641044"
+    },
+    {
+      "id": "641045",
+      "title": "Tasks",
+      "modifiedOn": "2026-09-21T18:17:34.010Z",
+      "markdown_sha256": "b9dc6c69954cde99967974108239ee79eabda08349386c3e9a2dcaa1ce02377e",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641045"
+    },
+    {
+      "id": "641046",
+      "title": "Data",
+      "modifiedOn": "2026-09-18T14:24:46.575Z",
+      "markdown_sha256": "b914ad7e07b90108e275165ea1def716971a998d41e097920b927db307004b24",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641046"
+    },
+    {
+      "id": "641047",
+      "title": "Evaluation",
+      "modifiedOn": "2026-06-15T14:07:15.097Z",
+      "markdown_sha256": "34e8edcd4d661e2b29482e12ecb6109c340f17cc778e59ab4f616f783bff09f9",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641047"
+    },
+    {
+      "id": "641048",
+      "title": "Submit",
+      "modifiedOn": "2026-06-16T07:09:49.087Z",
+      "markdown_sha256": "79fd3ec85f7525676b55296e0ec2d31e15199a6c7022aa5f40fae7d67c09b5a9",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641048"
+    },
+    {
+      "id": "641049",
+      "title": "Tutorial - Writeup",
+      "modifiedOn": "2026-06-16T07:23:05.589Z",
+      "markdown_sha256": "bdd1452a3130e0f184bd6f6cb1e863b5ddaa60b90312624582a1d5f6da13dbb7",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641049"
+    },
+    {
+      "id": "641050",
+      "title": "Results",
+      "modifiedOn": "2026-09-16T22:16:06.772Z",
+      "markdown_sha256": "61e6b501e6bd73570c956d306d36a1b32d126fcc7e9177a85a927c1612744543",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641050"
+    },
+    {
+      "id": "641051",
+      "title": "Organizers",
+      "modifiedOn": "2026-06-16T14:35:36.921Z",
+      "markdown_sha256": "fb60fd38b737b6ebac39fb6609a7a9a1aa6ed8513294f0c3599d41b9226cbb99",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641051"
+    },
+    {
+      "id": "641053",
+      "title": "Challenge Rules",
+      "modifiedOn": "2026-06-15T16:42:20.162Z",
+      "markdown_sha256": "d061fc0070dc34ca4764a8ea15ca7355e2b8541d6bf8491958ce614173942fb5",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641053"
+    },
+    {
+      "id": "641065",
+      "title": "Timeline",
+      "modifiedOn": "2026-08-27T15:39:24.277Z",
+      "markdown_sha256": "4494c73db960e7fc507b164f85ad41787fb9510f61a149ce1158661b1bf59483",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641065"
+    },
+    {
+      "id": "641066",
+      "title": "Incentives",
+      "modifiedOn": "2026-06-14T19:30:21.822Z",
+      "markdown_sha256": "5901375ba6d2e45e081bd0c4d4e63c8c25f20a002e67ebb6f5023ec287224f1f",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641066"
+    },
+    {
+      "id": "641132",
+      "title": "Building blocks",
+      "modifiedOn": "2026-06-14T19:03:24.833Z",
+      "markdown_sha256": "b166d6891268592044fb44eae2c0353ff1d6cde04027164641bb6dad336ab2ad",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641132"
+    },
+    {
+      "id": "641133",
+      "title": "Library",
+      "modifiedOn": "2026-06-15T16:14:07.974Z",
+      "markdown_sha256": "dba7d6857ba7ec4afd0709306420e536ff28c9428bb4112cc0d56547d77e3685",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641133"
+    },
+    {
+      "id": "641134",
+      "title": "Hit Selection",
+      "modifiedOn": "2026-06-15T16:15:11.153Z",
+      "markdown_sha256": "a814cb48d849547b78dcd6299aa0208cc53918817b43ba9ac6c287cb8bc488fa",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641134"
+    },
+    {
+      "id": "641135",
+      "title": "Deduplicate Selection",
+      "modifiedOn": "2026-06-15T21:18:59.212Z",
+      "markdown_sha256": "96c59d02585917e6ee600bf09e6ca0ddefa29af196ba6266e19a6fd534eebade",
+      "url": "https://www.synapse.org/Synapse:syn75349604/wiki/641135"
+    }
+  ],
+  "linked_forum_threads_reviewed": [
+    {
+      "thread_id": 15512,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15512"
+    },
+    {
+      "thread_id": 15352,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15352"
+    },
+    {
+      "thread_id": 15490,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15490"
+    },
+    {
+      "thread_id": 15462,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15462"
+    },
+    {
+      "thread_id": 15447,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15447"
+    },
+    {
+      "thread_id": 15314,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15314"
+    },
+    {
+      "thread_id": 15373,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15373"
+    },
+    {
+      "thread_id": 15248,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15248"
+    },
+    {
+      "thread_id": 15354,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15354"
+    },
+    {
+      "thread_id": 15353,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15353"
+    },
+    {
+      "thread_id": 15343,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15343"
+    },
+    {
+      "thread_id": 15344,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15344"
+    },
+    {
+      "thread_id": 15177,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15177"
+    },
+    {
+      "thread_id": 15208,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15208"
+    },
+    {
+      "thread_id": 15215,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15215"
+    },
+    {
+      "thread_id": 15156,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15156"
+    },
+    {
+      "thread_id": 15181,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15181"
+    },
+    {
+      "thread_id": 14646,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14646"
+    },
+    {
+      "thread_id": 15113,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15113"
+    },
+    {
+      "thread_id": 14943,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14943"
+    },
+    {
+      "thread_id": 15046,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15046"
+    },
+    {
+      "thread_id": 15057,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=15057"
+    },
+    {
+      "thread_id": 14948,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14948"
+    },
+    {
+      "thread_id": 14860,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14860"
+    },
+    {
+      "thread_id": 14714,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14714"
+    },
+    {
+      "thread_id": 14426,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14426"
+    },
+    {
+      "thread_id": 14549,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14549"
+    },
+    {
+      "thread_id": 14425,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14425"
+    },
+    {
+      "thread_id": 14446,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14446"
+    },
+    {
+      "thread_id": 14435,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14435"
+    },
+    {
+      "thread_id": 14147,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14147"
+    },
+    {
+      "thread_id": 14066,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14066"
+    },
+    {
+      "thread_id": 14011,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14011"
+    },
+    {
+      "thread_id": 14034,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=14034"
+    },
+    {
+      "thread_id": 13966,
+      "url": "https://www.synapse.org/Synapse:syn75349604/discussion/threadId=13966"
+    }
+  ],
+  "release_metadata_unchanged_since_previous_receipt": true,
+  "source_entities": [
+    {
+      "name": "active_learning_data.csv",
+      "id": "syn77795911",
+      "etag": "b1a22905-cd66-4f15-b973-cb17c555dbf8",
+      "createdOn": "2026-10-02T15:17:45.655Z",
+      "modifiedOn": "2026-10-02T17:49:20.196Z",
+      "createdBy": "3539191",
+      "modifiedBy": "3539191",
+      "parentId": "syn77795859",
+      "concreteType": "org.sagebionetworks.repo.model.FileEntity",
+      "versionNumber": 2,
+      "versionLabel": "2",
+      "isLatestVersion": true,
+      "dataFileHandleId": "177775816"
+    },
+    {
+      "name": "active_learning_submission_example.csv",
+      "id": "syn77796557",
+      "etag": "7c323596-46f3-4717-89de-3b2dbe77facd",
+      "createdOn": "2026-10-02T16:03:33.626Z",
+      "modifiedOn": "2026-10-02T17:43:31.047Z",
+      "createdBy": "3539191",
+      "modifiedBy": "3539191",
+      "parentId": "syn75400072",
+      "concreteType": "org.sagebionetworks.repo.model.FileEntity",
+      "versionNumber": 2,
+      "versionLabel": "2",
+      "isLatestVersion": true,
+      "dataFileHandleId": "177775730"
+    }
+  ],
+  "folders_checked": {
+    "syn75349604": {
+      "page": [
+        {
+          "name": "Active Learning Data",
+          "id": "syn77795859",
+          "type": "org.sagebionetworks.repo.model.Folder",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 77795859,
+          "createdOn": "2026-10-02T15:09:14.445Z",
+          "modifiedOn": "2026-10-02T21:00:38.878Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        },
+        {
+          "name": "QandA webinar",
+          "id": "syn76139788",
+          "type": "org.sagebionetworks.repo.model.Folder",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 75349604,
+          "createdOn": "2026-07-07T14:49:39.424Z",
+          "modifiedOn": "2026-07-07T14:49:39.424Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        },
+        {
+          "name": "Submission Logs",
+          "id": "syn75349606",
+          "type": "org.sagebionetworks.repo.model.Folder",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 75349604,
+          "createdOn": "2026-06-08T17:53:27.817Z",
+          "modifiedOn": "2026-06-08T17:53:27.817Z",
+          "createdBy": "3393723",
+          "modifiedBy": "3393723"
+        },
+        {
+          "name": "Submission templates",
+          "id": "syn75400072",
+          "type": "org.sagebionetworks.repo.model.Folder",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 75400072,
+          "createdOn": "2026-06-11T18:37:50.489Z",
+          "modifiedOn": "2026-06-15T16:47:20.099Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3393723"
+        }
+      ],
+      "totalChildCount": 4
+    },
+    "syn77795859": {
+      "page": [
+        {
+          "name": "active_learning_data.csv",
+          "id": "syn77795911",
+          "type": "org.sagebionetworks.repo.model.FileEntity",
+          "versionNumber": 2,
+          "versionLabel": "2",
+          "isLatestVersion": true,
+          "benefactorId": 77795859,
+          "createdOn": "2026-10-02T15:17:45.655Z",
+          "modifiedOn": "2026-10-02T17:49:20.196Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        }
+      ],
+      "totalChildCount": 1
+    },
+    "syn75400072": {
+      "page": [
+        {
+          "name": "active_learning_submission_example.csv",
+          "id": "syn77796557",
+          "type": "org.sagebionetworks.repo.model.FileEntity",
+          "versionNumber": 2,
+          "versionLabel": "2",
+          "isLatestVersion": true,
+          "benefactorId": 75400072,
+          "createdOn": "2026-10-02T16:03:33.626Z",
+          "modifiedOn": "2026-10-02T17:43:31.047Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        },
+        {
+          "name": "test_submission_example.csv",
+          "id": "syn75400075",
+          "type": "org.sagebionetworks.repo.model.FileEntity",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 75400072,
+          "createdOn": "2026-06-11T18:38:10.008Z",
+          "modifiedOn": "2026-06-11T18:38:10.008Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        },
+        {
+          "name": "validation_submission_example.txt",
+          "id": "syn75400073",
+          "type": "org.sagebionetworks.repo.model.FileEntity",
+          "versionNumber": 1,
+          "versionLabel": "1",
+          "isLatestVersion": true,
+          "benefactorId": 75400072,
+          "createdOn": "2026-06-11T18:38:09.349Z",
+          "modifiedOn": "2026-06-11T18:38:09.349Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        },
+        {
+          "name": "writeup_template.md",
+          "id": "syn75400074",
+          "type": "org.sagebionetworks.repo.model.FileEntity",
+          "versionNumber": 2,
+          "versionLabel": "2",
+          "isLatestVersion": true,
+          "benefactorId": 75400072,
+          "createdOn": "2026-06-11T18:38:09.396Z",
+          "modifiedOn": "2026-06-15T14:40:26.318Z",
+          "createdBy": "3539191",
+          "modifiedBy": "3539191"
+        }
+      ],
+      "totalChildCount": 4
+    }
+  },
+  "baseline_repository_head": {
+    "sha": "c3472a4c6185e5dc74a6da9d28d4f80aeb4ebfcf",
+    "committed_on": "2025-05-20T14:51:06Z",
+    "url": "https://github.com/StructuralGenomicsConsortium/Target2035_Aircheck_Utils"
+  },
+  "published_deadline_utc": "2026-10-31T23:59:00Z",
+  "account_credits_verified": false,
+  "aircheck_authenticated_inventory_verified": false,
+  "writeup_template_anonymous_download": "HTTP 403; metadata checked, contents not re-read",
+  "remote_release_file_bytes_verified": false,
+  "new_deadline_extension_found": false,
+  "later_public_reversal_of_supplied_organizer_announcement_found": false,
+  "full_wiki_snapshots_ignored": ".local/site_review/2026-10-05",
+  "authored_review": "phase2/SITE_REVIEW.md"
+}

@@ -4,7 +4,7 @@ The next campaign starts from experimental feedback, 6,580 released blind-test a
 
 ## Official schedule and requirements
 
-Checked October 1, 2026 through the public Synapse wiki API. The [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) lists Active Learning from October 1–31, with 100 validation credits reset after the additional data release and two test submissions. Deadline is October 31 at 23:59 UTC, which is November 1 at 00:59 in Zurich. These are published allowances; the current account balance has not been checked.
+Checked October 5, 2026 through the public Synapse wiki API. The [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) lists Active Learning from October 1–31, with 100 validation credits reset after the additional data release and two test submissions. Deadline is October 31 at 23:59 UTC, which is November 1 at 00:59 in Zurich. These are published allowances; the current account balance has not been checked.
 
 The organizer announcement supplied on October 5 and the [actual release](https://www.synapse.org/Synapse:syn77795911) provide labels for all 6,580 evaluated compounds, including negatives. The [updated template](https://www.synapse.org/Synapse:syn77796557) removes all 6,580 IDs from both scoring and selection, leaving exactly 178,052 candidates. Molecules outside the labeled release remain unlabeled. The announcement requires significant DEL use as a key component of the final workflow, rather than a token contribution from a DEL model.
 
@@ -20,12 +20,12 @@ The workspace and phase-one evidence are consolidated. No phase-two model has be
 - [ ] Check the account's actual Active Learning credits and registration.
 - [x] Obtain the official released labels and current submission templates.
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
-- [x] Audit IDs, structures, sources, and label consistency; flag eight constitutional discrepancies for exclusion from the initial fit.
+- [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
 - [ ] Compare phase-two baselines before preparing validation panels.
 
 ## Data ingestion
 
-The completed [release audit](DATA_AUDIT.md) and [machine-readable receipt](reports/release_audit.json) record input hashes, schemas, label counts, candidate membership, and agreement with our 100 prior selected test negatives. The prepared labeled table has an `EligibleForInitialFit` field and preserves both original and released structures. Eight non-binder rows with changed constitutions are excluded initially. Two stereochemical differences remain eligible for the historical non-chiral representation, with the source stereochemistry preserved. The 39 positives are all retained.
+The completed [release audit](DATA_AUDIT.md) and [machine-readable receipt](reports/release_audit.json) record input hashes, schemas, label counts, candidate membership, and agreement with our 100 prior selected test negatives. The prepared labeled table has an `EligibleForInitialFit` field and preserves both original and released structures. All 6,580 rows remain eligible, including eight non-binders with changed constitutions. Features are regenerated from the released structures, and the flags remain available for an inclusion/exclusion sensitivity analysis. Two stereochemical differences remain eligible for the historical non-chiral representation, with the source stereochemistry preserved. The 39 positives are all retained.
 
 All 100 historical selected test negatives already occur in the organizer release. Do not append them again and double their weight. There are no conflicting labels among identical non-chiral parent structures in this release. Group duplicate parents across splits. The 39 positives have 39 distinct exact Murcko scaffolds, which is not an organizer chemical-series count.
 
@@ -36,6 +36,8 @@ Assign separate evidence sources to organizer-released positives, logically forc
 Split confirmed labeled compounds by scaffold or chemical series before model comparison, grouping related structures and preventing duplicate parents from crossing the split. Sparse positive counts can make estimates unstable; report the number of held-out positives. Keep an untouched comparison set where the released sample permits it, and disclose the selection bias of participant-discovered hits.
 
 ## Model comparisons
+
+Start with the [October 5 site review and first experiment sequence](SITE_REVIEW.md). First diagnose the frozen models on the 39 released binders before fitting or screening the remaining library. Fresh released-structure features passed their checks; no adaptation model has been trained.
 
 1. Replay the frozen G ranking, original DEL LightGBM ensemble, and aggregate-count method as baselines on the current candidate universe.
 2. Fit a regularized adaptation model that builds on the DEL-trained ensemble using the reliable experimental labels. Compare it against frozen DEL predictions and a labels-only diagnostic baseline. Measure DEL's contribution through ablations and ensure it is a substantial component of the final workflow. The labels-only model is a comparator, not an eligible final workflow by itself.

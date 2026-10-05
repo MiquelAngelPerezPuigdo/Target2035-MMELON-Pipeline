@@ -12,16 +12,17 @@ The [submission format](https://www.synapse.org/Synapse:syn75349604/wiki/641045)
 
 ## Campaign readiness
 
-The workspace and phase-one evidence are consolidated. Twelve small regularized models were fitted for five grouped-fold comparisons and local panel ranking. No phase-two submission has been made. [status.json](status.json) is the separate campaign ledger.
+The workspace and phase-one evidence are consolidated. Three contrasting 50-ID panels were submitted to Blind validation and all scored zero hits. Three earlier validation score emails also reported zero. Three additional 50-ID lists were mistakenly sent to the Active learning test queue; two were rejected for format, and the third outcome remains unconfirmed. [status.json](status.json) is the campaign ledger.
 
 - [x] Recover all locally available phase-one code and result records.
 - [x] Preserve original submission archives, test files, models, and caches.
 - [x] Recover the chat history and correct the quota assumptions.
-- [ ] Check the account's actual Active Learning credits and registration.
+- [ ] Reconcile the account's actual Active Learning credits and all three mistaken test-queue attempts before any further test submission.
 - [x] Obtain the official released labels and current submission templates.
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
 - [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
-- [x] Compare phase-two baselines and prepare three diverse local validation panels; no files uploaded.
+- [x] Compare phase-two baselines, submit three validation panels, and record that each scored zero hits.
+- [ ] Diagnose the repeated zero-hit validation results before fitting or submitting another candidate list.
 
 ## Data ingestion
 
@@ -37,28 +38,18 @@ Split confirmed labeled compounds by scaffold or chemical series before model co
 
 ## Model comparisons
 
-Start with the [October 5 site review](SITE_REVIEW.md), then see the completed [first model comparison](EXPERIMENT_01.md). Fresh released-structure features passed checks. Frozen DEL baselines, grouped release-label adaptation, and three local validation panels are ready; the account balance remains unchecked.
+See the [October 5 site review](SITE_REVIEW.md) and [first model comparison](EXPERIMENT_01.md). Fresh released-structure features passed checks, but all three validation panels scored zero. The current candidate-ranking approach has failed its external check; do not spend more credits on its rankings.
 
-1. Replay the frozen G ranking, original DEL LightGBM ensemble, and aggregate-count method as baselines on the current candidate universe.
-2. Fit a regularized adaptation model that builds on the DEL-trained ensemble using the reliable experimental labels. Compare it against frozen DEL predictions and a labels-only diagnostic baseline. Measure DEL's contribution through ablations and ensure it is a substantial component of the final workflow. The labels-only model is a comparator, not an eligible final workflow by itself.
-3. Evaluate a method that preserves unlabeled status, such as positive-unlabeled learning or heavily downweighted background examples, if label coverage permits it.
-4. Compare ECFP, FCFP/descriptors, and ErG before committing to heavier embeddings. ChemBERTa and 3D features are optional experiments whose value must be measured on unseen chemical families.
-5. Assess precision and enrichment near the selection cutoff, chemical-series coverage, uncertainty across fits, and sensitivity to domain shift. Report ROC AUC and PR AUC as supporting metrics rather than the sole decision.
+1. Reconstruct which local files and methods correspond to the three older zero-hit validation submissions and reconcile them with the current three.
+2. Audit the validation and test CatalogID universes, joins, score direction, and selected-ID exports. Queue acceptance and score emails show that the three current validation lists were evaluated, but the repeated zero results still need a scientific explanation.
+3. Compare candidate rank distributions and chemical-family coverage across the participant-selected release, the validation pool, and the remaining test pool. Treat grouped cross-validation on the selected release as insufficient evidence of transfer.
+4. Only after finding a concrete correction, run a small, documented offline comparison and decide whether another validation experiment is worth a credit. Keep the final workflow substantially DEL-based and require a DEL-removal ablation.
 
 These are proposed comparisons, not completed models or guarantees of improvement. Use the Mac and memory-bounded caches. Preserve phase-one assets and write new results under `phase2/`.
 
 ## Validation budget proposal
 
-Confirm the balance first. If 100 fresh validations are available, use the following allocation as a starting plan and review it after every batch.
-
-| Purpose | Maximum initial allocation |
-| --- | ---: |
-| Designed diagnostics for chemistry coverage, label transfer, and model disagreements | 20 |
-| Compare promising representations and combinations | 30 |
-| Improve series coverage and robust candidate selection | 20 |
-| Reserved confirmation before the two test submissions | 30 |
-
-Each panel should answer a recorded question. Track list overlap, known-label exclusions, intended chemistry, and expected decision before submission. Use a few contrasting lists per batch, with a concise feedback form, to reduce manual effort. Stop splitting bags once the expected information no longer helps choose a model or discover a new series. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
+Do not treat the published allowance as a target. Six observed validation submissions have returned zero hits. Pause new validation submissions until the repeated failure is understood and the actual account history is reconciled. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
 
 ## Final test preparation
 

@@ -242,6 +242,7 @@ def main():
         'DEL_FCFP': fcfp_rank,
         'DEL_mean': del_rank,
         'known_ligand_prior': 1 - (rankdata(-val_ligand, method='average') - 1) / len(meta),
+        'historical_G_ligand_plus_DEL': 1 - (rankdata(-(.95 * val_ligand + .05 * del_ecfp), method='average') - 1) / len(meta),
         'released_label_adaptation': adapted_rank,
         'released_label_neighborhood_only': neighbor_rank,
     }

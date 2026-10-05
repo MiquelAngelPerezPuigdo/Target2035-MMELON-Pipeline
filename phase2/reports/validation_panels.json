@@ -17,7 +17,7 @@
     "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
     "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
     "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
-    "panel_builder": "748345051db45e84fb4c8720a8485683131253cb1cea08301800779a067619a7"
+    "panel_builder": "4ef5481bb35c8bb297aff8373d7ad62e1cd8b6a0a445572f17226f1ad0b472d7"
   },
   "ranking_methods": {
     "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
@@ -207,6 +207,23 @@
         "best_negative_rank_fraction": 0.99982400707246,
         "median_negative_rank_fraction": 0.7816204037195901,
         "known_negatives_in_top_50": 3
+      },
+      "historical_G_ligand_plus_DEL": {
+        "positive_rank_fractions_best_to_worst": [
+          0.99978717134344,
+          0.9974337775449396,
+          0.9968935201859795,
+          0.9966970629645395,
+          0.9962795913689794,
+          0.9960503912772993,
+          0.993803411807079,
+          0.9920189253789987
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 1,
+        "best_negative_rank_fraction": 0.999795357061,
+        "median_negative_rank_fraction": 0.8838221571002914,
+        "known_negatives_in_top_50": 0
       },
       "released_label_adaptation": {
         "positive_rank_fractions_best_to_worst": [
@@ -876,6 +893,6 @@
   },
   "bundle": {
     "file": "submissions/panels/active_learning_validation_panels.zip",
-    "sha256": "46884e255789a3b6b010d5b97e726971dbc9feaa1bf3b1ae5c764ef45b489990"
+    "sha256": "02ac157d2b62347b247a083d43a8479ec6f0f7701d16214c8e9f9ea3d9929fd1"
   }
 }

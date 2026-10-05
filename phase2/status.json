@@ -88,7 +88,7 @@
     "rank_direction": "Panel rank fractions sort highest model scores first",
     "historical_panel_overlap": "Of 150 current rows (148 unique IDs), 32 had already appeared in phase-one panels; all 32 were in DEL_support. Twenty-nine are logically forced non-binders from prior zero-hit panels. The other two current panels contain no previously tested IDs.",
     "historically_forced_positives_selected": 0,
-    "current_rank_vs_historical_panels": "For high-hit G/K/M panels (25/21/21 hits), median adaptation rank fractions are 0.09/0.30/0.39 versus frozen-DEL ranks 0.87/0.80/0.85. Adapter ranking therefore disfavors earlier successful validation chemistry.",
+    "current_rank_vs_historical_panels": "For high-hit G/K/M panels (25/21/21 hits), median adaptation rank fractions are 0.09/0.30/0.39 versus frozen-DEL ranks 0.87/0.80/0.85. Adapter ranking therefore disfavors earlier successful validation chemistry. Its standardized ECFP-DEL and public-ligand coefficients are negative; ligand prior alone puts one forced validation positive in its top 50, while the adapter puts no forced positives in its top 500.",
     "released_binder_transfer_audit": "reports/validation_release_transfer.json",
     "row_provenance_audit": "reports/validation_row_provenance_audit.json",
     "finding": "No format, validation-universe membership, score-length, reversed-ranking, or selected-row score-to-CatalogID error found. DEL_support repeated 29 already-known negatives, and none of the three panels selected the eight inferable historical positives. The remaining issue is historical-feedback omission and poor ranking transfer. See reports/validation_panel_history_overlap.json and reports/validation_row_provenance_audit.json."

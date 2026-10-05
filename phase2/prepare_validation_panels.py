@@ -216,6 +216,11 @@ def main():
               'panel_model_numerics': {
                   'adaptation_max_abs_standardized_validation_feature': float(np.max(np.abs(val_scaled))),
                   'adaptation_max_abs_coefficient': float(np.max(np.abs(adapted.coef_))),
+                  'adaptation_feature_names': ['DEL_ECFP_logit', 'DEL_FCFP_logit', 'public_ligand_similarity',
+                                               'released_positive_neighbor_max', 'released_negative_neighbor_max',
+                                               'positive_minus_negative_neighbor_max', 'positive_neighbor_soft_mean',
+                                               'negative_neighbor_soft_mean'],
+                  'adaptation_coefficients_standardized': adapted.coef_[0].astype(float).tolist(),
                   'adaptation_scores_finite': bool(np.isfinite(adapted_score).all()),
                   'labels_only_scores_finite': True},
               'panels': {}, 'fold_cv_context': json.loads((ROOT/'reports/release_diagnosis.json').read_text())['grouped_cv_fold_mean'],
@@ -236,6 +241,7 @@ def main():
         'DEL_ECFP': ecfp_rank,
         'DEL_FCFP': fcfp_rank,
         'DEL_mean': del_rank,
+        'known_ligand_prior': 1 - (rankdata(-val_ligand, method='average') - 1) / len(meta),
         'released_label_adaptation': adapted_rank,
         'released_label_neighborhood_only': neighbor_rank,
     }

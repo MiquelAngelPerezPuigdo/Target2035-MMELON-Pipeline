@@ -17,7 +17,7 @@
     "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
     "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
     "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
-    "panel_builder": "a291b51b2f5359d5be47d8fd244f8cb43c8c560f54085aec5eda7f553ddc16de"
+    "panel_builder": "748345051db45e84fb4c8720a8485683131253cb1cea08301800779a067619a7"
   },
   "ranking_methods": {
     "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
@@ -28,6 +28,26 @@
   "panel_model_numerics": {
     "adaptation_max_abs_standardized_validation_feature": 11.588953971862793,
     "adaptation_max_abs_coefficient": 1.17280925167482,
+    "adaptation_feature_names": [
+      "DEL_ECFP_logit",
+      "DEL_FCFP_logit",
+      "public_ligand_similarity",
+      "released_positive_neighbor_max",
+      "released_negative_neighbor_max",
+      "positive_minus_negative_neighbor_max",
+      "positive_neighbor_soft_mean",
+      "negative_neighbor_soft_mean"
+    ],
+    "adaptation_coefficients_standardized": [
+      -0.13559185961093156,
+      0.6461169992946872,
+      -0.13369990790946953,
+      0.5738925566776926,
+      -0.19366765219230675,
+      0.44850364722440456,
+      1.0211250042596662,
+      -1.17280925167482
+    ],
     "adaptation_scores_finite": true,
     "labels_only_scores_finite": true
   },
@@ -170,6 +190,23 @@
         "best_negative_rank_fraction": 0.99998158213549,
         "median_negative_rank_fraction": 0.8880316623555221,
         "known_negatives_in_top_50": 5
+      },
+      "known_ligand_prior": {
+        "positive_rank_fractions_best_to_worst": [
+          0.99981172849612,
+          0.9973396417929996,
+          0.9963614485445794,
+          0.9961854556170394,
+          0.9961158770177794,
+          0.9958334697619593,
+          0.9955510625061393,
+          0.9950230837235192
+        ],
+        "known_positives_in_top_50": 1,
+        "known_positives_in_top_500": 1,
+        "best_negative_rank_fraction": 0.99982400707246,
+        "median_negative_rank_fraction": 0.7816204037195901,
+        "known_negatives_in_top_50": 3
       },
       "released_label_adaptation": {
         "positive_rank_fractions_best_to_worst": [
@@ -839,6 +876,6 @@
   },
   "bundle": {
     "file": "submissions/panels/active_learning_validation_panels.zip",
-    "sha256": "282f4a63601a84a84a77dc1bae1b0813896cb012778299a7097025aa504c9082"
+    "sha256": "46884e255789a3b6b010d5b97e726971dbc9feaa1bf3b1ae5c764ef45b489990"
   }
 }

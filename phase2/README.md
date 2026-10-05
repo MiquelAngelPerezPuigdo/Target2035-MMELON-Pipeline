@@ -47,6 +47,8 @@ The transfer audit found maximum ECFP4 similarity to the 39 released test binder
 3. Compare the successful ligand-informed phase-one selections against current candidate ranks and chemical-family coverage across the validation pool and remaining test pool. Treat grouped cross-validation on the participant-selected release as insufficient evidence of transfer.
 4. The leakage-safe historical panel-count audit is complete. It shows that the DEL-count model misses the strongest ligand-led panels by 13–20 expected hits, so it is not a sufficient replacement for the known-ligand signal. Continue offline tests that combine ligand-derived chemistry with DEL as a material contributor, and require a DEL-removal ablation before any new validation selection.
 
+The follow-up DEL/neighborhood blend sweep found no increase above 27/250 held-out top-50 recoveries for any tested DEL-containing blend. Modest DEL weights kept most top-50 recovery and sometimes slightly improved whole-fold AP/AUC; stronger weights reduced recovery. This makes DEL a useful candidate secondary feature for further experiments, but the current evidence does not show top-50 benefit or validate a test list. See [release_del_blend_audit.json](reports/release_del_blend_audit.json).
+
 These are proposed comparisons, not completed models or guarantees of improvement. Use the Mac and memory-bounded caches. Preserve phase-one assets and write new results under `phase2/`.
 
 ## Validation budget proposal

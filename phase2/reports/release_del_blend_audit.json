@@ -1,0 +1,826 @@
+{
+  "source": "phase2/data/release_oof_scores.parquet",
+  "method": "Combine within-fold percentile ranks of the release-label neighborhood and each DEL-containing score at fixed weights; evaluate only held-out rows from the original five chemistry-group folds.",
+  "folds": 5,
+  "weight_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "positive_count": 39,
+  "grouping": "Butina ECFP4 clusters at Tanimoto >= 0.65, StratifiedGroupKFold seed 2605",
+  "summary": {
+    "frozen_DEL_ECFP": {
+      "neighbor_only_top50_hits": 27,
+      "best_blend_top50_hits": 27,
+      "max_average_precision": 0.3627027191417443,
+      "top50_improved_over_neighbor_only": false
+    },
+    "frozen_DEL_FCFP": {
+      "neighbor_only_top50_hits": 27,
+      "best_blend_top50_hits": 27,
+      "max_average_precision": 0.3579309438561548,
+      "top50_improved_over_neighbor_only": false
+    },
+    "mean_frozen_DEL_rank": {
+      "neighbor_only_top50_hits": 27,
+      "best_blend_top50_hits": 27,
+      "max_average_precision": 0.3579309438561548,
+      "top50_improved_over_neighbor_only": false
+    },
+    "historical_G": {
+      "neighbor_only_top50_hits": 27,
+      "best_blend_top50_hits": 27,
+      "max_average_precision": 0.3579309438561548,
+      "top50_improved_over_neighbor_only": false
+    },
+    "DEL_plus_release_adaptation_OOF": {
+      "neighbor_only_top50_hits": 27,
+      "best_blend_top50_hits": 27,
+      "max_average_precision": 0.35947017714759294,
+      "top50_improved_over_neighbor_only": false
+    }
+  },
+  "results": [
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579309438561548,
+      "mean_fold_roc_auc": 0.9183616637041359
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.1,
+      "top50_hits_across_five_heldout_folds": 25,
+      "fold_top50_hits": [
+        5,
+        6,
+        5,
+        3,
+        6
+      ],
+      "mean_fold_average_precision": 0.3627027191417443,
+      "mean_fold_roc_auc": 0.9188949198198879
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.2,
+      "top50_hits_across_five_heldout_folds": 23,
+      "fold_top50_hits": [
+        5,
+        5,
+        5,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.30811501948492026,
+      "mean_fold_roc_auc": 0.9161832670170247
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.3,
+      "top50_hits_across_five_heldout_folds": 20,
+      "fold_top50_hits": [
+        3,
+        5,
+        4,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.2778675385711483,
+      "mean_fold_roc_auc": 0.9104270312442064
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.4,
+      "top50_hits_across_five_heldout_folds": 17,
+      "fold_top50_hits": [
+        2,
+        3,
+        4,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.23821106284096735,
+      "mean_fold_roc_auc": 0.9003767247712077
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.5,
+      "top50_hits_across_five_heldout_folds": 16,
+      "fold_top50_hits": [
+        1,
+        3,
+        4,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.20247498356632834,
+      "mean_fold_roc_auc": 0.8843272418850988
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.6,
+      "top50_hits_across_five_heldout_folds": 16,
+      "fold_top50_hits": [
+        1,
+        2,
+        5,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.1587104246301685,
+      "mean_fold_roc_auc": 0.8624857394436465
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.7,
+      "top50_hits_across_five_heldout_folds": 13,
+      "fold_top50_hits": [
+        0,
+        2,
+        4,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.1368371877807983,
+      "mean_fold_roc_auc": 0.8331723734379178
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.8,
+      "top50_hits_across_five_heldout_folds": 12,
+      "fold_top50_hits": [
+        0,
+        2,
+        3,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.11975317430619987,
+      "mean_fold_roc_auc": 0.7950370535034812
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 0.9,
+      "top50_hits_across_five_heldout_folds": 9,
+      "fold_top50_hits": [
+        0,
+        2,
+        3,
+        1,
+        3
+      ],
+      "mean_fold_average_precision": 0.06477770916015298,
+      "mean_fold_roc_auc": 0.7563374948022531
+    },
+    {
+      "DEL_signal": "frozen_DEL_ECFP",
+      "DEL_rank_weight": 1.0,
+      "top50_hits_across_five_heldout_folds": 4,
+      "fold_top50_hits": [
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "mean_fold_average_precision": 0.019752477465799133,
+      "mean_fold_roc_auc": 0.7146038240720101
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579309438561548,
+      "mean_fold_roc_auc": 0.9183616637041359
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.1,
+      "top50_hits_across_five_heldout_folds": 23,
+      "fold_top50_hits": [
+        5,
+        6,
+        5,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.2723382846486505,
+      "mean_fold_roc_auc": 0.9175458847625574
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.2,
+      "top50_hits_across_five_heldout_folds": 23,
+      "fold_top50_hits": [
+        5,
+        6,
+        4,
+        3,
+        5
+      ],
+      "mean_fold_average_precision": 0.21765185956953256,
+      "mean_fold_roc_auc": 0.9146719631310564
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.3,
+      "top50_hits_across_five_heldout_folds": 20,
+      "fold_top50_hits": [
+        3,
+        6,
+        4,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.1614679755130503,
+      "mean_fold_roc_auc": 0.9076304745346417
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.4,
+      "top50_hits_across_five_heldout_folds": 15,
+      "fold_top50_hits": [
+        2,
+        5,
+        4,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.1336998275152036,
+      "mean_fold_roc_auc": 0.8926557465421187
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.5,
+      "top50_hits_across_five_heldout_folds": 15,
+      "fold_top50_hits": [
+        2,
+        5,
+        5,
+        1,
+        2
+      ],
+      "mean_fold_average_precision": 0.11055981801655852,
+      "mean_fold_roc_auc": 0.8676037307303887
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.6,
+      "top50_hits_across_five_heldout_folds": 12,
+      "fold_top50_hits": [
+        1,
+        4,
+        3,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.08913957678528334,
+      "mean_fold_roc_auc": 0.8308846937702656
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.7,
+      "top50_hits_across_five_heldout_folds": 11,
+      "fold_top50_hits": [
+        1,
+        4,
+        2,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.05866257588294201,
+      "mean_fold_roc_auc": 0.7922092917718518
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.8,
+      "top50_hits_across_five_heldout_folds": 9,
+      "fold_top50_hits": [
+        0,
+        3,
+        2,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.04336541734472228,
+      "mean_fold_roc_auc": 0.7479011753250482
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 0.9,
+      "top50_hits_across_five_heldout_folds": 8,
+      "fold_top50_hits": [
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.02977830100902043,
+      "mean_fold_roc_auc": 0.7027001833782738
+    },
+    {
+      "DEL_signal": "frozen_DEL_FCFP",
+      "DEL_rank_weight": 1.0,
+      "top50_hits_across_five_heldout_folds": 1,
+      "fold_top50_hits": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mean_fold_average_precision": 0.020358846718925058,
+      "mean_fold_roc_auc": 0.6579612137826734
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579309438561548,
+      "mean_fold_roc_auc": 0.9183616637041359
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.1,
+      "top50_hits_across_five_heldout_folds": 25,
+      "fold_top50_hits": [
+        5,
+        6,
+        5,
+        3,
+        6
+      ],
+      "mean_fold_average_precision": 0.3272009050233442,
+      "mean_fold_roc_auc": 0.919454392548029
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.2,
+      "top50_hits_across_five_heldout_folds": 25,
+      "fold_top50_hits": [
+        5,
+        6,
+        5,
+        3,
+        6
+      ],
+      "mean_fold_average_precision": 0.261572677475577,
+      "mean_fold_roc_auc": 0.9198157888496358
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.3,
+      "top50_hits_across_five_heldout_folds": 22,
+      "fold_top50_hits": [
+        5,
+        5,
+        5,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.22030149145312045,
+      "mean_fold_roc_auc": 0.9161330553583011
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.4,
+      "top50_hits_across_five_heldout_folds": 18,
+      "fold_top50_hits": [
+        3,
+        5,
+        4,
+        2,
+        4
+      ],
+      "mean_fold_average_precision": 0.1968357213674932,
+      "mean_fold_roc_auc": 0.9081571885888969
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.5,
+      "top50_hits_across_five_heldout_folds": 17,
+      "fold_top50_hits": [
+        2,
+        5,
+        4,
+        2,
+        4
+      ],
+      "mean_fold_average_precision": 0.1569934628275508,
+      "mean_fold_roc_auc": 0.8950964151498276
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.6,
+      "top50_hits_across_five_heldout_folds": 17,
+      "fold_top50_hits": [
+        1,
+        6,
+        4,
+        2,
+        4
+      ],
+      "mean_fold_average_precision": 0.13930969020710543,
+      "mean_fold_roc_auc": 0.8719190528123626
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.7,
+      "top50_hits_across_five_heldout_folds": 13,
+      "fold_top50_hits": [
+        1,
+        5,
+        3,
+        1,
+        3
+      ],
+      "mean_fold_average_precision": 0.10499583813165506,
+      "mean_fold_roc_auc": 0.8419666639140339
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.8,
+      "top50_hits_across_five_heldout_folds": 10,
+      "fold_top50_hits": [
+        0,
+        5,
+        2,
+        1,
+        2
+      ],
+      "mean_fold_average_precision": 0.07777617820099818,
+      "mean_fold_roc_auc": 0.8012742039836729
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 0.9,
+      "top50_hits_across_five_heldout_folds": 6,
+      "fold_top50_hits": [
+        0,
+        1,
+        2,
+        1,
+        2
+      ],
+      "mean_fold_average_precision": 0.047022595129766837,
+      "mean_fold_roc_auc": 0.7564795344823496
+    },
+    {
+      "DEL_signal": "mean_frozen_DEL_rank",
+      "DEL_rank_weight": 1.0,
+      "top50_hits_across_five_heldout_folds": 4,
+      "fold_top50_hits": [
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "mean_fold_average_precision": 0.016349411644402595,
+      "mean_fold_roc_auc": 0.713006718950443
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579309438561548,
+      "mean_fold_roc_auc": 0.9183616637041359
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.1,
+      "top50_hits_across_five_heldout_folds": 22,
+      "fold_top50_hits": [
+        4,
+        5,
+        4,
+        3,
+        6
+      ],
+      "mean_fold_average_precision": 0.23578387935069242,
+      "mean_fold_roc_auc": 0.9095316922319869
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.2,
+      "top50_hits_across_five_heldout_folds": 17,
+      "fold_top50_hits": [
+        3,
+        3,
+        2,
+        3,
+        6
+      ],
+      "mean_fold_average_precision": 0.18620454493463848,
+      "mean_fold_roc_auc": 0.897286328073991
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.3,
+      "top50_hits_across_five_heldout_folds": 15,
+      "fold_top50_hits": [
+        3,
+        3,
+        2,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.14547855243192448,
+      "mean_fold_roc_auc": 0.8798853508683541
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.4,
+      "top50_hits_across_five_heldout_folds": 14,
+      "fold_top50_hits": [
+        3,
+        2,
+        2,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.12589458915143173,
+      "mean_fold_roc_auc": 0.8553159782342341
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.5,
+      "top50_hits_across_five_heldout_folds": 15,
+      "fold_top50_hits": [
+        3,
+        2,
+        3,
+        2,
+        5
+      ],
+      "mean_fold_average_precision": 0.10664364391637664,
+      "mean_fold_roc_auc": 0.8141405492516032
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.6,
+      "top50_hits_across_five_heldout_folds": 14,
+      "fold_top50_hits": [
+        3,
+        2,
+        3,
+        2,
+        4
+      ],
+      "mean_fold_average_precision": 0.09522367497480913,
+      "mean_fold_roc_auc": 0.7480254894342258
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.7,
+      "top50_hits_across_five_heldout_folds": 11,
+      "fold_top50_hits": [
+        2,
+        2,
+        3,
+        2,
+        2
+      ],
+      "mean_fold_average_precision": 0.06847508967120479,
+      "mean_fold_roc_auc": 0.6842708421907417
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.8,
+      "top50_hits_across_five_heldout_folds": 8,
+      "fold_top50_hits": [
+        1,
+        2,
+        3,
+        1,
+        1
+      ],
+      "mean_fold_average_precision": 0.04358647848338537,
+      "mean_fold_roc_auc": 0.630101886977248
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 0.9,
+      "top50_hits_across_five_heldout_folds": 5,
+      "fold_top50_hits": [
+        1,
+        0,
+        2,
+        1,
+        1
+      ],
+      "mean_fold_average_precision": 0.024532358577389377,
+      "mean_fold_roc_auc": 0.5805370856920979
+    },
+    {
+      "DEL_signal": "historical_G",
+      "DEL_rank_weight": 1.0,
+      "top50_hits_across_five_heldout_folds": 2,
+      "fold_top50_hits": [
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "mean_fold_average_precision": 0.00980368468063841,
+      "mean_fold_roc_auc": 0.5344203314990439
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579309438561548,
+      "mean_fold_roc_auc": 0.9183616637041359
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.1,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.35733823246438823,
+      "mean_fold_roc_auc": 0.9194335315944132
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.2,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.35851769858510224,
+      "mean_fold_roc_auc": 0.9202842726938893
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.3,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.35947017714759294,
+      "mean_fold_roc_auc": 0.9213797938467948
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.4,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3579583211649238,
+      "mean_fold_roc_auc": 0.922522679046029
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.5,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.35237572637495274,
+      "mean_fold_roc_auc": 0.923347364815726
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.6,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.35023905458322924,
+      "mean_fold_roc_auc": 0.9237446169887866
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.7,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3487692854637397,
+      "mean_fold_roc_auc": 0.924016822515371
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.8,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3463363766864041,
+      "mean_fold_roc_auc": 0.9242127063832353
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 0.9,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3455027550113221,
+      "mean_fold_roc_auc": 0.9234698007569774
+    },
+    {
+      "DEL_signal": "DEL_plus_release_adaptation_OOF",
+      "DEL_rank_weight": 1.0,
+      "top50_hits_across_five_heldout_folds": 27,
+      "fold_top50_hits": [
+        5,
+        6,
+        6,
+        3,
+        7
+      ],
+      "mean_fold_average_precision": 0.3438716805830687,
+      "mean_fold_roc_auc": 0.9231405267041026
+    }
+  ],
+  "source_sha256": "f3bc91e10163961acaf680112b52188447657f20e295d2dafd60ba012c9e83c7",
+  "limitation": "The 39 binders were selected by participant workflows. These OOF comparisons measure transfer within that selected release and do not estimate hits in the remaining test pool. Repeated weight comparisons also create model-selection risk; no test submission is justified by this sweep alone."
+}

@@ -70,5 +70,12 @@
     "9779675",
     "9780474"
   ],
-  "feedback_assessment": "All three current, scientifically distinct 50-ID panels scored zero hits: 150 submitted selections with two cross-panel overlaps (148 unique IDs). At least three earlier Blind validation submissions also scored zero. Treat the current panel strategy as unsuccessful; pause submissions and diagnose before retraining or selecting another panel."
+  "feedback_assessment": "All three current, scientifically distinct 50-ID panels scored zero hits: 150 submitted selections with two cross-panel overlaps (148 unique IDs). At least three earlier Blind validation submissions also scored zero. Treat the current panel strategy as unsuccessful; pause submissions and diagnose before retraining or selecting another panel.",
+  "initial_failure_audit": {
+    "submission_queue": "Blind validation; all three files received scored notifications",
+    "validation_ID_membership": "All 150 submitted rows are unique within their panel and belong to the 244328-row validation universe; 148 distinct IDs across panels",
+    "DEL_score_vectors": "Both frozen prediction arrays contain 244328 finite scores, matching the validation metadata row count",
+    "rank_direction": "Panel rank fractions sort highest model scores first",
+    "finding": "No obvious format, validation-universe membership, score-length, or reversed-ranking error found. Exact row-by-row score-to-CatalogID provenance and the cause of repeated zero hits still require audit."
+  }
 }

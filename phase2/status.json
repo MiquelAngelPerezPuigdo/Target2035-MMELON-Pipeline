@@ -61,7 +61,8 @@
       "synapse_file_id": "syn77821898",
       "submission_id": "9783557",
       "status": "scored",
-      "status_email_received": false,
+      "status_email_received": true,
+      "status_email_timestamp": "2026-10-05T14:47+02:00",
       "N_hits": 0,
       "method": "60% historical G rank + 40% mean ECFP/FCFP DEL rank; excluded all previously evaluated IDs"
     }
@@ -71,7 +72,8 @@
       "count": 3,
       "file_format": "50 CatalogIDs per line",
       "outcome": "submitted to Active learning by mistake; at least two received format-rejection emails, one outcome not yet confirmed",
-      "note": "Do not make further test-queue attempts before reconciling Synapse submission history."
+      "rejected_submission_ids_confirmed": ["9783552", "9783553"],
+      "note": "Gmail confirms submission 9783553 was rejected on 2026-10-05 for missing required CSV columns; 9783552 was previously reported rejected. The third attempt is still unidentified. Do not make further test-queue attempts before reconciling Synapse submission history."
     }
   ],
   "historical_validation_summary": {

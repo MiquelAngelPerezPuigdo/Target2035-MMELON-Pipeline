@@ -1,0 +1,32 @@
+{
+  "source": "local_del archived validation batch lists and exact aggregate hit counts",
+  "method": "For every unresolved ID, test label 0 and label 1 against the full binary MILP; add a label only if the opposite assignment is infeasible.",
+  "solver": {
+    "name": "scipy.optimize.milp (HiGHS)",
+    "scipy_version": "1.13.1"
+  },
+  "bags": 48,
+  "unique_submitted_ids": 1247,
+  "propagation_labels": {
+    "positive": 8,
+    "negative": 628
+  },
+  "unresolved_checked": 611,
+  "binary_feasibility_checks": 1222,
+  "additional_forced_labels": [
+    {
+      "CatalogID": "Z31233864",
+      "label": 0
+    },
+    {
+      "CatalogID": "Z31246525",
+      "label": 0
+    }
+  ],
+  "combined_labels": {
+    "positive": 8,
+    "negative": 630,
+    "unresolved": 609
+  },
+  "limitation": "These are adaptive validation feedback labels inferred from participant-selected panels, not an independent estimate of generalization."
+}

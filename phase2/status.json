@@ -9,13 +9,13 @@
   "published_validation_allowance": 100,
   "published_test_allowance": 2,
   "account_balance_verified": false,
-  "validation_submissions_by_this_recovery": 3,
+  "validation_submissions_by_this_recovery": 4,
   "test_submissions_by_this_recovery": 3,
   "test_queue_attempts_scored": 0,
   "test_queue_attempts_rejected_for_format": 2,
   "test_queue_attempts_with_unconfirmed_outcome": 1,
   "account_submission_history_reconciled": false,
-  "next_action": "Pause submissions. Audit why the three current panels scored zero against the full historical validation record; use historical validation feedback in the next offline comparison and reconcile the mistaken Active learning queue attempts before any test submission.",
+  "next_action": "Pause submissions. The fresh historical-ligand/DEL consensus panel also scored zero after excluding all previously evaluated IDs. Reassess transfer to the validation chemistry and reconcile the mistaken Active learning queue attempts before any test submission.",
   "released_labeled_rows": 6580,
   "released_binders": 39,
   "released_nonbinders": 6541,
@@ -30,8 +30,8 @@
   "released_structure_features_regenerated": true,
   "official_site_reviewed_on": "2026-10-05",
   "offline_grouped_CV_complete": true,
-  "validation_panels_prepared": 3,
-  "validation_panels_submitted": 3,
+  "validation_panels_prepared": 4,
+  "validation_panels_submitted": 4,
   "validation_panel_submissions": [
     {
       "panel": "DEL_support",
@@ -55,6 +55,15 @@
       "submission_id": "9783556",
       "status": "scored",
       "N_hits": 0
+    },
+    {
+      "panel": "DEL_ligand_consensus",
+      "synapse_file_id": "syn77821898",
+      "submission_id": "9783557",
+      "status": "scored",
+      "status_email_received": false,
+      "N_hits": 0,
+      "method": "60% historical G rank + 40% mean ECFP/FCFP DEL rank; excluded all previously evaluated IDs"
     }
   ],
   "wrong_queue_active_learning_attempts": [
@@ -63,7 +72,7 @@
       "file_format": "50 CatalogIDs per line",
       "outcome": "submitted to Active learning by mistake; at least two received format-rejection emails, one outcome not yet confirmed",
       "note": "Do not make further test-queue attempts before reconciling Synapse submission history."
-      }
+    }
   ],
   "historical_validation_summary": {
     "source": "Synapse Results wiki, Your Submissions Ranking",
@@ -73,24 +82,24 @@
     "phase_one_zero_hit_submissions": 19,
     "phase_one_nonzero_submissions": 32,
     "phase_one_total_hits": 163,
-    "current_phase_two_submissions": 3,
-    "current_phase_two_zero_hit_submissions": 3,
-    "combined_submissions": 54,
-    "combined_zero_hit_submissions": 22,
+    "current_phase_two_submissions": 4,
+    "current_phase_two_zero_hit_submissions": 4,
+    "combined_submissions": 55,
+    "combined_zero_hit_submissions": 23,
     "combined_total_hits": 163,
     "record": "reports/validation_history.json"
   },
-  "feedback_assessment": "All three current, scientifically distinct 50-ID panels scored zero hits: 150 submitted selections with two cross-panel overlaps (148 unique IDs). The 51 earlier validation submissions were mixed: 19 scored zero, 32 found at least one hit, totaling 163 hits. The strongest phase-one panels were ligand-informed. The current panels failed their external check; use the complete adaptive validation history to diagnose and compare methods before selecting again.",
+  "feedback_assessment": "All four current, scientifically distinct 50-ID panels scored zero hits: 200 submitted selections with two overlaps among the first three panels (198 unique IDs). The newest ligand/DEL consensus panel excluded all 1,363 previously evaluated IDs and still scored zero. The 51 earlier validation submissions were mixed: 19 scored zero, 32 found at least one hit, totaling 163 hits. Pause further submissions and reassess transfer before selecting again.",
   "initial_failure_audit": {
     "submission_queue": "Blind validation; all three files received scored notifications",
     "validation_ID_membership": "All 150 submitted rows are unique within their panel and belong to the 244328-row validation universe; 148 distinct IDs across panels",
     "DEL_score_vectors": "Both frozen prediction arrays contain 244328 finite scores. The 148 unique submitted IDs were traced to source rows, regenerated fingerprints, sparse feature rows, and recomputed model scores; all match exactly.",
     "rank_direction": "Panel rank fractions sort highest model scores first",
-    "historical_panel_overlap": "Of 150 current rows (148 unique IDs), 32 had already appeared in phase-one panels; all 32 were in DEL_support. Twenty-nine are logically forced non-binders from prior zero-hit panels. The other two current panels contain no previously tested IDs.",
+    "historical_panel_overlap": "Of 200 current rows (198 unique IDs), 32 had already appeared in phase-one panels; all 32 were in DEL_support. Twenty-nine are logically forced non-binders from prior zero-hit panels. The new DEL_ligand_consensus panel excluded all 1,363 IDs previously selected across phase one and the first three phase-two panels; it nevertheless scored zero.",
     "historically_forced_positives_selected": 0,
     "current_rank_vs_historical_panels": "For high-hit G/K/M panels (25/21/21 hits), median adaptation rank fractions are 0.09/0.30/0.39 versus frozen-DEL ranks 0.87/0.80/0.85. Adapter ranking therefore disfavors earlier successful validation chemistry. Its standardized ECFP-DEL and public-ligand coefficients are negative; ligand prior alone puts one forced validation positive in its top 50, the historical G formula puts one in its top 500, and the adapter puts no forced positives in its top 500.",
     "released_binder_transfer_audit": "reports/validation_release_transfer.json",
     "row_provenance_audit": "reports/validation_row_provenance_audit.json",
-    "finding": "No format, validation-universe membership, score-length, reversed-ranking, or selected-row score-to-CatalogID error found. DEL_support repeated 29 already-known negatives, and none of the three panels selected the eight inferable historical positives. The remaining issue is historical-feedback omission and poor ranking transfer. See reports/validation_panel_history_overlap.json and reports/validation_row_provenance_audit.json."
+    "finding": "No format, validation-universe membership, score-length, reversed-ranking, or selected-row score-to-CatalogID error is supported. DEL_support repeated 29 already-known negatives, and none of the four panels selected any of the eight inferable historical positives. The new ligand/DEL consensus panel excluded all previously tested IDs and still found no hits, indicating a transfer/ranking failure rather than merely repeated candidates. Further submissions are paused pending a stronger correction."
   }
 }

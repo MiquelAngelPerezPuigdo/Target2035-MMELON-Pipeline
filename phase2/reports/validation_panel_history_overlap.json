@@ -1,17 +1,33 @@
 {
-  "source": "Local round01-round21 archived validation submission batches and phase-one aggregate hit-count ledger",
-  "method": "Compared current phase-two panel CatalogIDs against all 48 archived round01-round21 panels. Molecule-level labels are reported only when logically forced by aggregate constraints; membership in a nonzero panel is not treated as a positive label.",
+  "source": "Local round01-round21 archived validation batches and phase-one aggregate hit-count ledger",
+  "method": "Compared all four phase-two panels against the 48 archived phase-one panels. Individual labels are reported only when logically forced by aggregate constraints; membership in a nonzero panel is never treated as a positive label.",
   "phase_one_panels_compared": 48,
   "phase_one_unique_ids_evaluated": 1247,
   "forced_label_rows": 636,
   "forced_positives": 8,
   "forced_negatives": 628,
-  "phase_two_panel_rows": 150,
-  "phase_two_unique_ids": 148,
-  "phase_two_unique_ids_previously_evaluated": 32,
+  "phase_two_panel_rows": 200,
+  "phase_two_unique_ids": 198,
+  "phase_two_unique_ids_previously_evaluated_in_phase_one": 32,
   "phase_two_forced_positives_selected": 0,
   "phase_two_forced_negatives_selected": 29,
   "panels": [
+    {
+      "panel": "DEL_ligand_consensus",
+      "file": "phase2/submissions/panels/DEL_ligand_consensus/DEL_ligand_consensus.txt",
+      "submission_sha256": "4701bad17fd2ea9c477792a07da072fb004fa781fd4df16454ff1b3d4772f616",
+      "rows": 50,
+      "unique_ids": 50,
+      "ids_evaluated_in_phase_one": 0,
+      "ids_in_prior_zero_hit_panels": 0,
+      "forced_labels_present": 0,
+      "forced_positive_ids": 0,
+      "forced_negative_ids": 0,
+      "evaluated_ids_without_forced_label": 0,
+      "excludes_all_previous_phase1_and_phase2_ids": true,
+      "excludes_all_phase_one_ids": true,
+      "previous_phase_one_and_first_phase_two_unique_ids_excluded": 1363
+    },
     {
       "panel": "DEL_support",
       "file": "phase2/submissions/panels/DEL_support/DEL_support.txt",
@@ -23,7 +39,8 @@
       "forced_labels_present": 29,
       "forced_positive_ids": 0,
       "forced_negative_ids": 29,
-      "evaluated_ids_without_forced_label": 3
+      "evaluated_ids_without_forced_label": 3,
+      "excludes_all_previous_phase1_and_phase2_ids": false
     },
     {
       "panel": "Experimental_adaptation",
@@ -36,7 +53,8 @@
       "forced_labels_present": 0,
       "forced_positive_ids": 0,
       "forced_negative_ids": 0,
-      "evaluated_ids_without_forced_label": 0
+      "evaluated_ids_without_forced_label": 0,
+      "excludes_all_previous_phase1_and_phase2_ids": false
     },
     {
       "panel": "Model_disagreement",
@@ -49,8 +67,9 @@
       "forced_labels_present": 0,
       "forced_positive_ids": 0,
       "forced_negative_ids": 0,
-      "evaluated_ids_without_forced_label": 0
+      "evaluated_ids_without_forced_label": 0,
+      "excludes_all_previous_phase1_and_phase2_ids": false
     }
   ],
-  "interpretation": "DEL_support reused 32 previously evaluated candidates, including 29 logically forced negatives and no forced positives. The other two panels contained no IDs from the 48 archived phase-one panels. None of the three panels included any of the eight inferable positive validation labels. This is evidence of missing historical-feedback filtering and weak transfer of the present rankings, but the small, adaptively selected forced-label sample is not an independent performance estimate."
+  "interpretation": "The DEL_support panel reused 32 previously evaluated candidates, including 29 logically forced negatives. The other three panels had no exact overlap with prior phase-one panels. The new DEL_ligand_consensus panel also excluded all 1,363 IDs previously used in phase one or the first three phase-two panels, but still scored zero hits. None of the four phase-two panels included any of the eight inferable positive validation labels."
 }

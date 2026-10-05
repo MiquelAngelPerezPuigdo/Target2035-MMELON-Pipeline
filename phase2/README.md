@@ -12,7 +12,7 @@ The [submission format](https://www.synapse.org/Synapse:syn75349604/wiki/641045)
 
 ## Campaign readiness
 
-The workspace and phase-one evidence are consolidated. Three contrasting 50-ID panels were submitted to Blind validation and all scored zero hits. The full Results page history shows 19 zero-hit and 32 nonzero results across 51 phase-one validation submissions (163 hits total); the strongest panels were ligand-informed. Three additional 50-ID lists were mistakenly sent to the Active learning test queue; two were rejected for format, and the third outcome remains unconfirmed. See the mapped [validation history](reports/validation_history.json) and [status.json](status.json).
+The workspace and phase-one evidence are consolidated. Four phase-two 50-ID panels were submitted to Blind validation and all scored zero hits, including a fresh ligand/DEL consensus panel that excluded every previously tested ID. The full Results page history shows 19 zero-hit and 32 nonzero results across 51 earlier validation submissions (163 hits total); the strongest panels were ligand-informed. Three additional 50-ID lists were mistakenly sent to the Active learning test queue; two were rejected for format, and the third outcome remains unconfirmed. See the mapped [validation history](reports/validation_history.json) and [status.json](status.json).
 
 - [x] Recover all locally available phase-one code and result records.
 - [x] Preserve original submission archives, test files, models, and caches.
@@ -21,7 +21,7 @@ The workspace and phase-one evidence are consolidated. Three contrasting 50-ID p
 - [x] Obtain the official released labels and current submission templates.
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
 - [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
-- [x] Compare phase-two baselines, submit three validation panels, and record that each scored zero hits.
+- [x] Compare phase-two baselines, submit four validation panels, and record that each scored zero hits.
 - [ ] Diagnose why the current three panels failed despite the strong ligand-informed phase-one validation results before fitting or submitting another candidate list.
 
 ## Data ingestion
@@ -40,7 +40,7 @@ Split confirmed labeled compounds by scaffold or chemical series before model co
 
 See the [October 5 site review](SITE_REVIEW.md) and [first model comparison](EXPERIMENT_01.md). Fresh released-structure features passed checks, but all three validation panels scored zero. The current candidate-ranking approach has failed its external check; do not spend more credits on its rankings.
 
-The transfer audit found maximum ECFP4 similarity to the 39 released test binders scored only 0.244 AUC on the eight inferable validation positives versus 628 inferable negatives. The phase-two adapted ranking also places the strongest historical validation panels below the frozen DEL ranking. These forced labels and historical panel comparisons are adaptive, so use them to diagnose domain shift rather than as independent performance estimates. See [validation_release_transfer.json](reports/validation_release_transfer.json) and the historical panel ranks in [validation_panels.json](reports/validation_panels.json).
+The transfer audit found maximum ECFP4 similarity to the 39 released test binders scored only 0.244 AUC on the eight inferable validation positives versus 628 inferable negatives. The phase-two adapted ranking also places the strongest historical validation panels below the frozen DEL ranking. A fourth fresh ligand/DEL consensus panel excluded all prior IDs yet still scored zero. These forced labels and historical panel comparisons are adaptive, so use them to diagnose domain shift rather than as independent performance estimates. See [validation_release_transfer.json](reports/validation_release_transfer.json) and the historical panel ranks in [validation_panels.json](reports/validation_panels.json).
 
 1. Use the mapped 51-submission validation history and archived candidate lists as adaptive evidence. Preserve aggregate hit-count constraints; do not turn every member of a partially successful panel into a positive label. The [panel overlap audit](reports/validation_panel_history_overlap.json) found 29 already-known negatives in DEL_support and no historical positives in any current panel.
 2. Audit validation and test CatalogID universes, joins, score direction, and selected-ID exports. Queue acceptance and score emails show the current lists were evaluated; investigate why the current rankings missed even historically inferable positives.

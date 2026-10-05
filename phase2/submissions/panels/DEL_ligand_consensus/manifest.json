@@ -1,0 +1,35 @@
+{
+  "status": "scored",
+  "method": "60% historical G rank (95% public-ligand prior + 5% ECFP-DEL raw score) and 40% mean ECFP/FCFP DEL rank; rank fusion avoids mixing score scales.",
+  "candidate_universe_rows": 244328,
+  "previously_evaluated_unique_ids_excluded": 1363,
+  "selection_rules": {
+    "valid_structure": true,
+    "unique_nonchiral_parent": true,
+    "maximum_per_Murcko_scaffold": 2,
+    "maximum_pairwise_ECFP4_Tanimoto": 0.65,
+    "rows": 50,
+    "unique_CatalogIDs": 50
+  },
+  "historical_forced_label_diagnostic": {
+    "warning": "The forced labels are adaptive and not an independent evaluation set.",
+    "forced_positives_in_selected_panel": 0,
+    "forced_negatives_in_selected_panel": 0,
+    "forced_positives_in_global_top_50": 0,
+    "forced_positives_in_global_top_500": 0
+  },
+  "file": "submissions/panels/DEL_ligand_consensus/DEL_ligand_consensus.txt",
+  "submission_sha256": "4701bad17fd2ea9c477792a07da072fb004fa781fd4df16454ff1b3d4772f616",
+  "detail_file": "submissions/panels/DEL_ligand_consensus/selected_details.csv",
+  "source_hashes": {
+    "validation_catalog_ids": "ed7d3df8050def5a12c12dbb8b528f9c22251ce04f509089a9d3c01b2a3de482",
+    "validation_ECFP_scores": "b949e44e9445fca0f239d15f1d827e3ad9d96fbcacbe0b0ccf0578477b7a8c83",
+    "validation_FCFP_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
+    "known_ligand_similarity": "5a9b08d1c384542d3ec49a321a8f524468a028e383cd3994757226a75ccc09d2",
+    "builder": "162a7b609553d20c550dc1504b10146646201e308e49685bfc6462f69f1f0c7e"
+  },
+  "synapse_file_id": "syn77821898",
+  "submission_id": "9783557",
+  "N_hits": 0,
+  "evaluation_queue": "Blind validation"
+}

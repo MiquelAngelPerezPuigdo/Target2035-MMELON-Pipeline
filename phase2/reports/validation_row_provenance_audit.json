@@ -1,8 +1,8 @@
 {
-  "scope": "The 148 unique CatalogIDs submitted across the three current phase-two validation panels.",
+  "scope": "198 unique CatalogIDs across all four phase-two validation panels",
   "source_rows_compared": "Val-Test-set/PGK2_Validation_split.csv versus local_del/features/validation_meta.parquet",
   "source_row_order_and_smiles_match": true,
-  "selected_ids_checked": 148,
+  "selected_ids_checked": 198,
   "selected_structures_regenerated_from_metadata_SMILES": true,
   "regenerated_ECFP4_and_FCFP4_equal_cached_fingerprint_rows": true,
   "selected_ECFP_sparse_rows_match_regenerated_fingerprints": true,
@@ -11,10 +11,8 @@
   "score_recomputation_max_absolute_error_by_model": {
     "ECFP_seed_2035": 0.0,
     "ECFP_seed_2036": 0.0,
-    "ECFP_mean": 0.0,
     "FCFP_seed_2035": 0.0,
-    "FCFP_seed_2036": 0.0,
-    "FCFP_mean": 0.0
+    "FCFP_seed_2036": 0.0
   },
   "source_sha256": {
     "Val-Test-set/PGK2_Validation_split.csv": "337040d538210a005075a431b4c42aa0ad96d3fa19c76e389ff521e17ff3cb72",
@@ -29,5 +27,5 @@
     "local_del/models/validation_fcfp_2035.npy": "d3b66063db47c3d6edb3c0a00e4465ddee2588cf960cb7831a87f8532d5bda8c",
     "local_del/models/validation_fcfp_2036.npy": "75530c732c55e2930762730d817d24492a24f60dc4b71bbb32a51d734c1c372d"
   },
-  "interpretation": "Row order, CatalogID mapping, fingerprints, model feature rows, and stored prediction scores match exactly for every unique ID in the submitted panels. A score-to-ID indexing error is not supported as the explanation for their zero-hit outcomes."
+  "interpretation": "All 198 unique submitted CatalogIDs, including the newly scored ligand/DEL consensus panel, match the source ID/SMILES row order, regenerated fingerprint and feature rows, and frozen per-seed scores. A score-to-ID indexing error is not supported as the explanation for any zero-hit result."
 }

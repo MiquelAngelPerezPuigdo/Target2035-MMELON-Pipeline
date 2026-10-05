@@ -7,10 +7,10 @@
     "blind_validation_zero_hit_submissions": 19,
     "blind_validation_nonzero_submissions": 32,
     "blind_validation_total_hits": 163,
-    "active_learning_validation_submissions": 3,
-    "active_learning_validation_zero_hit_submissions": 3,
-    "combined_submissions": 54,
-    "combined_zero_hit_submissions": 22,
+    "active_learning_validation_submissions": 4,
+    "active_learning_validation_zero_hit_submissions": 4,
+    "combined_submissions": 55,
+    "combined_zero_hit_submissions": 23,
     "combined_total_hits": 163
   },
   "submissions": [
@@ -444,6 +444,14 @@
       "panel": "Model_disagreement",
       "submission_id": "9783556",
       "synapse_file_id": "syn77821632",
+      "N_hits": 0
+    },
+    {
+      "phase": "active_learning_validation",
+      "round": null,
+      "panel": "AL04_DEL_ligand_consensus",
+      "submission_id": "9783557",
+      "synapse_file_id": "syn77821898",
       "N_hits": 0
     }
   ]

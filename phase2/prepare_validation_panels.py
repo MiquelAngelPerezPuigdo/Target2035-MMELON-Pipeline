@@ -200,7 +200,6 @@ def main():
               'validation_universe_sha256': hashlib.sha256('\n'.join(meta.CatalogID.astype(str)).encode()).hexdigest(),
               'rules': {'scaffold_cap': 2, 'max_pairwise_ECFP4_Tanimoto': .65,
                         'one_per_nonchiral_parent': True, 'file_format': '50 CatalogIDs, one per line; no header'},
-              'actual_submissions_made': 0, 'published_account_balance_verified': False,
               'source_hashes': {
                   'active_learning_labels': hashlib.sha256((ROOT/'data/raw/active_learning_data.csv').read_bytes()).hexdigest(),
                   'validation_catalog_ids': hashlib.sha256('\n'.join(meta.CatalogID.astype(str)).encode()).hexdigest(),
@@ -222,7 +221,7 @@ def main():
               'panels': {}, 'fold_cv_context': json.loads((ROOT/'reports/release_diagnosis.json').read_text())['grouped_cv_fold_mean'],
               'limitations': ['Validation feedback is adaptive and will be declared in the writeup.',
                               'The validation sample is not independent of historical phase-one tuning.',
-                              'These files are local panels for review; they have not been uploaded.']}
+                              'This generated report records offline panel preparation; live Synapse submissions and scores are tracked separately in status.json.']}
     for name, score in panels.items():
         ids = diverse_top(meta, score, fps)
         selected_sets[name] = set(meta.CatalogID.iloc[ids].astype(str))

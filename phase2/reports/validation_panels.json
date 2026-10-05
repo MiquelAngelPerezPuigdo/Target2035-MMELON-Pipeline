@@ -10,8 +10,6 @@
     "one_per_nonchiral_parent": true,
     "file_format": "50 CatalogIDs, one per line; no header"
   },
-  "actual_submissions_made": 0,
-  "published_account_balance_verified": false,
   "source_hashes": {
     "active_learning_labels": "55fc2752c75a9aeb1aa0a9b10527768e4ce7f899f82d2efd99b31d41ef9223d5",
     "validation_catalog_ids": "ed7d3df8050def5a12c12dbb8b528f9c22251ce04f509089a9d3c01b2a3de482",
@@ -19,7 +17,7 @@
     "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
     "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
     "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
-    "panel_builder": "cb82b2449efeb9f5c1ed217391b2190b2fc63435c313d37a5de2171e397a71b5"
+    "panel_builder": "50d898a6a22729ce602d8a6ad0d34be3cca06072de7801376d8a83ffd5a0e678"
   },
   "ranking_methods": {
     "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
@@ -114,7 +112,7 @@
   "limitations": [
     "Validation feedback is adaptive and will be declared in the writeup.",
     "The validation sample is not independent of historical phase-one tuning.",
-    "These files are local panels for review; they have not been uploaded."
+    "This generated report records offline panel preparation; live Synapse submissions and scores are tracked separately in status.json."
   ],
   "bundle": {
     "file": "submissions/panels/active_learning_validation_panels.zip",

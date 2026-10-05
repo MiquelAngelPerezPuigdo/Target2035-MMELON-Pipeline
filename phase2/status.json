@@ -2,17 +2,20 @@
   "phase": "active_learning",
   "as_of": "2026-10-05",
   "timezone": "Europe/Zurich",
-  "preparation": "offline_release_diagnosis_and_validation_panels_ready",
+  "preparation": "validation_panels_submitted_and_feedback_tracking",
   "released_labels_ingested": true,
   "current_template_verified": true,
   "eligible_selection_universe_verified": true,
   "published_validation_allowance": 100,
   "published_test_allowance": 2,
   "account_balance_verified": false,
-  "validation_submissions_by_this_recovery": 0,
-  "test_submissions_by_this_recovery": 0,
+  "validation_submissions_by_this_recovery": 3,
+  "test_submissions_by_this_recovery": 3,
+  "test_queue_attempts_scored": 0,
+  "test_queue_attempts_rejected_for_format": 2,
+  "test_queue_attempts_with_unconfirmed_outcome": 1,
   "account_submission_history_reconciled": false,
-  "next_action": "Review panel design and verify actual Active Learning account credits before any upload.",
+  "next_action": "Pause submissions. Diagnose why all three current 50-ID validation panels and at least three earlier Blind validation submissions scored zero hits; reconcile the mistaken Active learning queue attempts before any test submission.",
   "released_labeled_rows": 6580,
   "released_binders": 39,
   "released_nonbinders": 6541,
@@ -28,5 +31,44 @@
   "official_site_reviewed_on": "2026-10-05",
   "offline_grouped_CV_complete": true,
   "validation_panels_prepared": 3,
-  "validation_panels_submitted": 0
+  "validation_panels_submitted": 3,
+  "validation_panel_submissions": [
+    {
+      "panel": "DEL_support",
+      "synapse_file_id": "syn77821634",
+      "submission_id": "9783554",
+      "status": "scored",
+      "status_email_received": true,
+      "status_email_timestamp": "2026-10-05T13:24:00+02:00",
+      "N_hits": 0
+    },
+    {
+      "panel": "Experimental_adaptation",
+      "synapse_file_id": "syn77821633",
+      "submission_id": "9783555",
+      "status": "scored",
+      "N_hits": 0
+    },
+    {
+      "panel": "Model_disagreement",
+      "synapse_file_id": "syn77821632",
+      "submission_id": "9783556",
+      "status": "scored",
+      "N_hits": 0
+    }
+  ],
+  "wrong_queue_active_learning_attempts": [
+    {
+      "count": 3,
+      "file_format": "50 CatalogIDs per line",
+      "outcome": "submitted to Active learning by mistake; at least two received format-rejection emails, one outcome not yet confirmed",
+      "note": "Do not make further test-queue attempts before reconciling Synapse submission history."
+      }
+  ],
+  "historical_blind_validation_zero_hit_submissions_observed": [
+    "9778878",
+    "9779675",
+    "9780474"
+  ],
+  "feedback_assessment": "All three current, scientifically distinct 50-ID panels scored zero hits: 150 submitted selections with two cross-panel overlaps (148 unique IDs). At least three earlier Blind validation submissions also scored zero. Treat the current panel strategy as unsuccessful; pause submissions and diagnose before retraining or selecting another panel."
 }

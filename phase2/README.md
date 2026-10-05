@@ -12,7 +12,7 @@ The [submission format](https://www.synapse.org/Synapse:syn75349604/wiki/641045)
 
 ## Campaign readiness
 
-The workspace and phase-one evidence are consolidated. No phase-two model has been trained and no phase-two submission has been made during this recovery. [status.json](status.json) is the separate campaign ledger.
+The workspace and phase-one evidence are consolidated. Twelve small regularized models were fitted for five grouped-fold comparisons and local panel ranking. No phase-two submission has been made. [status.json](status.json) is the separate campaign ledger.
 
 - [x] Recover all locally available phase-one code and result records.
 - [x] Preserve original submission archives, test files, models, and caches.
@@ -21,7 +21,7 @@ The workspace and phase-one evidence are consolidated. No phase-two model has be
 - [x] Obtain the official released labels and current submission templates.
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
 - [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
-- [ ] Compare phase-two baselines before preparing validation panels.
+- [x] Compare phase-two baselines and prepare three diverse local validation panels; no files uploaded.
 
 ## Data ingestion
 
@@ -37,7 +37,7 @@ Split confirmed labeled compounds by scaffold or chemical series before model co
 
 ## Model comparisons
 
-Start with the [October 5 site review and first experiment sequence](SITE_REVIEW.md). First diagnose the frozen models on the 39 released binders before fitting or screening the remaining library. Fresh released-structure features passed their checks; no adaptation model has been trained.
+Start with the [October 5 site review](SITE_REVIEW.md), then see the completed [first model comparison](EXPERIMENT_01.md). Fresh released-structure features passed checks. Frozen DEL baselines, grouped release-label adaptation, and three local validation panels are ready; the account balance remains unchecked.
 
 1. Replay the frozen G ranking, original DEL LightGBM ensemble, and aggregate-count method as baselines on the current candidate universe.
 2. Fit a regularized adaptation model that builds on the DEL-trained ensemble using the reliable experimental labels. Compare it against frozen DEL predictions and a labels-only diagnostic baseline. Measure DEL's contribution through ablations and ensure it is a substantial component of the final workflow. The labels-only model is a comparator, not an eligible final workflow by itself.

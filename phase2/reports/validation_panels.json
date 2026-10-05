@@ -1,0 +1,123 @@
+{
+  "status": "prepared_for_review",
+  "validation_rows": 244328,
+  "label_rows_used_for_adaptation": 6580,
+  "positive_labels": 39,
+  "validation_universe_sha256": "ed7d3df8050def5a12c12dbb8b528f9c22251ce04f509089a9d3c01b2a3de482",
+  "rules": {
+    "scaffold_cap": 2,
+    "max_pairwise_ECFP4_Tanimoto": 0.65,
+    "one_per_nonchiral_parent": true,
+    "file_format": "50 CatalogIDs, one per line; no header"
+  },
+  "actual_submissions_made": 0,
+  "published_account_balance_verified": false,
+  "source_hashes": {
+    "active_learning_labels": "55fc2752c75a9aeb1aa0a9b10527768e4ce7f899f82d2efd99b31d41ef9223d5",
+    "validation_catalog_ids": "ed7d3df8050def5a12c12dbb8b528f9c22251ce04f509089a9d3c01b2a3de482",
+    "validation_ECFP_model_scores": "b949e44e9445fca0f239d15f1d827e3ad9d96fbcacbe0b0ccf0578477b7a8c83",
+    "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
+    "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
+    "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
+    "panel_builder": "cb82b2449efeb9f5c1ed217391b2190b2fc63435c313d37a5de2171e397a71b5"
+  },
+  "ranking_methods": {
+    "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
+    "Experimental_adaptation": "Full-release regularized logistic model using ECFP/FCFP DEL logits, known-ligand similarity, and label-neighborhood features.",
+    "Model_disagreement": "55% adaptation rank plus 45% rank-disagreement term; favors adaptation-high/DEL-low compounds."
+  },
+  "DEL_key_component_check": "Offline grouped CV did not improve held-out PR area or average top-50 recovery over the label-neighborhood-only comparator; do not present this adapter alone as satisfying the significant-DEL requirement.",
+  "panel_model_numerics": {
+    "adaptation_max_abs_standardized_validation_feature": 11.588953971862793,
+    "adaptation_max_abs_coefficient": 1.17280925167482,
+    "adaptation_scores_finite": true,
+    "labels_only_scores_finite": true
+  },
+  "panels": {
+    "DEL_support": {
+      "rows": 50,
+      "unique_scaffolds": 47,
+      "median_DEL_rank_fraction": 0.9991578943060149,
+      "median_adapted_rank_fraction": 0.6528314397040045,
+      "maximum_pairwise_ECFP4_Tanimoto": 0.6229508196721312,
+      "submission_sha256": "4ce3bb17a0597569ba86f1758795212988907aa36e16e97b90e2b9963c2babb4",
+      "submission_file": "submissions/panels/DEL_support/DEL_support.txt",
+      "overlap_with_other_panels": {
+        "Experimental_adaptation": 0,
+        "Model_disagreement": 0
+      }
+    },
+    "Experimental_adaptation": {
+      "rows": 50,
+      "unique_scaffolds": 47,
+      "median_DEL_rank_fraction": 0.8135344700566451,
+      "median_adapted_rank_fraction": 0.99985061065453,
+      "maximum_pairwise_ECFP4_Tanimoto": 0.640625,
+      "submission_sha256": "083c3c49e3da67eb6bf3883e13547a41d7af834a25b4d532ed02a19878381cbf",
+      "submission_file": "submissions/panels/Experimental_adaptation/Experimental_adaptation.txt",
+      "overlap_with_other_panels": {
+        "DEL_support": 0,
+        "Model_disagreement": 2
+      }
+    },
+    "Model_disagreement": {
+      "rows": 50,
+      "unique_scaffolds": 46,
+      "median_DEL_rank_fraction": 0.08082168232867293,
+      "median_adapted_rank_fraction": 0.9905209390655185,
+      "maximum_pairwise_ECFP4_Tanimoto": 0.6491228070175439,
+      "submission_sha256": "7a25c994bc46c9545109f6664ed01b1152f7ab2376047582348571d0bf07d75c",
+      "submission_file": "submissions/panels/Model_disagreement/Model_disagreement.txt",
+      "overlap_with_other_panels": {
+        "DEL_support": 0,
+        "Experimental_adaptation": 2
+      }
+    }
+  },
+  "fold_cv_context": {
+    "frozen_DEL_ECFP": {
+      "roc_auc": 0.7146038240720101,
+      "average_precision": 0.019752477465799133,
+      "trapezoidal_pr_auc": 0.014894150791678584,
+      "positives_in_top_50": 0.8,
+      "precision_at_50": 0.016
+    },
+    "frozen_DEL_FCFP": {
+      "roc_auc": 0.6579612137826734,
+      "average_precision": 0.020358846718925058,
+      "trapezoidal_pr_auc": 0.014112241729380217,
+      "positives_in_top_50": 0.2,
+      "precision_at_50": 0.004
+    },
+    "historical_G_ligand_plus_DEL": {
+      "roc_auc": 0.5344203314990439,
+      "average_precision": 0.00980368468063841,
+      "trapezoidal_pr_auc": 0.0076994672688611016,
+      "positives_in_top_50": 0.4,
+      "precision_at_50": 0.008
+    },
+    "release_positive_neighbor": {
+      "roc_auc": 0.9183616637041359,
+      "average_precision": 0.3579309438561548,
+      "trapezoidal_pr_auc": 0.33451734289401436,
+      "positives_in_top_50": 5.4,
+      "precision_at_50": 0.10800000000000001
+    },
+    "DEL_plus_release_adaptation": {
+      "roc_auc": 0.9231405267041026,
+      "average_precision": 0.3438716805830687,
+      "trapezoidal_pr_auc": 0.3205026494288024,
+      "positives_in_top_50": 5.4,
+      "precision_at_50": 0.10800000000000001
+    }
+  },
+  "limitations": [
+    "Validation feedback is adaptive and will be declared in the writeup.",
+    "The validation sample is not independent of historical phase-one tuning.",
+    "These files are local panels for review; they have not been uploaded."
+  ],
+  "bundle": {
+    "file": "submissions/panels/active_learning_validation_panels.zip",
+    "sha256": "02df9977d55c263f9e58a161dd469b1f0e120f0db9fbf5d4597080b0c8cef58a"
+  }
+}

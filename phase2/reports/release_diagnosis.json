@@ -1,0 +1,545 @@
+{
+  "status": "passed",
+  "as_of": "2026-10-05",
+  "rows": 6580,
+  "positives": 39,
+  "negatives": 6541,
+  "positive_fraction_selected_release": 0.005927051671732523,
+  "leakage_grouping": {
+    "method": "Butina ECFP4, Tanimoto similarity threshold >= 0.65",
+    "groups": 5466,
+    "folds": [
+      {
+        "fold": 1,
+        "train_rows": 5254,
+        "holdout_rows": 1326,
+        "train_positives": 31,
+        "holdout_positives": 8,
+        "holdout_group_count": 1093,
+        "metrics": {
+          "frozen_DEL_ECFP": {
+            "roc_auc": 0.5537746585735963,
+            "average_precision": 0.007790274213970773,
+            "trapezoidal_pr_auc": 0.006653360999629937,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 0,
+            "positives_in_top_250": 1,
+            "positives_in_top_500": 4,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "frozen_DEL_FCFP": {
+            "roc_auc": 0.6357169954476479,
+            "average_precision": 0.00892439470373226,
+            "trapezoidal_pr_auc": 0.007646619945777167,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 0,
+            "positives_in_top_250": 1,
+            "positives_in_top_500": 5,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "historical_G_ligand_plus_DEL": {
+            "roc_auc": 0.4648141122913505,
+            "average_precision": 0.007893167398845446,
+            "trapezoidal_pr_auc": 0.006103792095281033,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 3,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "release_positive_neighbor": {
+            "roc_auc": 0.8772761760242792,
+            "average_precision": 0.22999167873172566,
+            "trapezoidal_pr_auc": 0.21494197118738576,
+            "positives_in_top_50": 5,
+            "positives_in_top_100": 5,
+            "positives_in_top_250": 6,
+            "positives_in_top_500": 7,
+            "recall_at_50": 0.625,
+            "precision_at_50": 0.1
+          },
+          "DEL_plus_release_adaptation": {
+            "roc_auc": 0.8681714719271624,
+            "average_precision": 0.22792407942019366,
+            "trapezoidal_pr_auc": 0.21279412462564534,
+            "positives_in_top_50": 5,
+            "positives_in_top_100": 5,
+            "positives_in_top_250": 6,
+            "positives_in_top_500": 7,
+            "recall_at_50": 0.625,
+            "precision_at_50": 0.1
+          }
+        }
+      },
+      {
+        "fold": 2,
+        "train_rows": 5273,
+        "holdout_rows": 1307,
+        "train_positives": 32,
+        "holdout_positives": 7,
+        "holdout_group_count": 1093,
+        "metrics": {
+          "frozen_DEL_ECFP": {
+            "roc_auc": 0.7946153846153846,
+            "average_precision": 0.02271234472876485,
+            "trapezoidal_pr_auc": 0.016324088398451984,
+            "positives_in_top_50": 1,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 3,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.14285714285714285,
+            "precision_at_50": 0.02
+          },
+          "frozen_DEL_FCFP": {
+            "roc_auc": 0.842087912087912,
+            "average_precision": 0.019855790060023484,
+            "trapezoidal_pr_auc": 0.01640589660222086,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 5,
+            "positives_in_top_500": 7,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "historical_G_ligand_plus_DEL": {
+            "roc_auc": 0.5194505494505495,
+            "average_precision": 0.00686738917016392,
+            "trapezoidal_pr_auc": 0.005535698514845137,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 0,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 2,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "release_positive_neighbor": {
+            "roc_auc": 0.962967032967033,
+            "average_precision": 0.5681305433565831,
+            "trapezoidal_pr_auc": 0.5508214478329639,
+            "positives_in_top_50": 6,
+            "positives_in_top_100": 6,
+            "positives_in_top_250": 6,
+            "positives_in_top_500": 7,
+            "recall_at_50": 0.8571428571428571,
+            "precision_at_50": 0.12
+          },
+          "DEL_plus_release_adaptation": {
+            "roc_auc": 0.97,
+            "average_precision": 0.5902097902097901,
+            "trapezoidal_pr_auc": 0.5719296790725362,
+            "positives_in_top_50": 6,
+            "positives_in_top_100": 6,
+            "positives_in_top_250": 6,
+            "positives_in_top_500": 7,
+            "recall_at_50": 0.8571428571428571,
+            "precision_at_50": 0.12
+          }
+        }
+      },
+      {
+        "fold": 3,
+        "train_rows": 5266,
+        "holdout_rows": 1314,
+        "train_positives": 31,
+        "holdout_positives": 8,
+        "holdout_group_count": 1093,
+        "metrics": {
+          "frozen_DEL_ECFP": {
+            "roc_auc": 0.73937595712098,
+            "average_precision": 0.023291343530244108,
+            "trapezoidal_pr_auc": 0.01843681986777946,
+            "positives_in_top_50": 1,
+            "positives_in_top_100": 3,
+            "positives_in_top_250": 5,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.125,
+            "precision_at_50": 0.02
+          },
+          "frozen_DEL_FCFP": {
+            "roc_auc": 0.6520865237366004,
+            "average_precision": 0.013022033139871027,
+            "trapezoidal_pr_auc": 0.010387471783882782,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 2,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 5,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "historical_G_ligand_plus_DEL": {
+            "roc_auc": 0.5199081163859112,
+            "average_precision": 0.015739070509669977,
+            "trapezoidal_pr_auc": 0.011602865370688005,
+            "positives_in_top_50": 2,
+            "positives_in_top_100": 2,
+            "positives_in_top_250": 3,
+            "positives_in_top_500": 3,
+            "recall_at_50": 0.25,
+            "precision_at_50": 0.04
+          },
+          "release_positive_neighbor": {
+            "roc_auc": 0.9508039816232773,
+            "average_precision": 0.30012174442788847,
+            "trapezoidal_pr_auc": 0.27946224280748694,
+            "positives_in_top_50": 6,
+            "positives_in_top_100": 6,
+            "positives_in_top_250": 7,
+            "positives_in_top_500": 8,
+            "recall_at_50": 0.75,
+            "precision_at_50": 0.12
+          },
+          "DEL_plus_release_adaptation": {
+            "roc_auc": 0.951186830015314,
+            "average_precision": 0.28930446352726147,
+            "trapezoidal_pr_auc": 0.26941400736793664,
+            "positives_in_top_50": 6,
+            "positives_in_top_100": 6,
+            "positives_in_top_250": 7,
+            "positives_in_top_500": 8,
+            "recall_at_50": 0.75,
+            "precision_at_50": 0.12
+          }
+        }
+      },
+      {
+        "fold": 4,
+        "train_rows": 5261,
+        "holdout_rows": 1319,
+        "train_positives": 33,
+        "holdout_positives": 6,
+        "holdout_group_count": 1093,
+        "metrics": {
+          "frozen_DEL_ECFP": {
+            "roc_auc": 0.7699923838537701,
+            "average_precision": 0.013132314521663998,
+            "trapezoidal_pr_auc": 0.010030750269985017,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 3,
+            "positives_in_top_500": 5,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "frozen_DEL_FCFP": {
+            "roc_auc": 0.6449606499111449,
+            "average_precision": 0.049634411136097664,
+            "trapezoidal_pr_auc": 0.027474344191478543,
+            "positives_in_top_50": 1,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 4,
+            "recall_at_50": 0.16666666666666666,
+            "precision_at_50": 0.02
+          },
+          "historical_G_ligand_plus_DEL": {
+            "roc_auc": 0.5615638486925616,
+            "average_precision": 0.0066979961329025044,
+            "trapezoidal_pr_auc": 0.00521268194031104,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 0,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 2,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "release_positive_neighbor": {
+            "roc_auc": 0.9267580604214268,
+            "average_precision": 0.1724613378902383,
+            "trapezoidal_pr_auc": 0.11596447680392699,
+            "positives_in_top_50": 3,
+            "positives_in_top_100": 4,
+            "positives_in_top_250": 5,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.5,
+            "precision_at_50": 0.06
+          },
+          "DEL_plus_release_adaptation": {
+            "roc_auc": 0.9607768469154607,
+            "average_precision": 0.16717358446966396,
+            "trapezoidal_pr_auc": 0.1124328380277804,
+            "positives_in_top_50": 3,
+            "positives_in_top_100": 4,
+            "positives_in_top_250": 6,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.5,
+            "precision_at_50": 0.06
+          }
+        }
+      },
+      {
+        "fold": 5,
+        "train_rows": 5266,
+        "holdout_rows": 1314,
+        "train_positives": 29,
+        "holdout_positives": 10,
+        "holdout_group_count": 1094,
+        "metrics": {
+          "frozen_DEL_ECFP": {
+            "roc_auc": 0.715260736196319,
+            "average_precision": 0.03183611033435196,
+            "trapezoidal_pr_auc": 0.023025734422546528,
+            "positives_in_top_50": 2,
+            "positives_in_top_100": 2,
+            "positives_in_top_250": 5,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.2,
+            "precision_at_50": 0.04
+          },
+          "frozen_DEL_FCFP": {
+            "roc_auc": 0.5149539877300613,
+            "average_precision": 0.010357604554900854,
+            "trapezoidal_pr_auc": 0.008646876123541742,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 3,
+            "positives_in_top_500": 5,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "historical_G_ligand_plus_DEL": {
+            "roc_auc": 0.6063650306748467,
+            "average_precision": 0.011820800191610203,
+            "trapezoidal_pr_auc": 0.010042298423180293,
+            "positives_in_top_50": 0,
+            "positives_in_top_100": 1,
+            "positives_in_top_250": 2,
+            "positives_in_top_500": 6,
+            "recall_at_50": 0.0,
+            "precision_at_50": 0.0
+          },
+          "release_positive_neighbor": {
+            "roc_auc": 0.8740030674846626,
+            "average_precision": 0.5189494148743387,
+            "trapezoidal_pr_auc": 0.5113965758383084,
+            "positives_in_top_50": 7,
+            "positives_in_top_100": 7,
+            "positives_in_top_250": 8,
+            "positives_in_top_500": 8,
+            "recall_at_50": 0.7,
+            "precision_at_50": 0.14
+          },
+          "DEL_plus_release_adaptation": {
+            "roc_auc": 0.8655674846625767,
+            "average_precision": 0.4447464852884341,
+            "trapezoidal_pr_auc": 0.4359425980501135,
+            "positives_in_top_50": 7,
+            "positives_in_top_100": 7,
+            "positives_in_top_250": 7,
+            "positives_in_top_500": 8,
+            "recall_at_50": 0.7,
+            "precision_at_50": 0.14
+          }
+        }
+      }
+    ],
+    "splitter": "StratifiedGroupKFold, 5 folds, seed 2605"
+  },
+  "full_release_ranking_diagnostic": {
+    "frozen_DEL_ECFP": {
+      "roc_auc": 0.7108377531860179,
+      "average_precision": 0.01402274646356078,
+      "trapezoidal_pr_auc": 0.012998765266351707,
+      "positives_in_top_50": 1,
+      "positives_in_top_100": 2,
+      "positives_in_top_250": 7,
+      "positives_in_top_500": 7,
+      "recall_at_50": 0.02564102564102564,
+      "precision_at_50": 0.02
+    },
+    "frozen_DEL_FCFP": {
+      "roc_auc": 0.6460276206492381,
+      "average_precision": 0.010779724658894062,
+      "trapezoidal_pr_auc": 0.009720818321569676,
+      "positives_in_top_50": 1,
+      "positives_in_top_100": 1,
+      "positives_in_top_250": 1,
+      "positives_in_top_500": 5,
+      "recall_at_50": 0.02564102564102564,
+      "precision_at_50": 0.02
+    },
+    "historical_G_ligand_plus_DEL": {
+      "roc_auc": 0.5375442475274305,
+      "average_precision": 0.007309667127073441,
+      "trapezoidal_pr_auc": 0.0068409705487869794,
+      "positives_in_top_50": 0,
+      "positives_in_top_100": 0,
+      "positives_in_top_250": 2,
+      "positives_in_top_500": 4,
+      "recall_at_50": 0.0,
+      "precision_at_50": 0.0
+    },
+    "release_positive_neighbor": {
+      "roc_auc": 0.9144802606047064,
+      "average_precision": 0.3238588785204788,
+      "trapezoidal_pr_auc": 0.31799162983609636,
+      "positives_in_top_50": 16,
+      "positives_in_top_100": 21,
+      "positives_in_top_250": 27,
+      "positives_in_top_500": 29,
+      "recall_at_50": 0.41025641025641024,
+      "precision_at_50": 0.32
+    },
+    "DEL_plus_release_adaptation": {
+      "roc_auc": 0.9157307555106057,
+      "average_precision": 0.3154602560638235,
+      "trapezoidal_pr_auc": 0.3103057510623509,
+      "positives_in_top_50": 15,
+      "positives_in_top_100": 21,
+      "positives_in_top_250": 27,
+      "positives_in_top_500": 28,
+      "recall_at_50": 0.38461538461538464,
+      "precision_at_50": 0.3
+    },
+    "random_selected_sample_reference": {
+      "binder_fraction": 0.005927051671732523,
+      "interpretation": "Observed participant-selected release fraction; not remaining-pool prevalence."
+    }
+  },
+  "grouped_cv_fold_mean": {
+    "frozen_DEL_ECFP": {
+      "roc_auc": 0.7146038240720101,
+      "average_precision": 0.019752477465799133,
+      "trapezoidal_pr_auc": 0.014894150791678584,
+      "positives_in_top_50": 0.8,
+      "precision_at_50": 0.016
+    },
+    "frozen_DEL_FCFP": {
+      "roc_auc": 0.6579612137826734,
+      "average_precision": 0.020358846718925058,
+      "trapezoidal_pr_auc": 0.014112241729380217,
+      "positives_in_top_50": 0.2,
+      "precision_at_50": 0.004
+    },
+    "historical_G_ligand_plus_DEL": {
+      "roc_auc": 0.5344203314990439,
+      "average_precision": 0.00980368468063841,
+      "trapezoidal_pr_auc": 0.0076994672688611016,
+      "positives_in_top_50": 0.4,
+      "precision_at_50": 0.008
+    },
+    "release_positive_neighbor": {
+      "roc_auc": 0.9183616637041359,
+      "average_precision": 0.3579309438561548,
+      "trapezoidal_pr_auc": 0.33451734289401436,
+      "positives_in_top_50": 5.4,
+      "precision_at_50": 0.10800000000000001
+    },
+    "DEL_plus_release_adaptation": {
+      "roc_auc": 0.9231405267041026,
+      "average_precision": 0.3438716805830687,
+      "trapezoidal_pr_auc": 0.3205026494288024,
+      "positives_in_top_50": 5.4,
+      "precision_at_50": 0.10800000000000001
+    }
+  },
+  "grouped_cv_total_hits_in_each_fold_top_50_of_250": {
+    "frozen_DEL_ECFP": 4,
+    "frozen_DEL_FCFP": 1,
+    "historical_G_ligand_plus_DEL": 2,
+    "release_positive_neighbor": 27,
+    "DEL_plus_release_adaptation": 27
+  },
+  "top_50_method_overlap": {
+    "frozen_DEL_ECFP__frozen_DEL_FCFP": 12,
+    "frozen_DEL_ECFP__historical_G_ligand_plus_DEL": 0,
+    "frozen_DEL_ECFP__release_positive_neighbor": 1,
+    "frozen_DEL_FCFP__historical_G_ligand_plus_DEL": 1,
+    "frozen_DEL_FCFP__release_positive_neighbor": 0,
+    "historical_G_ligand_plus_DEL__release_positive_neighbor": 0,
+    "DEL_plus_release_adaptation__frozen_DEL_ECFP": 1,
+    "DEL_plus_release_adaptation__frozen_DEL_FCFP": 0,
+    "DEL_plus_release_adaptation__historical_G_ligand_plus_DEL": 0,
+    "DEL_plus_release_adaptation__release_positive_neighbor": 45
+  },
+  "model_definition": {
+    "frozen_DEL_ECFP": "Mean of phase-one ECFP DEL LightGBM seeds 2035 and 2036.",
+    "frozen_DEL_FCFP": "Mean of phase-one FCFP DEL LightGBM seeds 2035 and 2036.",
+    "historical_G_ligand_plus_DEL": "95% maximum verified PGK2 ligand similarity (0.65 ECFP Tanimoto + 0.20 FCFP Tanimoto + 0.15 ECFP Tversky) and 5% frozen ECFP DEL score.",
+    "release_positive_neighbor": "Five-fold grouped OOF logistic model, C=0.03, on leave-one-out max/mean ECFP similarities to released binders and non-binders.",
+    "DEL_plus_release_adaptation": "Five-fold grouped OOF logistic model, C=0.03, using frozen ECFP/FCFP logits, ligand prior and leave-one-out positive/negative ECFP neighborhood summaries."
+  },
+  "structure_sensitivity": {
+    "constitutional_discrepancy_count": 8,
+    "all_eight_are_label_zero": true,
+    "released_structures_used_for_features": true,
+    "score_evaluated_without_these_rows": {
+      "frozen_DEL_ECFP": {
+        "roc_auc": 0.7108251205909251,
+        "average_precision": 0.014031752824422794,
+        "trapezoidal_pr_auc": 0.013007584341895166,
+        "positives_in_top_50": 1,
+        "positives_in_top_100": 2,
+        "positives_in_top_250": 7,
+        "positives_in_top_500": 7,
+        "recall_at_50": 0.02564102564102564,
+        "precision_at_50": 0.02
+      },
+      "frozen_DEL_FCFP": {
+        "roc_auc": 0.6460141215996107,
+        "average_precision": 0.010792646849078713,
+        "trapezoidal_pr_auc": 0.009732923971651639,
+        "positives_in_top_50": 1,
+        "positives_in_top_100": 1,
+        "positives_in_top_250": 1,
+        "positives_in_top_500": 5,
+        "recall_at_50": 0.02564102564102564,
+        "precision_at_50": 0.02
+      },
+      "historical_G_ligand_plus_DEL": {
+        "roc_auc": 0.5374646273161504,
+        "average_precision": 0.007315594122593347,
+        "trapezoidal_pr_auc": 0.006846702884123601,
+        "positives_in_top_50": 0,
+        "positives_in_top_100": 0,
+        "positives_in_top_250": 2,
+        "positives_in_top_500": 4,
+        "recall_at_50": 0.0,
+        "precision_at_50": 0.0
+      },
+      "release_positive_neighbor": {
+        "roc_auc": 0.9144344099188734,
+        "average_precision": 0.3238610540236113,
+        "trapezoidal_pr_auc": 0.3179937758391442,
+        "positives_in_top_50": 16,
+        "positives_in_top_100": 21,
+        "positives_in_top_250": 27,
+        "positives_in_top_500": 29,
+        "recall_at_50": 0.41025641025641024,
+        "precision_at_50": 0.32
+      },
+      "DEL_plus_release_adaptation": {
+        "roc_auc": 0.9156864361211522,
+        "average_precision": 0.31546232546475705,
+        "trapezoidal_pr_auc": 0.3103077927982716,
+        "positives_in_top_50": 15,
+        "positives_in_top_100": 21,
+        "positives_in_top_250": 27,
+        "positives_in_top_500": 28,
+        "recall_at_50": 0.38461538461538464,
+        "precision_at_50": 0.3
+      }
+    }
+  },
+  "interpretation_limits": [
+    "The released set was selected from participant top-50 lists; its binder fraction and metrics are not estimates for the remaining test pool.",
+    "Organizer chemical-series labels are unavailable. ECFP clusters are an evaluation leakage guard, not official series labels.",
+    "Grouped OOF scores are internal comparisons on a small, selected release; do not use alone to spend a blind-test submission.",
+    "Validation and test submissions were not made; paid compute was not used."
+  ],
+  "source_hashes": {
+    "labels": "55fc2752c75a9aeb1aa0a9b10527768e4ce7f899f82d2efd99b31d41ef9223d5",
+    "fresh_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
+    "ECFP_models": {
+      "2035": "5a53676d6cd39790475401d926180ad3275636394624e77914b1a64fad907b42",
+      "2036": "336e2bd164e4dbb6248a8132cc8733cdd346e40eac76b3d2e0e5bb0a03f7cfcf"
+    },
+    "FCFP_models": {
+      "2035": "e0e4e54561a332312d5ea2a815919a0c37a44f5cf5df4478d027ab43081fdb48",
+      "2036": "6ddc4c88495d07cded008dc6625f95f942a6d21b2009fe369bc010736f799a52"
+    }
+  },
+  "seconds": 7.66
+}

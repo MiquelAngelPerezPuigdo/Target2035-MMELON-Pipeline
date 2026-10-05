@@ -2,7 +2,7 @@
 
 This is the consolidated workspace for the DREAM x CACHE Target 2035 DEL-ML Challenge. The September 2026 local experiments and their feedback have been recovered from the Codex Cache Challenge project. Start with the [phase-one report](docs/PHASE1_REPORT.md) and [Active Learning plan](phase2/README.md).
 
-The strongest recorded validation set found 25 hits in three chemical series. Both blind-test submissions found zero hits among their selected 50 compounds. The next phase needs to address that failure to transfer to different chemistry.
+The full Results page history contains 51 phase-one validation submissions: 19 zero-hit and 32 nonzero submissions, totaling 163 hits. The strongest validation panel found 25 hits in three chemical series. Both blind-test submissions found zero selected hits. In Active Learning, three phase-two validation panels have also scored zero; the audit found 29 previously known negatives in the DEL-only panel, no known validation positives in any current panel, and no score-to-ID mapping error.
 
 ## Where everything lives
 
@@ -11,6 +11,9 @@ The strongest recorded validation set found 25 hits in three chemical series. Bo
 | [docs/PHASE1_REPORT.md](docs/PHASE1_REPORT.md) | Methods, results, limitations, and lessons |
 | [docs/CHAT_HISTORY.md](docs/CHAT_HISTORY.md) | Recovered conversation history and corrected assumptions |
 | [docs/PHASE1_RESULTS.csv](docs/PHASE1_RESULTS.csv) | All 48 recorded validation sets and two evaluated test sets |
+| [phase2/reports/validation_history.json](phase2/reports/validation_history.json) | Synapse IDs, names, and scores for all 51 phase-one and three current validation submissions |
+| [phase2/reports/validation_panel_history_overlap.json](phase2/reports/validation_panel_history_overlap.json) | Current panel overlap with historical submissions and forced labels |
+| [phase2/reports/validation_row_provenance_audit.json](phase2/reports/validation_row_provenance_audit.json) | Exact check from selected CatalogIDs through structures, features, and model scores |
 | [local_del/](local_del/) | Local DEL models, rounds 2–21, audits, result ledger, and submissions |
 | [docs/recovery/](docs/recovery/) | Source inventory, hashes, and recovery verification |
 | [phase2/](phase2/) | Active Learning plan and separate campaign status |
@@ -36,6 +39,6 @@ The check validates original validation archives, logically forced labels, the t
 
 As checked on October 5, 2026, the official [timeline](https://www.synapse.org/Synapse:syn75349604/wiki/641065) lists Active Learning for October 1–31, with 100 validation credits after the additional data release and two test submissions. The actual account balance still needs checking. The old phase-one quota estimates must not be used as today's balance.
 
-The October 5 [release audit](phase2/DATA_AUDIT.md) confirms 6,580 experimental labels, including 39 binders, and an updated template with 178,052 eligible test IDs. The raw files and prepared tables are saved locally under ignored `phase2/data/`. New models and submissions belong in `phase2/`; the next task is to compare the frozen DEL baselines with adaptation using the released labels. No phase-two model or submission has been produced yet.
+The October 5 [release audit](phase2/DATA_AUDIT.md) confirms 6,580 experimental labels, including 39 binders, and an updated template with 178,052 eligible test IDs. The raw files and prepared tables are saved locally under ignored `phase2/data/`. Phase-two models were compared and three 50-ID validation panels were submitted; all scored zero. The full phase-one feedback shows the earlier campaign had strong ligand-informed results, so do not infer that every method failed. Use the [campaign status](phase2/status.json), [first experiment report](phase2/EXPERIMENT_01.md), and mapped [validation history](phase2/reports/validation_history.json) before choosing another panel.
 
-The [October 5 site review](phase2/SITE_REVIEW.md) records current organizer clarifications and the first experiment sequence. All 6,580 released labels now have fresh features from the official released structures, including the eight flagged constitutional differences.
+The [October 5 site review](phase2/SITE_REVIEW.md) records current organizer clarifications and the first experiment sequence. All 6,580 released labels now have fresh features from the official released structures, including the eight flagged constitutional differences. Phase-two models were compared and three 50-ID validation panels were submitted; all scored zero. The full phase-one feedback shows the earlier campaign had strong ligand-informed results, so do not infer that every method failed. Use the [campaign status](phase2/status.json), [first experiment report](phase2/EXPERIMENT_01.md), and mapped [validation history](phase2/reports/validation_history.json) before choosing another panel.

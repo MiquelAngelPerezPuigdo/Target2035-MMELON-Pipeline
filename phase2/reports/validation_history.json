@@ -1,0 +1,450 @@
+{
+  "source": "Synapse Results wiki, Your Submissions Ranking, reviewed 2026-10-05",
+  "source_url": "https://www.synapse.org/Synapse:syn75349604/wiki/641050",
+  "scope_note": "Submission IDs, uploaded names and N_hits transcribed from the live Results table. The round/panel mapping for rounds 01-21 is confirmed by matching the displayed uploaded filenames to the local archived batch names.",
+  "summary": {
+    "blind_validation_submissions": 51,
+    "blind_validation_zero_hit_submissions": 19,
+    "blind_validation_nonzero_submissions": 32,
+    "blind_validation_total_hits": 163,
+    "active_learning_validation_submissions": 3,
+    "active_learning_validation_zero_hit_submissions": 3,
+    "combined_submissions": 54,
+    "combined_zero_hit_submissions": 22,
+    "combined_total_hits": 163
+  },
+  "submissions": [
+    {
+      "phase": "blind_validation",
+      "round": 1,
+      "panel": "A_ECFP",
+      "submission_id": "9780369",
+      "submitted_file": "Team_MMELON_R01_A_ECFP.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 1,
+      "panel": "B_FCFP",
+      "submission_id": "9780370",
+      "submitted_file": "Team_MMELON_R01_B_FCFP.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 1,
+      "panel": "C_NEIGHBORS",
+      "submission_id": "9780371",
+      "submitted_file": "Team_MMELON_R01_C_NEIGHBORS.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 2,
+      "panel": "D_STRUCTURAL",
+      "submission_id": "9780372",
+      "submitted_file": "Team_MMELON_R02_D_STRUCTURAL.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 2,
+      "panel": "E_CHEMICAL_FEATURES",
+      "submission_id": "9780373",
+      "submitted_file": "Team_MMELON_R02_E_CHEMICAL_FEATURES.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 2,
+      "panel": "F_CONTROL_CONTRAST",
+      "submission_id": "9780374",
+      "submitted_file": "Team_MMELON_R02_F_CONTROL_CONTRAST.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 3,
+      "panel": "G_KNOWN_LIGANDS",
+      "submission_id": "9780380",
+      "submitted_file": "Team_MMELON_R03_G_KNOWN_LIGANDS.txt",
+      "N_hits": 25
+    },
+    {
+      "phase": "blind_validation",
+      "round": 3,
+      "panel": "H_SELECTIVE_DEL",
+      "submission_id": "9780381",
+      "submitted_file": "Team_MMELON_R03_H_SELECTIVE_DEL.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 3,
+      "panel": "I_SIZE_AWARE_KERNEL",
+      "submission_id": "9780382",
+      "submitted_file": "Team_MMELON_R03_I_SIZE_AWARE_KERNEL.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 4,
+      "panel": "J_LIGAND47",
+      "submission_id": "9780392",
+      "submitted_file": "Team_MMELON_R04_J_LIGAND47.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 4,
+      "panel": "K_NEW_CORES",
+      "submission_id": "9780393",
+      "submitted_file": "Team_MMELON_R04_K_NEW_CORES.txt",
+      "N_hits": 21
+    },
+    {
+      "phase": "blind_validation",
+      "round": 4,
+      "panel": "L_DISTANT_TRANSFER",
+      "submission_id": "9780394",
+      "submitted_file": "Team_MMELON_R04_L_DISTANT_TRANSFER.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 5,
+      "panel": "M_K_BAG",
+      "submission_id": "9780404",
+      "submitted_file": "Team_MMELON_R05_M_K_BAG.txt",
+      "N_hits": 21
+    },
+    {
+      "phase": "blind_validation",
+      "round": 5,
+      "panel": "N_GROUP_A_B",
+      "submission_id": "9780405",
+      "submitted_file": "Team_MMELON_R05_N_GROUP_A_B.txt",
+      "N_hits": 8
+    },
+    {
+      "phase": "blind_validation",
+      "round": 5,
+      "panel": "O_DIVERSE_BAG",
+      "submission_id": "9780406",
+      "submitted_file": "Team_MMELON_R05_O_DIVERSE_BAG.txt",
+      "N_hits": 4
+    },
+    {
+      "phase": "blind_validation",
+      "round": 6,
+      "panel": "P_M_EXPANSION",
+      "submission_id": "9780410",
+      "submitted_file": "Team_MMELON_R06_P_M_EXPANSION.txt",
+      "N_hits": 2
+    },
+    {
+      "phase": "blind_validation",
+      "round": 6,
+      "panel": "Q_K_M_CONSENSUS",
+      "submission_id": "9780411",
+      "submitted_file": "Team_MMELON_R06_Q_K_M_CONSENSUS.txt",
+      "N_hits": 3
+    },
+    {
+      "phase": "blind_validation",
+      "round": 6,
+      "panel": "R_SERIES_SEARCH",
+      "submission_id": "9780412",
+      "submitted_file": "Team_MMELON_R06_R_SERIES_SEARCH.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 7,
+      "panel": "S_M_PART1",
+      "submission_id": "9780419",
+      "submitted_file": "Team_MMELON_R07_S_M_PART1.txt",
+      "N_hits": 13
+    },
+    {
+      "phase": "blind_validation",
+      "round": 7,
+      "panel": "T_M_PART2",
+      "submission_id": "9780420",
+      "submitted_file": "Team_MMELON_R07_T_M_PART2.txt",
+      "N_hits": 6
+    },
+    {
+      "phase": "blind_validation",
+      "round": 7,
+      "panel": "U_M_PART3",
+      "submission_id": "9780421",
+      "submitted_file": "Team_MMELON_R07_U_M_PART3.txt",
+      "N_hits": 2
+    },
+    {
+      "phase": "blind_validation",
+      "round": 8,
+      "panel": "V_S_MAIN15",
+      "submission_id": "9780435",
+      "submitted_file": "Team_MMELON_R08_V_S_MAIN15.txt",
+      "N_hits": 13
+    },
+    {
+      "phase": "blind_validation",
+      "round": 8,
+      "panel": "W_T_MAIN7",
+      "submission_id": "9780436",
+      "submitted_file": "Team_MMELON_R08_W_T_MAIN7.txt",
+      "N_hits": 5
+    },
+    {
+      "phase": "blind_validation",
+      "round": 8,
+      "panel": "X_T_REST10",
+      "submission_id": "9780437",
+      "submitted_file": "Team_MMELON_R08_X_T_REST10.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 9,
+      "panel": "Y_X_THIENO4",
+      "submission_id": "9780439",
+      "submitted_file": "Team_MMELON_R09_Y_X_THIENO4.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 9,
+      "panel": "Z_X_ISOXAZOLE3",
+      "submission_id": "9780440",
+      "submitted_file": "Team_MMELON_R09_Z_X_ISOXAZOLE3.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 9,
+      "panel": "AA_X_SINGLETONS3",
+      "submission_id": "9780441",
+      "submitted_file": "Team_MMELON_R09_AA_X_SINGLETONS3.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 10,
+      "panel": "AB_Y_PAIR_SPLIT",
+      "submission_id": "9780444",
+      "submitted_file": "Team_MMELON_R10_AB_Y_PAIR_SPLIT.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 10,
+      "panel": "AC_Y4_EXPANSION",
+      "submission_id": "9780445",
+      "submitted_file": "Team_MMELON_R10_AC_Y4_EXPANSION.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 10,
+      "panel": "AD_SERIES_EXPLORATION",
+      "submission_id": "9780446",
+      "submitted_file": "Team_MMELON_R10_AD_SERIES_EXPLORATION.txt",
+      "N_hits": 2
+    },
+    {
+      "phase": "blind_validation",
+      "round": 11,
+      "panel": "AE_K_GROUP10",
+      "submission_id": "9780447",
+      "submitted_file": "Team_MMELON_R11_AE_K_GROUP10.txt",
+      "N_hits": 8
+    },
+    {
+      "phase": "blind_validation",
+      "round": 11,
+      "panel": "AF_K_GROUP7",
+      "submission_id": "9780448",
+      "submitted_file": "Team_MMELON_R11_AF_K_GROUP7.txt",
+      "N_hits": 7
+    },
+    {
+      "phase": "blind_validation",
+      "round": 11,
+      "panel": "AG_K_REST22",
+      "submission_id": "9780449",
+      "submitted_file": "Team_MMELON_R11_AG_K_REST22.txt",
+      "N_hits": 6
+    },
+    {
+      "phase": "blind_validation",
+      "round": 12,
+      "panel": "AH_ERG_SCAFFOLD_HOPS",
+      "submission_id": "9780454",
+      "submitted_file": "Team_MMELON_R12_AH_ERG_SCAFFOLD_HOPS.txt",
+      "N_hits": 2
+    },
+    {
+      "phase": "blind_validation",
+      "round": 13,
+      "panel": "AI_CHEMBERTA_OOD",
+      "submission_id": "9780456",
+      "submitted_file": "Team_MMELON_R13_AI_CHEMBERTA_OOD.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 14,
+      "panel": "AJ_AI_HIT_SPLIT1",
+      "submission_id": "9780457",
+      "submitted_file": "Team_MMELON_R14_AJ_AI_HIT_SPLIT1.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 15,
+      "panel": "AK_AI_HIT_SPLIT2",
+      "submission_id": "9780458",
+      "submitted_file": "Team_MMELON_R15_AK_AI_HIT_SPLIT2.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 16,
+      "panel": "AL_AI_CODE_BIT1",
+      "submission_id": "9780461",
+      "submitted_file": "Team_MMELON_R16_AL_AI_CODE_BIT1.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 16,
+      "panel": "AM_AI_CODE_BIT2",
+      "submission_id": "9780463",
+      "submitted_file": "Team_MMELON_R16_AM_AI_CODE_BIT2.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 17,
+      "panel": "AN_AI_SINGLETON_1",
+      "submission_id": "9780464",
+      "submitted_file": "Team_MMELON_R17_AN_AI_SINGLETON_1.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 17,
+      "panel": "AO_AI_SINGLETON_2",
+      "submission_id": "9780465",
+      "submitted_file": "Team_MMELON_R17_AO_AI_SINGLETON_2.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 18,
+      "panel": "AP_EXACT_HIT_ANALOGS",
+      "submission_id": "9780466",
+      "submitted_file": "Team_MMELON_R18_AP_EXACT_HIT_ANALOGS.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 18,
+      "panel": "AQ_EXACT_HIT_SCAFFOLD_HOPS",
+      "submission_id": "9780467",
+      "submitted_file": "Team_MMELON_R18_AQ_EXACT_HIT_SCAFFOLD_HOPS.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 19,
+      "panel": "AR_LIGAND21_CRYSTAL_3D",
+      "submission_id": "9780469",
+      "submitted_file": "Team_MMELON_R19_AR_LIGAND21_CRYSTAL_3D.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 19,
+      "panel": "AS_GK_3D_SERIES_PORTFOLIO",
+      "submission_id": "9780470",
+      "submitted_file": "Team_MMELON_R19_AS_GK_3D_SERIES_PORTFOLIO.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": 20,
+      "panel": "AT_TESTSTYLE_CONSENSUS",
+      "submission_id": "9780472",
+      "submitted_file": "Team_MMELON_R20_AT_TESTSTYLE_CONSENSUS.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 20,
+      "panel": "AU_TESTSTYLE_SERIES_PORTFOLIO",
+      "submission_id": "9780473",
+      "submitted_file": "Team_MMELON_R20_AU_TESTSTYLE_SERIES_PORTFOLIO.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": 21,
+      "panel": "AV_AS_KLIKE_HALF",
+      "submission_id": "9780474",
+      "submitted_file": "Team_MMELON_R21_AV_AS_KLIKE_HALF.txt",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": null,
+      "panel": "MMELON_BCM_Binary_Test_v1",
+      "submission_id": "9778878",
+      "submitted_file": "MMELON_BCM_Binary_Test_v1",
+      "N_hits": 0
+    },
+    {
+      "phase": "blind_validation",
+      "round": null,
+      "panel": "Team_MMELON_submission_validation.txt",
+      "submission_id": "9779612",
+      "submitted_file": "Team_MMELON_submission_validation.txt",
+      "N_hits": 1
+    },
+    {
+      "phase": "blind_validation",
+      "round": null,
+      "panel": "hybrid_mode",
+      "submission_id": "9779675",
+      "submitted_file": "hybrid_mode",
+      "N_hits": 0
+    },
+    {
+      "phase": "active_learning_validation",
+      "round": null,
+      "panel": "DEL_support",
+      "submission_id": "9783554",
+      "synapse_file_id": "syn77821634",
+      "N_hits": 0
+    },
+    {
+      "phase": "active_learning_validation",
+      "round": null,
+      "panel": "Experimental_adaptation",
+      "submission_id": "9783555",
+      "synapse_file_id": "syn77821633",
+      "N_hits": 0
+    },
+    {
+      "phase": "active_learning_validation",
+      "round": null,
+      "panel": "Model_disagreement",
+      "submission_id": "9783556",
+      "synapse_file_id": "syn77821632",
+      "N_hits": 0
+    }
+  ]
+}

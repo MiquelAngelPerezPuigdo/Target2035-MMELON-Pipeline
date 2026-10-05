@@ -12,7 +12,7 @@ The [submission format](https://www.synapse.org/Synapse:syn75349604/wiki/641045)
 
 ## Campaign readiness
 
-The workspace and phase-one evidence are consolidated. Three contrasting 50-ID panels were submitted to Blind validation and all scored zero hits. Three earlier validation score emails also reported zero. Three additional 50-ID lists were mistakenly sent to the Active learning test queue; two were rejected for format, and the third outcome remains unconfirmed. [status.json](status.json) is the campaign ledger.
+The workspace and phase-one evidence are consolidated. Three contrasting 50-ID panels were submitted to Blind validation and all scored zero hits. The full Results page history shows 19 zero-hit and 32 nonzero results across 51 phase-one validation submissions (163 hits total); the strongest panels were ligand-informed. Three additional 50-ID lists were mistakenly sent to the Active learning test queue; two were rejected for format, and the third outcome remains unconfirmed. See the mapped [validation history](reports/validation_history.json) and [status.json](status.json).
 
 - [x] Recover all locally available phase-one code and result records.
 - [x] Preserve original submission archives, test files, models, and caches.
@@ -22,7 +22,7 @@ The workspace and phase-one evidence are consolidated. Three contrasting 50-ID p
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
 - [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
 - [x] Compare phase-two baselines, submit three validation panels, and record that each scored zero hits.
-- [ ] Diagnose the repeated zero-hit validation results before fitting or submitting another candidate list.
+- [ ] Diagnose why the current three panels failed despite the strong ligand-informed phase-one validation results before fitting or submitting another candidate list.
 
 ## Data ingestion
 
@@ -40,16 +40,16 @@ Split confirmed labeled compounds by scaffold or chemical series before model co
 
 See the [October 5 site review](SITE_REVIEW.md) and [first model comparison](EXPERIMENT_01.md). Fresh released-structure features passed checks, but all three validation panels scored zero. The current candidate-ranking approach has failed its external check; do not spend more credits on its rankings.
 
-1. Reconstruct which local files and methods correspond to the three older zero-hit validation submissions and reconcile them with the current three.
-2. Audit the validation and test CatalogID universes, joins, score direction, and selected-ID exports. Queue acceptance and score emails show that the three current validation lists were evaluated, but the repeated zero results still need a scientific explanation.
-3. Compare candidate rank distributions and chemical-family coverage across the participant-selected release, the validation pool, and the remaining test pool. Treat grouped cross-validation on the selected release as insufficient evidence of transfer.
+1. Use the mapped 51-submission validation history and archived candidate lists as adaptive evidence. Preserve aggregate hit-count constraints; do not turn every member of a partially successful panel into a positive label. The [panel overlap audit](reports/validation_panel_history_overlap.json) found 29 already-known negatives in DEL_support and no historical positives in any current panel.
+2. Audit validation and test CatalogID universes, joins, score direction, and selected-ID exports. Queue acceptance and score emails show the current lists were evaluated; investigate why the current rankings missed even historically inferable positives.
+3. Compare the successful ligand-informed phase-one selections against current candidate ranks and chemical-family coverage across the validation pool and remaining test pool. Treat grouped cross-validation on the participant-selected release as insufficient evidence of transfer.
 4. Only after finding a concrete correction, run a small, documented offline comparison and decide whether another validation experiment is worth a credit. Keep the final workflow substantially DEL-based and require a DEL-removal ablation.
 
 These are proposed comparisons, not completed models or guarantees of improvement. Use the Mac and memory-bounded caches. Preserve phase-one assets and write new results under `phase2/`.
 
 ## Validation budget proposal
 
-Do not treat the published allowance as a target. Six observed validation submissions have returned zero hits. Pause new validation submissions until the repeated failure is understood and the actual account history is reconciled. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
+Do not treat the published allowance as a target. The three current panels all returned zero hits, while the 51 earlier evaluations include both 19 zero-hit and 32 nonzero results. Pause new validation submissions until the current failure is understood and the actual account history is reconciled. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
 
 ## Final test preparation
 

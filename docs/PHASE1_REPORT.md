@@ -1,6 +1,6 @@
 # PGK2 phase one analysis and results
 
-The September 11, 2026 campaign used this Mac to train DEL-supervised models and adapt predictions using validation feedback. It produced 21 rounds containing 48 evaluated validation lists. The best single list found 25 hits in three chemical series. Both evaluated blind-test lists returned zero hits, covering 100 distinct selected molecules. Those test outcomes are the key evidence for planning Active Learning.
+The September 11, 2026 campaign used this Mac to train DEL-supervised models and adapt predictions using validation feedback. The local record contains 21 rounds with 48 evaluated validation lists; the Synapse Results page adds three early validation evaluations outside those rounds. Across all 51 earlier validation submissions, 19 had zero hits and 32 found hits, totaling 163. The best single list found 25 hits in three chemical series. Both evaluated blind-test lists returned zero hits, covering 100 distinct selected molecules. Those test outcomes are the key evidence for planning Active Learning. See the complete ID-to-file mapping in [validation_history.json](../phase2/reports/validation_history.json).
 
 This report combines the recovered Codex conversations, saved code, original submission archives, and the [feedback ledger](../local_del/reports/official_results.json). Feedback was reported by the user; most submission IDs were not saved and the ledger has not been reconciled against the complete Synapse account history. [PHASE1_RESULTS.csv](PHASE1_RESULTS.csv) contains every recorded outcome.
 

@@ -17,7 +17,7 @@
     "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
     "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
     "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
-    "panel_builder": "50d898a6a22729ce602d8a6ad0d34be3cca06072de7801376d8a83ffd5a0e678"
+    "panel_builder": "0ec91c5b8dd617538a9e2590718524874f222ea2101141f423814e351bd89594"
   },
   "ranking_methods": {
     "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
@@ -114,8 +114,101 @@
     "The validation sample is not independent of historical phase-one tuning.",
     "This generated report records offline panel preparation; live Synapse submissions and scores are tracked separately in status.json."
   ],
+  "historically_forced_validation_labels": {
+    "rows": 636,
+    "positives": 8,
+    "negatives": 628,
+    "warning": "Adaptive labels logically inferred from previous aggregate submission feedback; diagnostic only, not an independent estimate.",
+    "rank_diagnostics": {
+      "DEL_ECFP": {
+        "positive_rank_fractions_best_to_worst": [
+          0.9701057594708752,
+          0.9111194787335057,
+          0.8934014930748829,
+          0.8804271307422809,
+          0.8108485314822698,
+          0.7879244294554861,
+          0.5704094495923513,
+          0.1423700926623228
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 0,
+        "known_negatives_in_top_50": 50,
+        "best_negative_rank_fraction": 1.0,
+        "median_negative_rank_fraction": 0.9400232474378704
+      },
+      "DEL_FCFP": {
+        "positive_rank_fractions_best_to_worst": [
+          0.9377025965096101,
+          0.9110089715464458,
+          0.9076651059231853,
+          0.8275883238924724,
+          0.6320192528077011,
+          0.6185414688451589,
+          0.606352935398317,
+          0.5433556530565469
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 0,
+        "known_negatives_in_top_50": 50,
+        "best_negative_rank_fraction": 1.0,
+        "median_negative_rank_fraction": 0.9016813463868243
+      },
+      "DEL_mean": {
+        "positive_rank_fractions_best_to_worst": [
+          0.9539041779902426,
+          0.9110642251399758,
+          0.900533299499034,
+          0.8540077273173766,
+          0.7086007334402934,
+          0.6656400412560165,
+          0.5944754592187551,
+          0.38719467273501196
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 0,
+        "known_negatives_in_top_50": 5,
+        "best_negative_rank_fraction": 0.99998158213549,
+        "median_negative_rank_fraction": 0.8883345339052422
+      },
+      "released_label_adaptation": {
+        "positive_rank_fractions_best_to_worst": [
+          0.4766379620837563,
+          0.4691234733636751,
+          0.4611464916014538,
+          0.2316435283716971,
+          0.18166562980910905,
+          0.15910579221374543,
+          0.11539406044333844,
+          0.048614976588847725
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 0,
+        "known_negatives_in_top_50": 0,
+        "best_negative_rank_fraction": 0.99963573556858,
+        "median_negative_rank_fraction": 0.5200795651746832
+      },
+      "released_label_neighborhood_only": {
+        "positive_rank_fractions_best_to_worst": [
+          0.6230845420909596,
+          0.5423897383844668,
+          0.3240643724828919,
+          0.2641571985200223,
+          0.21032382698667362,
+          0.20816689040961334,
+          0.11279100225925809,
+          0.021389279984283416
+        ],
+        "known_positives_in_top_50": 0,
+        "known_positives_in_top_500": 0,
+        "known_negatives_in_top_50": 0,
+        "best_negative_rank_fraction": 0.9994310926295799,
+        "median_negative_rank_fraction": 0.30628908680134903
+      }
+    }
+  },
   "bundle": {
     "file": "submissions/panels/active_learning_validation_panels.zip",
-    "sha256": "02df9977d55c263f9e58a161dd469b1f0e120f0db9fbf5d4597080b0c8cef58a"
+    "sha256": "cc3f0b43bb19f641db207a63b9c92d336da97329c925cc7f8b844b47aa5566a7"
   }
 }

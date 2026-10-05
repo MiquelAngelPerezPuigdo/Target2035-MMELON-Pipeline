@@ -1,0 +1,33 @@
+{
+  "scope": "The 148 unique CatalogIDs submitted across the three current phase-two validation panels.",
+  "source_rows_compared": "Val-Test-set/PGK2_Validation_split.csv versus local_del/features/validation_meta.parquet",
+  "source_row_order_and_smiles_match": true,
+  "selected_ids_checked": 148,
+  "selected_structures_regenerated_from_metadata_SMILES": true,
+  "regenerated_ECFP4_and_FCFP4_equal_cached_fingerprint_rows": true,
+  "selected_ECFP_sparse_rows_match_regenerated_fingerprints": true,
+  "selected_FCFP_plus_descriptor_rows_match_regenerated_features": true,
+  "frozen_model_scores_recomputed_on_all_selected_rows": true,
+  "score_recomputation_max_absolute_error_by_model": {
+    "ECFP_seed_2035": 0.0,
+    "ECFP_seed_2036": 0.0,
+    "ECFP_mean": 0.0,
+    "FCFP_seed_2035": 0.0,
+    "FCFP_seed_2036": 0.0,
+    "FCFP_mean": 0.0
+  },
+  "source_sha256": {
+    "Val-Test-set/PGK2_Validation_split.csv": "337040d538210a005075a431b4c42aa0ad96d3fa19c76e389ff521e17ff3cb72",
+    "local_del/features/validation_meta.parquet": "64058f9e1530e708a9d9f4f90155e470870e09f64095137de012a03a9a37e85a",
+    "local_del/features/validation_bits.npy": "f01fad47329dcadcbecb5f786b7b91d6c175028adb4dc5a04eb14e8b4e219553",
+    "local_del/features/validation_ecfp.npz": "c2909e30390cae0812704e67ebc0cfcdb53c6e66bcbf7479ebfaf9e1745ddb75",
+    "local_del/features/validation_fcfp.npz": "c5b33423198a3cffeba54f92d50845eab4d1a40588573d6e114d25f9dd1f718c",
+    "local_del/models/validation_ecfp.npy": "b949e44e9445fca0f239d15f1d827e3ad9d96fbcacbe0b0ccf0578477b7a8c83",
+    "local_del/models/validation_fcfp.npy": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
+    "local_del/models/validation_ecfp_2035.npy": "fc9c1f737be21b18b0a18259988c108277d68b241fb4983baba335f2369ba08e",
+    "local_del/models/validation_ecfp_2036.npy": "52667c4573b2ead0c1867656e7db3ceeff776b3b84239a1ef9b70511680738ed",
+    "local_del/models/validation_fcfp_2035.npy": "d3b66063db47c3d6edb3c0a00e4465ddee2588cf960cb7831a87f8532d5bda8c",
+    "local_del/models/validation_fcfp_2036.npy": "75530c732c55e2930762730d817d24492a24f60dc4b71bbb32a51d734c1c372d"
+  },
+  "interpretation": "Row order, CatalogID mapping, fingerprints, model feature rows, and stored prediction scores match exactly for every unique ID in the submitted panels. A score-to-ID indexing error is not supported as the explanation for their zero-hit outcomes."
+}

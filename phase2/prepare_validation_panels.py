@@ -222,6 +222,37 @@ def main():
               'limitations': ['Validation feedback is adaptive and will be declared in the writeup.',
                               'The validation sample is not independent of historical phase-one tuning.',
                               'This generated report records offline panel preparation; live Synapse submissions and scores are tracked separately in status.json.']}
+    # Compare rankings with only the validation labels logically forced by the
+    # previous aggregate hit-count feedback. These eight positives are an
+    # adaptive, highly selected diagnostic, not an independent performance set.
+    forced = pd.read_parquet(LOCAL / 'reports/validation_forced_labels.parquet')
+    meta_index = pd.Index(meta.CatalogID.astype(str))
+    forced_ix = meta_index.get_indexer(forced.CatalogID.astype(str))
+    require((forced_ix >= 0).all(), 'A forced validation label is missing from the scoring universe.')
+    forced_y = forced.forced_label.to_numpy(dtype=np.int8)
+    forced_pos = forced_ix[forced_y == 1]
+    forced_neg = forced_ix[forced_y == 0]
+    forced_rankings = {
+        'DEL_ECFP': ecfp_rank,
+        'DEL_FCFP': fcfp_rank,
+        'DEL_mean': del_rank,
+        'released_label_adaptation': adapted_rank,
+        'released_label_neighborhood_only': neighbor_rank,
+    }
+    report['historically_forced_validation_labels'] = {
+        'rows': int(len(forced)), 'positives': int(len(forced_pos)), 'negatives': int(len(forced_neg)),
+        'warning': 'Adaptive labels logically inferred from previous aggregate submission feedback; diagnostic only, not an independent estimate.',
+        'rank_diagnostics': {
+            name: {
+                'positive_rank_fractions_best_to_worst': sorted(map(float, scores[forced_pos]), reverse=True),
+                'known_positives_in_top_50': int(np.sum(scores[forced_pos] >= 1 - 49 / len(meta))),
+                'known_positives_in_top_500': int(np.sum(scores[forced_pos] >= 1 - 499 / len(meta))),
+                'best_negative_rank_fraction': float(np.max(scores[forced_neg])),
+                'median_negative_rank_fraction': float(np.median(scores[forced_neg])),
+                'known_negatives_in_top_50': int(np.sum(scores[forced_neg] >= 1 - 49 / len(meta))),
+            } for name, scores in forced_rankings.items()
+        }
+    }
     for name, score in panels.items():
         ids = diverse_top(meta, score, fps)
         selected_sets[name] = set(meta.CatalogID.iloc[ids].astype(str))

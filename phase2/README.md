@@ -21,7 +21,7 @@ The workspace and phase-one evidence are consolidated. Four phase-two 50-ID pane
 - [x] Obtain the official released labels and current submission templates.
 - [x] Confirm that all released compounds are removed from the scoring and selection universe.
 - [x] Audit IDs, structures, sources, and label consistency; preserve eight constitutional discrepancy flags and use fresh released-structure features.
-- [x] Compare phase-two baselines, submit four validation panels, and record that each scored zero hits.
+- [x] Compare phase-two baselines, submit five validation panels, and record that each scored zero hits.
 - [ ] Diagnose why the current three panels failed despite the strong ligand-informed phase-one validation results before fitting or submitting another candidate list.
 
 ## Data ingestion
@@ -53,7 +53,7 @@ These are proposed comparisons, not completed models or guarantees of improvemen
 
 ## Validation budget proposal
 
-Do not treat the published allowance as a target. The three current panels all returned zero hits, while the 51 earlier evaluations include both 19 zero-hit and 32 nonzero results. Pause new validation submissions until the current failure is understood and the actual account history is reconciled. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
+Do not treat the published allowance as a target. All five current panels returned zero hits, while the 51 earlier evaluations include both 19 zero-hit and 32 nonzero results. Pause new validation submissions until a stronger transfer hypothesis is developed and the actual account history is reconciled. The historical request for 50 extra blind-phase lists is superseded by the new phase; it is not an instruction to spend 50 new credits immediately.
 
 ## Final test preparation
 

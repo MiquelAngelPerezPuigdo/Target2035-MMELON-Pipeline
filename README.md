@@ -14,6 +14,8 @@ The full Results page history contains 51 phase-one validation submissions: 19 z
 | [phase2/reports/validation_history.json](phase2/reports/validation_history.json) | Synapse IDs, names, and scores for all 51 phase-one and three current validation submissions |
 | [phase2/reports/validation_panel_history_overlap.json](phase2/reports/validation_panel_history_overlap.json) | Current panel overlap with historical submissions and forced labels |
 | [phase2/reports/validation_row_provenance_audit.json](phase2/reports/validation_row_provenance_audit.json) | Exact check from selected CatalogIDs through structures, features, and model scores |
+| [phase2/reports/validation_release_transfer.json](phase2/reports/validation_release_transfer.json) | Chemistry overlap between released binders and forced historical validation labels |
+| [phase2/reports/validation_panels.json](phase2/reports/validation_panels.json) | Phase-two model comparison, panel provenance, and current versus historical panel ranks |
 | [local_del/](local_del/) | Local DEL models, rounds 2–21, audits, result ledger, and submissions |
 | [docs/recovery/](docs/recovery/) | Source inventory, hashes, and recovery verification |
 | [phase2/](phase2/) | Active Learning plan and separate campaign status |

@@ -253,6 +253,49 @@ def main():
             } for name, scores in forced_rankings.items()
         }
     }
+    # Re-score every archived phase-one validation list under the current
+    # rankings. This tests whether phase-two rankings recover earlier selected
+    # chemistries; historical bag hit counts remain aggregate outcomes.
+    phase1 = json.loads((LOCAL / 'reports/official_results.json').read_text())
+    historical_rank_audit = {}
+    meta_ids = pd.Index(meta.CatalogID.astype(str))
+    for round_name, outcomes in phase1.items():
+        if not round_name.startswith('round'):
+            continue
+        archive = LOCAL / 'submissions' / f'{round_name}_validation_batch.zip'
+        with zipfile.ZipFile(archive) as zf:
+            entries = [entry for entry in zf.namelist() if entry.startswith('Team_')]
+            for panel_name, outcome in outcomes.items():
+                matches = [entry for entry in entries if entry.endswith(f'_{panel_name}.txt')]
+                require(len(matches) == 1, f'Missing or duplicate historical panel: {round_name}/{panel_name}')
+                ids = zf.read(matches[0]).decode().splitlines()
+                ix = meta_ids.get_indexer(ids)
+                require((ix >= 0).all() and len(ids) == len(set(ids)) == 50,
+                        f'Invalid archived validation IDs: {round_name}/{panel_name}')
+                historical_rank_audit[f'{round_name}/{panel_name}'] = {
+                    'N_hits': int(outcome['hits']),
+                    'panel_rows_in_global_top_50': {
+                        method: int(np.sum(scores[ix] >= 1 - 49 / len(meta)))
+                        for method, scores in {
+                            'DEL_mean': del_rank,
+                            'released_label_adaptation': adapted_rank,
+                            'released_label_neighborhood_only': neighbor_rank,
+                        }.items()
+                    },
+                    'median_panel_rank_fraction': {
+                        method: float(np.median(scores[ix]))
+                        for method, scores in {
+                            'DEL_mean': del_rank,
+                            'released_label_adaptation': adapted_rank,
+                            'released_label_neighborhood_only': neighbor_rank,
+                        }.items()
+                    },
+                }
+    report['historical_panel_rank_audit'] = {
+        'method': 'Each archived phase-one panel ID was looked up in the validation universe and ranked using the current DEL, released-label adaptation, and released-label-neighborhood scores. N_hits is retained as an aggregate panel result; no member of a partially successful panel is assigned an individual label.',
+        'panel_count': len(historical_rank_audit),
+        'panels': historical_rank_audit,
+    }
     for name, score in panels.items():
         ids = diverse_top(meta, score, fps)
         selected_sets[name] = set(meta.CatalogID.iloc[ids].astype(str))

@@ -17,7 +17,7 @@
     "validation_FCFP_model_scores": "1b61bb88cf30f3882aba442564221ce32d14cb58f0b1c72a29556e9ac1488f23",
     "labeled_feature_receipt": "a7867ad4f6128f7462919225ec547201a2eec7dd6b3d8e60a9e2004556257f08",
     "diagnosis_receipt": "4b700db52a58f6f573b7d746316439472bae361bd76f0ed84c894e627c9e754d",
-    "panel_builder": "0ec91c5b8dd617538a9e2590718524874f222ea2101141f423814e351bd89594"
+    "panel_builder": "a291b51b2f5359d5be47d8fd244f8cb43c8c560f54085aec5eda7f553ddc16de"
   },
   "ranking_methods": {
     "DEL_support": "Mean of descending ECFP-DEL and FCFP-DEL rank fractions.",
@@ -133,9 +133,9 @@
         ],
         "known_positives_in_top_50": 0,
         "known_positives_in_top_500": 0,
-        "known_negatives_in_top_50": 50,
         "best_negative_rank_fraction": 1.0,
-        "median_negative_rank_fraction": 0.9400232474378704
+        "median_negative_rank_fraction": 0.9396896794473003,
+        "known_negatives_in_top_50": 50
       },
       "DEL_FCFP": {
         "positive_rank_fractions_best_to_worst": [
@@ -150,9 +150,9 @@
         ],
         "known_positives_in_top_50": 0,
         "known_positives_in_top_500": 0,
-        "known_negatives_in_top_50": 50,
         "best_negative_rank_fraction": 1.0,
-        "median_negative_rank_fraction": 0.9016813463868243
+        "median_negative_rank_fraction": 0.9009077960774041,
+        "known_negatives_in_top_50": 50
       },
       "DEL_mean": {
         "positive_rank_fractions_best_to_worst": [
@@ -167,9 +167,9 @@
         ],
         "known_positives_in_top_50": 0,
         "known_positives_in_top_500": 0,
-        "known_negatives_in_top_50": 5,
         "best_negative_rank_fraction": 0.99998158213549,
-        "median_negative_rank_fraction": 0.8883345339052422
+        "median_negative_rank_fraction": 0.8880316623555221,
+        "known_negatives_in_top_50": 5
       },
       "released_label_adaptation": {
         "positive_rank_fractions_best_to_worst": [
@@ -184,9 +184,9 @@
         ],
         "known_positives_in_top_50": 0,
         "known_positives_in_top_500": 0,
-        "known_negatives_in_top_50": 0,
         "best_negative_rank_fraction": 0.99963573556858,
-        "median_negative_rank_fraction": 0.5200795651746832
+        "median_negative_rank_fraction": 0.518559068137913,
+        "known_negatives_in_top_50": 0
       },
       "released_label_neighborhood_only": {
         "positive_rank_fractions_best_to_worst": [
@@ -201,14 +201,644 @@
         ],
         "known_positives_in_top_50": 0,
         "known_positives_in_top_500": 0,
-        "known_negatives_in_top_50": 0,
         "best_negative_rank_fraction": 0.9994310926295799,
-        "median_negative_rank_fraction": 0.30628908680134903
+        "median_negative_rank_fraction": 0.3045025539438787,
+        "known_negatives_in_top_50": 0
+      }
+    }
+  },
+  "historical_panel_rank_audit": {
+    "method": "Each archived phase-one panel ID was looked up in the validation universe and ranked using the current DEL, released-label adaptation, and released-label-neighborhood scores. N_hits is retained as an aggregate panel result; no member of a partially successful panel is assigned an individual label.",
+    "panel_count": 48,
+    "panels": {
+      "round01/A_ECFP": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 5,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9984539225958549,
+          "released_label_adaptation": 0.5940109197472251,
+          "released_label_neighborhood_only": 0.11685111816901872
+        }
+      },
+      "round01/B_FCFP": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 3,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9961209930912545,
+          "released_label_adaptation": 0.9550092498608428,
+          "released_label_neighborhood_only": 0.2343816508955175
+        }
+      },
+      "round01/C_NEIGHBORS": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 1,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9980773795880946,
+          "released_label_adaptation": 0.6307197701450509,
+          "released_label_neighborhood_only": 0.10003765430077605
+        }
+      },
+      "round02/D_STRUCTURAL": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 1,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9976353508398547,
+          "released_label_adaptation": 0.35090943322091617,
+          "released_label_neighborhood_only": 0.031224419632624956
+        }
+      },
+      "round02/E_CHEMICAL_FEATURES": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 1,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9654132968796045,
+          "released_label_adaptation": 0.5380124259192561,
+          "released_label_neighborhood_only": 0.03428178514128549
+        }
+      },
+      "round02/F_CONTROL_CONTRAST": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 1,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9941185619331391,
+          "released_label_adaptation": 0.5903682754330245,
+          "released_label_neighborhood_only": 0.05469901116531872
+        }
+      },
+      "round03/G_KNOWN_LIGANDS": {
+        "N_hits": 25,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8678825185815788,
+          "released_label_adaptation": 0.0902045610818244,
+          "released_label_neighborhood_only": 0.13095510952490091
+        }
+      },
+      "round03/H_SELECTIVE_DEL": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9425239841524508,
+          "released_label_adaptation": 0.5455924003798173,
+          "released_label_neighborhood_only": 0.2273664909465964
+        }
+      },
+      "round03/I_SIZE_AWARE_KERNEL": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9723998068170656,
+          "released_label_adaptation": 0.5911008971546446,
+          "released_label_neighborhood_only": 0.13798868733833208
+        }
+      },
+      "round04/J_LIGAND47": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8729996152712747,
+          "released_label_adaptation": 0.5713385285354113,
+          "released_label_neighborhood_only": 0.5821886971611931
+        }
+      },
+      "round04/K_NEW_CORES": {
+        "N_hits": 21,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8047511951147637,
+          "released_label_adaptation": 0.3022883173438983,
+          "released_label_neighborhood_only": 0.32203431452801157
+        }
+      },
+      "round04/L_DISTANT_TRANSFER": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8679531203955339,
+          "released_label_adaptation": 0.5773795880946924,
+          "released_label_neighborhood_only": 0.5949113486788252
+        }
+      },
+      "round05/M_K_BAG": {
+        "N_hits": 21,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8514957352411513,
+          "released_label_adaptation": 0.3886803804721522,
+          "released_label_neighborhood_only": 0.30113822402671814
+        }
+      },
+      "round05/N_GROUP_A_B": {
+        "N_hits": 8,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7480630545823647,
+          "released_label_adaptation": 0.3794653089289807,
+          "released_label_neighborhood_only": 0.25331726204119054
+        }
+      },
+      "round05/O_DIVERSE_BAG": {
+        "N_hits": 4,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7777680003929145,
+          "released_label_adaptation": 0.2586523034609214,
+          "released_label_neighborhood_only": 0.2359840051078878
+        }
+      },
+      "round06/P_M_EXPANSION": {
+        "N_hits": 2,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8156453619724305,
+          "released_label_adaptation": 0.47413927179856585,
+          "released_label_neighborhood_only": 0.2994274090566779
+        }
+      },
+      "round06/Q_K_M_CONSENSUS": {
+        "N_hits": 3,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8006869863462232,
+          "released_label_adaptation": 0.3984275236567238,
+          "released_label_neighborhood_only": 0.2836187420189254
+        }
+      },
+      "round06/R_SERIES_SEARCH": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.6798197504993289,
+          "released_label_adaptation": 0.2631032873841721,
+          "released_label_neighborhood_only": 0.2138682426901542
+        }
+      },
+      "round07/S_M_PART1": {
+        "N_hits": 13,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8729996152712747,
+          "released_label_adaptation": 0.4557828001702629,
+          "released_label_neighborhood_only": 0.4511599161782522
+        }
+      },
+      "round07/T_M_PART2": {
+        "N_hits": 6,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8182647915916309,
+          "released_label_adaptation": 0.5491531875184178,
+          "released_label_neighborhood_only": 0.4826033037556072
+        }
+      },
+      "round07/U_M_PART3": {
+        "N_hits": 2,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8524135588225664,
+          "released_label_adaptation": 0.37786704757539047,
+          "released_label_neighborhood_only": 0.41442650862774627
+        }
+      },
+      "round08/V_S_MAIN15": {
+        "N_hits": 13,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8775918028224354,
+          "released_label_adaptation": 0.4557828001702629,
+          "released_label_neighborhood_only": 0.4511599161782522
+        }
+      },
+      "round08/W_T_MAIN7": {
+        "N_hits": 5,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8679531203955339,
+          "released_label_adaptation": 0.5243791133230739,
+          "released_label_neighborhood_only": 0.49942495334140996
+        }
+      },
+      "round08/X_T_REST10": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8326644919943682,
+          "released_label_adaptation": 0.5380860973772961,
+          "released_label_neighborhood_only": 0.5104961363413117
+        }
+      },
+      "round09/Y_X_THIENO4": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.855756401231132,
+          "released_label_adaptation": 0.5713385285354113,
+          "released_label_neighborhood_only": 0.5821886971611931
+        }
+      },
+      "round09/Z_X_ISOXAZOLE3": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.855756401231132,
+          "released_label_adaptation": 0.5555196293507089,
+          "released_label_neighborhood_only": 0.5665642087685406
+        }
+      },
+      "round09/AA_X_SINGLETONS3": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8729996152712747,
+          "released_label_adaptation": 0.5380860973772961,
+          "released_label_neighborhood_only": 0.5344557316394356
+        }
+      },
+      "round10/AB_Y_PAIR_SPLIT": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8679531203955339,
+          "released_label_adaptation": 0.5713385285354113,
+          "released_label_neighborhood_only": 0.5821886971611931
+        }
+      },
+      "round10/AC_Y4_EXPANSION": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.65614563210111,
+          "released_label_adaptation": 0.6249017713892799,
+          "released_label_neighborhood_only": 0.6507318031498641
+        }
+      },
+      "round10/AD_SERIES_EXPLORATION": {
+        "N_hits": 2,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.6681714744114469,
+          "released_label_adaptation": 0.3238863331259618,
+          "released_label_neighborhood_only": 0.29144633443567663
+        }
+      },
+      "round11/AE_K_GROUP10": {
+        "N_hits": 8,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8178902950132609,
+          "released_label_adaptation": 0.44108943715006055,
+          "released_label_neighborhood_only": 0.4670545332503847
+        }
+      },
+      "round11/AF_K_GROUP7": {
+        "N_hits": 7,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8679531203955339,
+          "released_label_adaptation": 0.46849112668216497,
+          "released_label_neighborhood_only": 0.4826033037556072
+        }
+      },
+      "round11/AG_K_REST22": {
+        "N_hits": 6,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8425037245014898,
+          "released_label_adaptation": 0.3705592482236993,
+          "released_label_neighborhood_only": 0.42136595068923743
+        }
+      },
+      "round12/AH_ERG_SCAFFOLD_HOPS": {
+        "N_hits": 2,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7106973003503487,
+          "released_label_adaptation": 0.5006896467044302,
+          "released_label_neighborhood_only": 0.4279800104777185
+        }
+      },
+      "round13/AI_CHEMBERTA_OOD": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7143931518286893,
+          "released_label_adaptation": 0.5266936249631642,
+          "released_label_neighborhood_only": 0.43599996725712975
+        }
+      },
+      "round14/AJ_AI_HIT_SPLIT1": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8424996316427098,
+          "released_label_adaptation": 0.5416427916571167,
+          "released_label_neighborhood_only": 0.2426758292131888
+        }
+      },
+      "round15/AK_AI_HIT_SPLIT2": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9243056465079729,
+          "released_label_adaptation": 0.4678505942830949,
+          "released_label_neighborhood_only": 0.1761320847385482
+        }
+      },
+      "round16/AL_AI_CODE_BIT1": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9651042860417145,
+          "released_label_adaptation": 0.555883893782129,
+          "released_label_neighborhood_only": 0.1913268229593006
+        }
+      },
+      "round16/AM_AI_CODE_BIT2": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9651042860417145,
+          "released_label_adaptation": 0.5194451720637832,
+          "released_label_neighborhood_only": 0.1761320847385482
+        }
+      },
+      "round17/AN_AI_SINGLETON_1": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9759206885825611,
+          "released_label_adaptation": 0.5416427916571167,
+          "released_label_neighborhood_only": 0.1761320847385482
+        }
+      },
+      "round17/AO_AI_SINGLETON_2": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9759206885825611,
+          "released_label_adaptation": 0.555883893782129,
+          "released_label_neighborhood_only": 0.1761320847385482
+        }
+      },
+      "round18/AP_EXACT_HIT_ANALOGS": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.5184986984709079,
+          "released_label_adaptation": 0.16278322582757604,
+          "released_label_neighborhood_only": 0.18028838282963888
+        }
+      },
+      "round18/AQ_EXACT_HIT_SCAFFOLD_HOPS": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.38649786352771687,
+          "released_label_adaptation": 0.31545299760977047,
+          "released_label_neighborhood_only": 0.3037330964932386
+        }
+      },
+      "round19/AR_LIGAND21_CRYSTAL_3D": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.8171668822238958,
+          "released_label_adaptation": 0.5172657247634328,
+          "released_label_neighborhood_only": 0.45412519236436266
+        }
+      },
+      "round19/AS_GK_3D_SERIES_PORTFOLIO": {
+        "N_hits": 1,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.6911989211224255,
+          "released_label_adaptation": 0.42725762090304836,
+          "released_label_neighborhood_only": 0.44893340100193185
+        }
+      },
+      "round20/AT_TESTSTYLE_CONSENSUS": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.9378581251432501,
+          "released_label_adaptation": 0.5383193903277561,
+          "released_label_neighborhood_only": 0.5606295635375397
+        }
+      },
+      "round20/AU_TESTSTYLE_SERIES_PORTFOLIO": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7529877869094004,
+          "released_label_adaptation": 0.5357613535902557,
+          "released_label_neighborhood_only": 0.46209398840902394
+        }
+      },
+      "round21/AV_AS_KLIKE_HALF": {
+        "N_hits": 0,
+        "panel_rows_in_global_top_50": {
+          "DEL_mean": 0,
+          "released_label_adaptation": 0,
+          "released_label_neighborhood_only": 0
+        },
+        "median_panel_rank_fraction": {
+          "DEL_mean": 0.7095912052650535,
+          "released_label_adaptation": 0.38660530107069185,
+          "released_label_neighborhood_only": 0.3015168134638682
+        }
       }
     }
   },
   "bundle": {
     "file": "submissions/panels/active_learning_validation_panels.zip",
-    "sha256": "cc3f0b43bb19f641db207a63b9c92d336da97329c925cc7f8b844b47aa5566a7"
+    "sha256": "282f4a63601a84a84a77dc1bae1b0813896cb012778299a7097025aa504c9082"
   }
 }

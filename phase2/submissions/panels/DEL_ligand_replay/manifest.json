@@ -1,0 +1,30 @@
+{
+  "status": "prepared_for_validation_submission",
+  "method": "Exact replay of successful phase-one R03 G score: 95% max verified PGK2 crystal-ligand similarity + 5% frozen ECFP DEL score. Only selection filters differ: every previously selected CatalogID is excluded, with <=2 per Murcko scaffold and pairwise ECFP4 Tanimoto <0.65.",
+  "candidate_universe_rows": 244328,
+  "previously_selected_unique_ids_excluded": 1413,
+  "selection_rules": {
+    "valid_structure": true,
+    "unique_nonchiral_parent": true,
+    "maximum_per_Murcko_scaffold": 2,
+    "maximum_pairwise_ECFP4_Tanimoto": 0.65,
+    "rows": 50,
+    "unique_CatalogIDs": 50
+  },
+  "selected_score_range": [
+    0.281531847023924,
+    0.3153649541442324
+  ],
+  "mean_ligand_similarity_signal": 0.2871779203414917,
+  "mean_DEL_ECFP_score": 0.2590258846221152,
+  "file": "submissions/panels/DEL_ligand_replay/DEL_ligand_replay.txt",
+  "sha256": "d9029d2a37ee9919b78084d0cc6351e79ce26c781233722f94deac618aa7215c",
+  "detail_file": "submissions/panels/DEL_ligand_replay/selected_details.csv",
+  "source_hashes": {
+    "round03_full_rankings": "67bc318ba38d94a376dabcf8967cc745f4f98aadd260ff8d5be98dc288d0f77b",
+    "validation_metadata": "64058f9e1530e708a9d9f4f90155e470870e09f64095137de012a03a9a37e85a",
+    "validation_fingerprints": "f01fad47329dcadcbecb5f786b7b91d6c175028adb4dc5a04eb14e8b4e219553",
+    "builder": "cdee0077e4ac7b9a082b61ddf873aaa2526d8de5e57d41ead2403f92c71243f7"
+  },
+  "limitation": "This probe tests whether the exact previously successful ligand-led validation score transfers to fresh validation chemistry. It does not demonstrate that a 5% DEL contribution is sufficient for the final challenge workflow, and validation feedback is adaptive."
+}
